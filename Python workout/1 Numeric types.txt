@@ -1,0 +1,27 @@
+int, float et complex => les trois types de nombre en python.
+voir tableau 1.1 pour concept important.
+for et while => Les deux types de boucles python.
+for => Cette boucle est appropriée pour travailler avec des collections.
+random.randint => Cette fonction permet de générer un nombre aléatoire.
+import random => Cette commande permet d'importer le module random.
+number = random.randint(10, 30) => Cette commande permet de générer un nombre aléatoire entre 10 et (y compris) 30.
+name = input('Enter your name: ') => Cette commande permet de recupérer l'entrée de l'utilisateur et le routerne sous forme de chaîne en demandant son nom.
+print(f'Hello, {name}!') => Cette commande affiche la valeur de la variable name dans un message de salutation en utilisant un f-string.
+opérateur de comparaison => Procédé utilisé pour comparer l'entrée que l'utilisateur a choisi par rapport à l'entrée choisi par la machine aléatoirement.
+random => Module utile pour sélectionner un nombre aléatoire.
+random => Ce module a également des fonctions pour choisir un ou plusieurs éléments d'une séquence python.
+while True => Commande pour créer une boucle infinie en python.
+break => Commande permettant de sortir de la boucle.
+int('5') => Cette commande permet de convertir la chaîne '5' en entier.
+str(5) => Cette commande permet de convertir l'entier 5 en chaîne de caractère (string).
+list('abc') => Cette commande permet de convertir la chaîne 'abc' en liste.
+dict([('a', 1), ('b', 2), ('c', 3)]) => Cette commande permet de convertir la liste [('a', 1), ('b', 2), ('c', 3)] en dictionnaire.
+<,> => En python On ne peut pas utiliser__et__pour comparer différents types.
+f-strings => Approche moderne pour insérer des valeurs de variables dans des chaines de caractère.
+:= => Opérateur d'expression d'affectation ("walrus operator").
+while s := input('Enter thoughts:'): => Boucle qui s'évalue en fonction de l'entrée de l'utilisateur en utilisant l'opérateur walrus.
+print(f'Your thoughts are: {s}') => Afficher la valeur de la variable s dans la chaîne.
+
+
+
+

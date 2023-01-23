@@ -1,0 +1,27 @@
+Flashcard 1:
+Definition: An ordered sequence of two or more numbers
+Term: Vector
+
+Flashcard 2:
+Definition: A compact way of denoting a set of numbers that represent some entity
+Term: Vector
+
+Flashcard 3:
+Definition: A representation of a vector using lowercase letters with an overhead arrow
+Term: Vector notation
+
+Flashcard 4:
+Definition: An array of numbers
+Term: Array
+
+Flashcard 5:
+Definition: A representation of an array using square brackets
+Term: Array notation
+
+Flashcard 6:
+Definition: The first element in a vector, representing the hardness of an object
+Term: x0
+
+Flashcard 7:
+Definition: The second element in a vector, representing the sharpness of an object
+Term: x1

@@ -1,0 +1,46 @@
+stack (pile) => Ensemble des technologies utilisées pour construire une application ou un site web.
+FARM => Fast API (rest api), React (frontend) et MongoDB (base des données).
+stack (pile) => Ce sont des ensembles de technologies qui couvrent différentes parties d'une application web moderne, qui se mélangent bien et qui nous permettent de satisfaire certains critères lors de la création d'applicatrions web.
+composants d'une application web ou d'un site fonctionnel => système d'exploitation (unix/linux par exemple), un couche de base de base de données (solution sql ou Nosql), un serveur web (apache, nginx, uvicorn ou hypercorn par exemple) et un environnement de développement (php, python, .NET ou Node.js/javascript par exemple)
+MERN stack => MongoDB + Express.js + React + Node.js
+MEAN stack => MongoDB + Express.js + Angular.js + Node.js
+PERN stack => Postgres + Express.js + React + Node.js
+LAMP stack => Linux + Apache + MySQL + PHP
+#Figure 1.1 - diagramme de la pile FARM - description: client basé sur React déclenche une requête http suite à un évènement de l'utilisateur (clic de la souris ou soumission de formulaire), API Rest basé sur FastAPI qui traîte la requête du client servi par uvicorn - serveur rapide basé sur python - qui communique avec la base des données MongoDB pour récupérer de la data en moyen des requêtes. L'API utilise l'ORM Motor pour transformer le BSON(format des données renvoyées) en structure des données python qui seront retournées par l'api FastAPI en format json.
+Motor => Pilote python asynchrone pour mongodb.
+JAMstack => Paradigme de développement web relativement nouveau basé sur des composants en utilisant Javascript, API(s) et Markup.
+Mongodb => C'est une base des données rapide, évolutive et orientée document qui permet des schémas flexibles et par conséquent, un développement itératif et rapide.
+BSON => Format binaire du json.
+caractériques de mongodb => Facile et bon marché; flexibilité; format adapté au web; structures imbriquées complexes; syntaxe intuitive simple; construit avec l'évolutivité à l'esprit; très grande communauté et documentation.
+Mongodb => Ce système de base des données utilisé une approche sans schéma pour construire sa base des données.
+ACID => Atomicity, Consistency, Isolation and Durability - principe de transaction solide des bases de données.
+API => Application programming interface
+API => C'est un moyen utilisé pour activer une sorte d'interaction entre différents logiciels et différents systèmes qui communiquent en utilisant HTTP à tavers un cycle (une serie) de demandes et réponses.
+HTTP => Hypertext Transfert Protocol.
+API => Protocol standard de communication entre différents serveurs et clients hétérogènes.
+API => On peut le considérer comme une sorte de système vasculaire fondamental pour l'échange d'informations sur le web.
+API => Ensemble de câblages qui exposent la logique métier à travers une interface uniforme, nous permettant de les utiliser depuis un autre domaine.
+API => C'est un moyen pour un humain ou une machine d'interagir avec une application ou un service via une interface.
+API => Un moyen standardisé d'échange d'information, avec à l'esprit la convivialité, les performances et l'évolutivité.
+Caractéristiques API Rest => sans état, structure en couches et architecture client-serveur.
+sans état => Caractéristique des API Rest qui détemine le fait que ni le client ni le serveur ne stockent des états intermédiaires ainsi, les requêtes et réponses sont gérées par le serveur API de manière isolée et sans transformation sur la session elle-même.
+structure en couches => Caractéristique des API Rest qui détermine une hiérarchie des couches qui communiquent entre elles mais pas avec tous les composants, améliorant ainsi la sécurité globale et pour garder l'API évolutive et compréhensible.
+architecture client-serveur => Caractéristique des API Rest qui indique la capacité des API à connecter différents systèmes/logiciels sans limiter leurs propres fonctionnalités - le serveur (le système qui fournit la réponse) et le client (le système qui fait la demande) doivent être rester séparés et indépendants l'un de l'autre.
+FastAPI => C'est un framework web moderne et performant pour la création d'API.
+Créateur de FastAPI => Sebastian Ramirez.
+caractéristiques de FastAPI => Haute per pour spécifier au serveur la méthode HTTP à l'url '/' pour déclencher la fonction root pour une réponse en l'occurence "Hello world" afin de définir notre API minimale.
+starlette => Framework ou boîte à outils ASGI léger idéal prformance, validation des données et simplicité, développement rapide, conformité aux normes, structuration logique des applications, prise en charge asynchrone, injection des dépendances, excellente documentation, documentation automatique.
+from fastapi import FastAPI  => Cette commande importe la classe FastAPI du package fastapi pour définir une API minimale qui retourne un message "Hello world" à la requête get '/'.
+app = FastAPI() => cette commande crée une instance de la classe ou une application FastAPI pour définir une API minimale qui retourne un message "Hello world" à la requête get '/'.
+@app.get('/') => Cette commande définit un décorateuour créer des services asynchrone hautes performances.
+Compansants de FastAPI => starlette + pydantic + fonctionnalités modernes de python (type annotion et la prose en charge asynchrone).
+injection des dépendances => Techniques utilisées pour créer des fonctionnalistées réutilisables dans FastAPI.
+Frontend => Partie d'une application web qui fait face à l'utilisateur.
+React => C'est un framework qui nous offre une syntaxe intuitive nommée JSX pour nous permettre de définir des composants à partir des balises.
+DOM virtuel => Composant de React qui tourne en mémoire qui offre des performances fluides et rapides à nos applications web.
+caractéristiques de React => Réutilisabilité, Facilité d'utilisation, SPA ou SSR, grand écosystème (Next.js, Gatsby.js ou React Remix), système des hooks, vue déclarative, pas de langage de template et .
+hooks => C'est un moyen moderne pour utiliser et manipuler l'état des applications React sans se baser sur les classes.
+const [brand, setBrand] = useState(""); => Cette commande utilise le hook useState() pour définir la variable d'état de notre composant 
+useContext() => Ce hook fournit un moyen simple de transmettre et de maintenir des valeurs avec état dans chaque partie de l'application.
+
+

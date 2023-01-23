@@ -1,0 +1,59 @@
+
+#groupe 1
+GraphQL est un langage de programmation qui permet d'interroger et de manipuler des données en temps réel et qui est utilisé par de nombreuses entreprises pour faciliter la communication de données entre différents logiciels.
+
+
+Paragraphe 1: GraphQL est un langage de programmation utilisé pour la communication de données.
+Paragraphe 2: GraphQL possède un playground interactif qui permet de tester et d'expérimenter avec le langage.
+Paragraphe 3: GraphQL possède de nombreuses fonctionnalités intégrées permettant de personnaliser et d'organiser les demandes et réponses de données.
+
+Paragraphe 1: GraphQL est un langage pour communiquer avec les données.
+Paragraphe 2: GraphQL a un outil pour essayer le langage.
+Paragraphe 3: GraphQL a beaucoup de fonctionnalités pour personnaliser les demandes et réponses de données.
+Paragraphe 4: GraphQL sert à beaucoup d'applications chez Facebook et est utilisé par beaucoup d'autres entreprises.
+Paragraphe 5: Dans ce chapitre, on va apprendre ce qu'est GraphQL, quels problèmes il résout et quels problèmes il crée.
+
+
+#groupe 2
+Paragraphe 1: GraphQL est un langage qui utilise des structures de données en graphes pour représenter les données.
+Paragraphe 2: GraphQL est un langage de requête pour les API de données, mais aussi une couche de runtime à implémenter sur le backend qui permet aux consommateurs de l'API de l'utiliser.
+Paragraphe 3: GraphQL est déclaratif, flexible et efficace et permet aux développeurs de demander les données dont ils ont besoin d'une manière proche de la façon dont ils pensent aux données.
+Paragraphe 4: Sur le backend, GraphQL a besoin d'une couche de runtime qui fournit une structure pour décrire les données à exposer dans l'API.
+Paragraphe 5: GraphQL peut être utilisé avec n'importe quel framework ou technologie de backend ou de frontend et avec n'importe quel moteur de base de données.
+Paragraphe 6: Dans les applications web ou mobiles de frontend, GraphQL peut être utilisé en faisant des appels Ajax directs à un serveur GraphQL ou avec un client comme Apollo ou Relay. On peut utiliser une bibliothèque comme React
+
+
+#groupe 3
+Une API est une interface qui permet la communication entre plusieurs composants d'une application.
+Il existe différents types d'API, et GraphQL est une option utilisée pour lire et modifier les données à partir de services de données.
+D'autres options incluent REST, SOAP, XML et SQL.
+
+GraphQL et SQL sont des langages pour lire et modifier les données dans des bases de données. 
+L'exemple SQL montre comment lire et ajouter des données dans une table d'employés. 
+Les opérations SQL peuvent avoir différentes réponses, comme une ligne ou plusieurs lignes pour une requête SELECT, ou une confirmation pour une opération INSERT.
+
+
+
+Tip
+-SQL et GraphQL sont des langages qui permettent de lire et de modifier les données, mais SQL est plus compliqué à utiliser et peut être dangereux si sa structure est exposée publiquement.
+-GraphQL a besoin d'un service pour fonctionner et ne peut pas être utilisé directement pour interroger des bases de données.
+
+
+-Il faut utiliser un service qui supporte GraphQL ou en créer un soi-même.
+
+
+Certaines bases de données permettent à leurs clients d'utiliser GraphQL pour les interroger directement. Un exemple est Dgraph.
+JSON est un langage qui peut être utilisé pour communiquer des données. Voici un objet JSON qui peut représenter les données de Jane.
+Les données communiquées sur Jane n'ont pas à utiliser la même structure que la base de données utilise pour les enregistrer. J'ai utilisé des noms de propriétés en camel-case et j'ai combiné first_name et last_name en un seul champ name.
+
+
+JSON est un langage populaire pour la communication de données entre les serveurs API et les applications clientes. La plupart des serveurs API de données modernes utilisent JSON pour répondre aux exigences de données des applications clientes. Les serveurs GraphQL ne font pas exception et JSON est le choix populaire pour répondre aux exigences de données des demandes GraphQL.
+JSON peut également être utilisé par les applications clientes pour communiquer leurs exigences de données aux serveurs API. Par exemple, voici un objet JSON possible qui communique les exigences de données pour l'objet employé de la réponse de la liste 1.3.
+
+
+GraphQL est un langage utilisé par les applications clientes pour exprimer leurs besoins en matière de données. 
+Un serveur GraphQL peut comprendre cette syntaxe et la traduire en quelque chose que le moteur de stockage de données peut comprendre (par exemple, en instructions SQL pour une base de données relationnelle). 
+Ensuite, le serveur GraphQL peut prendre ce que le moteur de stockage répond, le traduire en quelque chose comme du JSON ou du XML et le renvoyer à l'application cliente. GraphQL permet aux clients de demander les données exactes dont ils ont besoin et facilite l'agrégation de données par les serveurs à partir de plusieurs ressources de stockage de données.
+
+
+#groupe 4

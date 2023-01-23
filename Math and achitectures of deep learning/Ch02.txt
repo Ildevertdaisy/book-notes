@@ -1,0 +1,1 @@
+Vectors are ordered sequences of numbers used to represent an entity in machine learning and data science. They are often used to group together numbers that represent a single entity and are denoted by a lowercase letter with an overhead arrow. In this book, vectors are represented as ⃗x and arrays as square brackets.

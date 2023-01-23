@@ -1,0 +1,215 @@
+#groupe 1
+from flask import Flask, jsonify, request=> Cette commande importe les classes Flask, jsonify et request de l'package Flask.
+
+from flask_sqlalchemy import SQLAlchemy=> Cette commande importe la classe SQLAlchemy de l'package Flask-SQLAlchemy.
+
+from sqlalchemy import Column, Integer, String, Float=> Cette commande  importe les classes Column, Integer, String et Float de l'package SQLAlchemy.
+
+import os => Cette commande  importe le module os qui fournit une interface avec le système d'exploitation.
+
+from flask_marshmallow import Marshmallow => Cette commande  importe la classe Marshmallow de l'package Flask-Marshmallow.
+
+from flask_jwt_extended import JWTManager, jwt_required, create_access_token => Cette commande importe les classes JWTManager, jwt_required et create_access_token de l'package Flask-JWT-Extended.
+
+from flask_mail import Mail, Message => Cette commande importe les classes Mail et Message de l'package Flask-Mail.
+
+#groupe 2
+app = Flask(__name__) => Cette commande crée une instance de l'application Flask.
+
+baseDir = os.path.abspath(os.path.dirname(__file__)) => Cette commande définit la variable baseDir comme étant le chemin absolu du répertoire de travail courant.
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(baseDir, 'planets.db') => Cette commande définit l'URI de la base de données à utiliser avec Flask-SQLAlchemy.
+
+app.config['JWT_SECRET_KEY'] = 'super-secret' => Cette commande définit la clé secrète à utiliser avec Flask-JWT-Extended.
+
+app.config['MAIL_SERVER']='smtp.mailtrap.io' => Cette commande  définit l'adresse du serveur SMTP à utiliser avec Flask-Mail.
+
+app.config['MAIL_PORT'] = 2525 => Cette commande  définit le port du serveur SMTP à utiliser avec Flask-Mail.
+
+app.config['MAIL_USERNAME'] = '...' => Cette commande  définit le nom d'utilisateur à utiliser pour l'authentification avec le serveur SMTP avec Flask-Mail.
+
+app.config['MAIL_PASSWORD'] = '...' => Cette commande  définit le mot de passe à utiliser pour l'authentification avec le serveur SMTP avec Flask-Mail.
+
+app.config['MAIL_USE_TLS'] = True => Cette commande active l'utilisation de TLS (Transport Layer Security) avec le serveur SMTP.
+
+app.config['MAIL_USE_SSL'] = False => Cette commande désactive l'utilisation de SSL (Secure Sockets Layer) avec le serveur SMTP.
+
+
+#groupe 3
+db = SQLAlchemy(app) => Cette commande crée une instance de SQLAlchemy liée à l'application Flask.
+
+ma = Marshmallow(app) => Cette commande crée une instance de Marshmallow liée à l'application Flask.
+
+jwt = JWTManager(app) => Cette commande crée une instance de JWTManager liée à l'application Flask.
+
+mail = Mail(app) => Cette commande crée une instance de Mail liée à l'application Flask.
+
+#groupe 4
+@app.cli.command('db_create') => Cette commande est un décorateur qui indique à Flask qu'une fonction suivante est un commande de ligne d'interface (CLI) nommée "db_create".
+
+db.create_all() => Cette commande  crée toutes les tables de la base de données qui ont été définies dans les modèles de l'application.
+
+print('Database created!') => Cette commande imprime un message indiquant que la base de données a été créée.
+
+@app.cli.command('db_drop') => Cette commande est un décorateur qui indique à Flask qu'une fonction suivante est un commande de ligne d'interface (CLI) nommée "db_drop".
+
+db.drop_all() => Cette commande supprime toutes les tables de la base de données.
+
+print('Database dropped') => Cette commande imprime un message indiquant que la base de données a été supprimée.
+
+@app.cli.command('db_seed') => Cette commande est un décorateur qui indique à Flask qu'une fonction suivante est un commande de ligne d'interface (CLI) nommée "db_seed".
+
+mercury = Planet(...) => Cette commande crée un objet de type Planet avec les données spécifiées.
+
+venus = Planet(...) => Cette commande crée un objet de type Planet avec les données spécifiées.
+
+earth = Planet(...) => Cette commande crée un objet de type Planet avec les données spécifiées.
+
+db.session.add(mercury) => Cette commande ajoute l'objet Planet "mercury" à la session de base de données.
+
+db.session.add(venus) => Cette commande ajoute l'objet Planet "venus" à la session de base de données.
+
+db.session.add(earth) => Cette commande ajoute l'objet Planet "earth" à la session de base de données.
+
+test_user = User(...) => Cette commande crée un objet de type User avec les données spécifiées.
+
+db.session.add(test_user) => Cette commande ajoute l'objet User "test_user" à la session de base de données.
+
+db.session.commit() => Cette commande enregistre les changements de la session de base de données dans la base de données.
+
+print('Database seeded!') => Cette commande imprime un message indiquant que la base de données a été initialisée avec des données de test.
+
+
+#groupe 5
+@app.route('/') => Cette commande déclare une fonction qui sera exécutée lorsque l'utilisateur accède à l'URL '/'.
+
+def home(): => Cette commande définit une fonction nommée "home" qui sera exécutée lorsque l'utilisateur accède à l'URL '/'.
+
+return "Hello world!" => Cette commande retourne la chaîne de caractères "Hello world!" lorsque la fonction est appelée.
+
+@app.route('/simple_api') => Cette commande déclare une autre fonction qui sera exécutée lorsque l'utilisateur accède à l'URL '/simple_api'.
+
+def simple_api(): => Cette commande définit une fonction nommée "simple_api" qui sera exécutée lorsque l'utilisateur accède à l'URL '/simple_api'.
+
+return jsonify(message='Hello from planetary API') => Cette commande retourne un objet JSON avec un message "Hello from planetary API" lorsque la fonction simple_api() est appelée.
+
+@app.route('/not_found') => Cette commande déclare une autre fonction qui sera exécutée lorsque l'utilisateur accède à l'URL '/not_found'.
+
+def not_found(): => Cette commande définit une fonction nommée "not_found" qui sera exécutée lorsque l'utilisateur accède à l'URL '/not_found'.
+
+return jsonify(message="That resource not found."), 404 => Cette commande retourne un objet JSON avec un message "That resource not found." et un code d'état HTTP 404 lorsque la fonction not_found() est appelée.
+
+@app.route('/parameters') => Cette commande déclare une fonction qui sera exécutée lorsque l'utilisateur accède à l'URL '/parameters'.
+
+def parameters(): => Cette commande définit une fonction nommée "parameters" qui sera exécutée lorsque l'utilisateur accède à l'URL '/parameters'.
+
+name = request.args.get('name') => Cette commande récupère la valeur du paramètre "name" dans la requête HTTP.
+
+age = int(request.args.get('age')) => Cette commande récupère la valeur du paramètre "age" dans la requête HTTP et la convertit en entier.
+
+if age < 18: => Cette commande vérifie si l'âge est inférieur à 18 ans.
+
+return jsonify(message=f'Sorry {name}, you are not old enough.'), 401 => Cette commande retourne un objet JSON avec un message indiquant que l'utilisateur n'a pas l'âge requis et un code d'état HTTP 401 si l'âge est inférieur à 18 ans.
+
+else: => Cette commande exécute le code suivant si l'âge est supérieur ou égal à 18 ans.
+
+return jsonify(message=f'Welcome {name}, you are old enough.') => Cette commande retourne un objet JSON avec un message de bienvenue si l'âge est supérieur ou égal à 18 ans.
+
+@app.route('/url_variables/<string:name>/<int:age>') => Cette commande déclare une route d'URL dans une application Flask et spécifie que les variables name et age seront présentes dans l'URL '/url_variables'.
+def url_variables(name: str, age: int): => Cette commande définit une fonction qui prend en entrée deux arguments, name et age, de types str et int respectivement.
+if age < 18: => Cette commande vérifie si l'âge est inférieur à 18.
+return jsonify(message=f'Sorry {name}, you are not old enough.'), 401 => Cette commande renvoie une réponse JSON avec un message d'erreur et un code d'état HTTP 401 (non autorisé).
+else: => Cette commande exécute le code qui suit si la condition du if n'est pas vraie.
+return jsonify(message=f'Welcome {name}, you are old enough.') => Cette commande renvoie une réponse JSON avec un message de bienvenue et un code d'état HTTP 200 (succès).
+
+@app.route('/planets', methods=['GET']) => Cette commande déclare une route d'URL '/planets' dans une application Flask et spécifie que cette route sera accessible uniquement en utilisant la méthode HTTP GET.
+def planets(): => Cette commande définit une fonction appelée planets.
+planets_list = Planet.query.all() => Cette commande récupère tous les objets de la classe Planet.
+results = planets_schema.dump(planets_list) => Cette commande utilise un schéma Marshmallow pour serializer la liste d'objets planets_list en un format pouvant être facilement transformé en JSON.
+return results => Cette commande renvoie le résultat de la serialization.
+
+@app.route('/register', methods=['POST']) => Cette commande déclare une route d'URL '/register' dans une application Flask et spécifie que cette route sera accessible uniquement en utilisant la méthode HTTP POST.
+def register(): => Cette commande définit une fonction appelée register.
+email = request.form['email'] => Cette commande récupère la valeur de la clé "email" dans les données de formulaire envoyées avec la requête HTTP POST.
+test = User.query.filter_by(email=email).first() => Cette commande vérifie si un utilisateur avec cette adresse e-mail existe déjà en utilisant une requête de base de données.
+if test: => Cette commande vérifie si l'utilisateur existe déjà.
+return jsonify(message='That email already exists'), 409 => Cette commande renvoie une réponse JSON avec un message d'erreur et un code d'état HTTP 409 (conflit).
+else: => Cette commande exécute le code qui suit si la condition du if n'est pas vraie.
+first_name = request.form['first_name'] => Cette commande récupère la valeur de la clé "first_name" dans les données de formulaire envoyées avec la requête HTTP POST.
+last_name = request.form['last_name'] => Cette commande récupère la valeur de la clé "last_name" dans les données de formulaire envoyées avec la requête HTTP POST.
+password = request.form['password'] => Cette commande récupère la valeur de la clé "password" dans les données de formulaire envoyées avec la requête HTTP POST.
+user = User(first_name=first_name, last_name=last_name, email=email, password=password) => Cette commande crée un nouvel objet de la classe User avec les données récupérées.
+db.session.add(user) => Cette commande ajoute l'objet user à la session de base de données.
+db.session.commit() => Cette commande enregistre l'objet user dans la base de données.
+return jsonify(message='User created successfully!'), 201 => Cette commande renvoie une réponse JSON avec un message de succès et un code d'état HTTP 201 (nouvel enregistrement créé).
+
+
+@app.route('/login', methods=['POST']) => Cette commande déclare une route d'URL '/login' dans une application Flask et spécifie que cette route sera accessible uniquement en utilisant la méthode HTTP POST.
+def login(): => Cette commande définit une fonction appelée login.
+if request.is_json: => Cette commande vérifie si la requête HTTP POST contient des données au format JSON.
+email = request.json['email'] => Cette commande récupère la valeur de la clé "email" dans les données JSON envoyées avec la requête HTTP POST.
+password = request.json['password'] => Cette commande récupère la valeur de la clé "password" dans les données JSON envoyées avec la requête HTTP POST.
+else: => Cette commande exécute le code qui suit si la condition du if n'est pas vraie.
+email = request.form['email'] => Cette commande récupère la valeur de la clé "email" dans les données de formulaire envoyées avec la requête HTTP POST.
+password = request.form['password'] => Cette commande récupère la valeur de la clé "password" dans les données de formulaire envoyées avec la requête HTTP POST.
+test = User.query.filter_by(email=email, password=password).first() => Cette commande vérifie si un utilisateur avec cette adresse e-mail et ce mot de passe existe en utilisant une requête de base de données.
+if test: => Cette commande vérifie si l'utilisateur existe.
+access_token = create_access_token(identity=email) => Cette commande crée un jeton d'accès avec l'adresse e-mail de l'utilisateur en tant qu'identité.
+return jsonify(message="Login succeeded!", access_token=access_token) => Cette commande renvoie une réponse JSON avec un message de succès et le jeton d'accès.
+return jsonify(message="Bad email or password"), 401 => Cette commande renvoie une réponse JSON avec un message d'erreur et un code d'état HTTP 401 (non autorisé).
+
+@app.route('/retrieve_password/<string:email>', methods=['GET']) => Cette commande déclare une route d'URL '/retrieve_password' dans une application Flask et spécifie que cette route sera accessible uniquement en utilisant la méthode HTTP GET. La route d'URL contient également une variable de chaîne appelée email.
+def retrieve_password(email: str): => Cette commande définit une fonction qui prend en entrée un argument de chaîne appelé email.
+user = User.query.filter_by(email=email).first() => Cette commande vérifie si un utilisateur avec cette adresse e-mail existe en utilisant une requête de base de données.
+if user: => Cette commande vérifie si l'utilisateur existe.
+msg = Message("Your planetary API password is " + user.password, sender="admin@planetary-api.com", recipients=[email]) => Cette commande crée un objet de message contenant le mot de passe de l'utilisateur, l'adresse e-mail de l'expéditeur et l'adresse e-mail du destinataire.
+mail.send(msg) => Cette commande envoie le message à l'adresse e-mail du destinataire.
+return jsonify(message=f"Password sent to {email}") => Cette commande renvoie une réponse JSON avec un message indiquant que le mot de passe a été envoyé à l'adresse e-mail de l'utilisateur.
+return jsonify(message="That email doesn't exist"), 401=> Cette commande  renvoie une réponse JSON avec un message d'erreur et un code d'état HTTP 401 (non autorisé).
+
+
+#groupe 6
+class User(db.Model): => Cette commande définit une classe appelée User qui hérite de db.Model, ce qui signifie qu'elle est associée à une table de base de données.
+__tablename__ = 'users' => Cette commande définit le nom de la table de base de données associée à la classe User.
+id = Column(Integer, primary_key=True) => Cette commande définit une colonne de la table users appelée id de type entier et spécifie qu'elle est la clé primaire de la table.
+first_name = Column(String) => Cette commande définit une colonne de la table users appelée first_name de type chaîne de caractères.
+last_name = Column(String) => Cette commande définit une colonne de la table users appelée last_name de type chaîne de caractères.
+email = Column(String, unique=True) => Cette commande définit une colonne de la table users appelée email de type chaîne de caractères et spécifie qu'elle doit être unique.
+password = Column(String) => Cette commande définit une colonne de la table users appelée password de type chaîne de caractères.
+
+class Planet(db.Model): => Cette commande définit une classe appelée Planet qui hérite de db.Model, ce qui signifie qu'elle est associée à une table de base de données.
+__tablename__ = 'planets' => Cette commande définit le nom de la table de base de données associée à la classe Planet.
+planet_id = Column(Integer, primary_key=True) => Cette commande définit une colonne de la table planets appelée planet_id de type entier et spécifie qu'elle est la clé primaire de la table.
+planet_name = Column(String) => Cette commande définit une colonne de la table planets appelée planet_name de type chaîne de caractères.
+planet_type = Column(String) => Cette commande définit une colonne de la table planets appelée planet_type de type chaîne de caractères.
+home_star = Column(String) => Cette commande définit une colonne de la table planets appelée home_star de type chaîne de caractères.
+mass = Column(Float) => Cette commande définit une colonne de la table planets appelée mass de type flottant.
+radius = Column(Float) => Cette commande définit une colonne de la table planets appelée radius de type flottant.
+distance = Column(Float) => Cette commande définit une colonne de la table planets appelée distance de type flottant.
+
+
+class UserSchema(ma.Schema): => Cette commande définit une classe appelée UserSchema qui hérite de ma.Schema, ce qui signifie qu'elle peut être utilisée comme un schéma Marshmallow.
+class Meta: => Cette commande définit une classe interne appelée Meta.
+fields = ('id', 'first_name', 'last_name', 'email', 'password') => Cette commande spécifie les champs qui seront inclus dans le schéma. Ces champs correspondent aux colonnes de la table de base de données associée à la classe User.
+
+
+class PlanetSchema(ma.Schema): => Cette commande définit une classe appelée PlanetSchema qui hérite de ma.Schema, ce qui signifie qu'elle peut être utilisée comme un schéma Marshmallow.
+class Meta: => Cette commande définit une classe interne appelée Meta.
+fields = ('planet_id', 'planet_name', 'planet_type', 'home_star', 'mass', 'radius', 'distance') => Cette commande spécifie les champs qui seront inclus dans le schéma. Ces champs correspondent aux colonnes de la table de base de données associée à la classe Planet.
+
+
+user_schema = UserSchema() => Cette commande crée un objet du schéma UserSchema. Cet objet peut être utilisé pour formater un seul utilisateur en un dictionnaire Python.
+users_schema = UserSchema(many=True)=> Cette commande  crée un objet du schéma UserSchema. Cet objet peut être utilisé pour formater une liste d'utilisateurs en une liste de dictionnaires Python. La valeur de many est définie sur True pour indiquer qu'il s'agit d'une liste.
+
+
+planet_schema = PlanetSchema()=> Cette commande  crée un objet du schéma PlanetSchema. Cet objet peut être utilisé pour formater un seul planète en un dictionnaire Python.
+planets_schema = PlanetSchema(many=True)=> Cette commande  crée un objet du schéma PlanetSchema. Cet objet peut être utilisé pour formater une liste de planètes en une liste de dictionnaires Python. La valeur de many est définie sur True pour indiquer qu'il s'agit d'une liste.
+
+if __name__ == "__main__": => Cette commande vérifie si le script Python actuel est exécuté directement.
+app.run(debug=True)=> Cette commande lance le serveur de développement Flask avec le mode de débogage activé. Cela permet de voir les erreurs et les avertissements dans le navigateur web et de faciliter le débogage de l'application.
+
+
+@app.cli.command('db_create') => Cette commande est un décorateur qui indique à Flask qu'une fonction suivante est un commande de ligne d'interface (CLI) nommée "db_create".
+db.create_all() => Cette commande crée toutes les tables de la base de données qui ont été définies dans les modèles de l'application.
+print('Database created!') => Cette commande imprime un message indiquant que la base de données a été créée.
+

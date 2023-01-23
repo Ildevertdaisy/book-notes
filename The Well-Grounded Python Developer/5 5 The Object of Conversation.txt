@@ -1,0 +1,679 @@
+
+#groupe 1
+
+Conversation: A discussion or exchange of ideas between people.
+Context: The current state of information that a function is working with.
+Function signature: The parameters and return value of a function, which define how data is passed around between function calls.
+Object-oriented programming: A programming model that organizes code into objects that represent real-world entities and their attributes and behaviors. It allows developers to manage multiple, distinct data contexts by organizing the data and functions that work on that data into separate objects.
+
+
+#groupe 2
+
+Object-oriented programming (OOP): a programming paradigm that uses "objects" to represent data and the methods that act on that data, encapsulating both into a single entity
+Classes: a blueprint for creating objects in OOP, defining the data and functionality of the object
+Data structures: collections of data, such as lists, sets, and dictionaries, that can be passed to functions to be acted upon
+Encapsulation: the concept of bundling data and the methods that act on that data into a single entity, making it easier to think about and use as a single object with behavior
+Objects: entities in OOP that represent data and the methods that act on that data, created using classes and encapsulating both into a single thing
+Behaviour: the actions or functionality of an object in OOP, which can be defined through the methods of the object's class
+
+
+#groupe 3
+
+Object-oriented programming: A programming paradigm that organizes code into objects that contain data and methods that act on that data.
+Class: A blueprint for creating objects that defines the attributes and methods of the objects.
+Instantiation: The process of creating an object from a class definition.
+Method: A function that is part of a class and is called on an object of that class.
+UML (Unified Modeling Language): A standardized way to present the design of systems visually.
+Constructor: A special method in a class that is called when an object of the class is created. It is usually used to initialize the object's attributes.
+Self: A parameter that is passed to every method of a class and refers to the instance of the object the method is called on.
+Public attribute: An attribute of a class that can be accessed and modified by any code. In Python, all attributes and methods of a class are public.
+
+Define a class Rectangle with the following attributes:
+length: a float representing the length of the rectangle
+width: a float representing the width of the rectangle
+Implement the following methods:
+
+__init__(self, length, width): a constructor method that initializes the length and width attributes of the rectangle.
+area(self): a method that returns the area of the rectangle.
+perimeter(self): a method that returns the perimeter of the rectangle.
+Solution:
+
+
+
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+    
+    def area(self):
+        return self.length * self.width
+    
+    def perimeter(self):
+        return 2 * (self.length + self.width)
+
+
+Define a class Person with the following attributes:
+first_name: a string representing the person's first name
+last_name: a string representing the person's last name
+Implement the following methods:
+
+__init__(self, first_name, last_name): a constructor method that initializes the first_name and last_name attributes of the person.
+full_name(self): a method that returns the full name of the person in the format "First Last".
+Solution:
+
+class Person:
+    def __init__(self, first_name, last_name):
+        self.first_name = first_name
+        self.last_name = last_name
+    
+    def full_name(self):
+        return f"{self.first_name} {self.last_name}"
+
+
+
+#groupe 4
+
+Inheritance: A relationship between classes where one class (child) can inherit attributes and methods from another class (parent).
+Polymorphism: The ability of an object to take on multiple forms.
+Composition: A way to give attributes and behavior to a class by using other classes and objects, rather than inheritance.
+arcade: A Python module that provides a framework to build a drawing surface on the computer screen and draw and animate objects on it.
+UML (Unified Modeling Language): A standardized way to visually present the design of systems.
+x, y, width, height: Attributes that define the position and dimensions of a rectangle on the screen.
+pen_color, fill_color: Attributes that define the colors used to outline and fill a rectangle.
+dir_x, dir_y: Attributes that define the direction of movement of a rectangle relative to the x and y axes.
+speed_x, speed_y: Attributes that define the speed at which a rectangle moves in pixels per update.
+set_pen_color(): A method that provides a way to set the pen color used to draw a rectangle object instance.
+set_fill_color(): A method that provides a way to set the fill color used to fill a rectangle object instance.
+draw(): A method that draws a rectangle object instance on the screen.
+
+
+Write a class definition for a Circle class that has attributes for the x and y position, the radius, and the pen and fill colors. The Circle class should also have a draw method that draws the Circle object on the screen.
+Solution:
+
+class Circle:
+def init(self, x: int, y: int, radius: int, pen_color: tuple, fill_color: tuple):
+self.x = x
+self.y = y
+self.radius = radius
+self.pen_color = pen_color
+self.fill_color = fill_color
+
+def draw(self):
+    # code to draw the Circle object on the screen
+
+
+Write a class definition for a Triangle class that has attributes for the x and y position, the base and height, and the pen and fill colors. The Triangle class should also have a draw method that draws the Triangle object on the screen.
+
+Solution:
+
+class Triangle:
+def init(self, x: int, y: int, base: int, height: int, pen_color: tuple, fill_color: tuple):
+self.x = x
+self.y = y
+self.base = base
+self.height = height
+self.pen_color = pen_color
+self.fill_color = fill_color
+
+def draw(self):
+    # code to draw the Triangle object on the screen
+
+
+Write a class definition for a Star class that has attributes for the x and y position, the number of points, and the pen and fill colors. The Star class should also have a draw method that draws the Star object on the screen.
+
+Solution:
+
+class Star:
+def init(self, x: int, y: int, points: int, pen_color: tuple, fill_color: tuple):
+self.x = x
+self.y = y
+self.points = points
+self.pen_color = pen_color
+self.fill_color = fill_color
+
+def draw(self):
+    # code to draw the Star object on the screen
+
+
+Object-Oriented Programming (OOP): A programming paradigm that organizes code into reusable units called "objects" that contain data and behavior.
+Class: A template for an object in OOP. Classes define the attributes and behaviors that objects created from them will have.
+Instantiation: The process of creating an object from a class.
+Method: A function associated with a class.
+Constructor: A special method in a class that is called when an object is created from the class.
+Inheritance: A relationship between two classes where one class (the child class) can inherit attributes and behaviors from another class (the parent class).
+Polymorphism: The ability for an object to take on multiple forms.
+Composition: A relationship between two classes where one class (the composite class) contains an instance of the other class (the component class) as an attribute.
+Encapsulation: The process of bundling data and behavior together in a class.
+UML (Unified Modeling Language): A standardized way to visually represent the design of systems.
+On_update() method: A method in a class that updates the state of objects in the class.
+On_draw() method: A method in a class that draws objects on a screen.
+API (Application Programming Interface): A set of functions and protocols that allow different software systems to communicate with each other.
+
+Write a function called move_rectangles that takes a list of Rectangle objects and updates their position by adding their speed_x and speed_y values to their x and y attributes, respectively.
+
+def move_rectangles(rectangles):
+    for rectangle in rectangles:
+        rectangle.x += rectangle.speed_x
+        rectangle.y += rectangle.speed_y
+
+
+Write a function called draw_rectangles that takes a list of Rectangle objects and calls the draw method for each one.
+
+def draw_rectangles(rectangles):
+    for rectangle in rectangles:
+        rectangle.draw()
+
+
+Write a function called change_colors that takes a list of Rectangle objects and sets random colors for their pen and fill colors using the choice function from the random module.
+
+from random import choice
+
+def change_colors(rectangles, color_palette):
+    for rectangle in rectangles:
+        rectangle.set_pen_color(choice(color_palette))
+        rectangle.set_fill_color(choice(color_palette))
+
+
+
+Properties: ways to control how attributes of a class are accessed and modified.
+Getters and setters: methods provided by the developer to control access to attributes of a class instance.
+Property decorators: way to control how class attributes are accessed and modified using the direct attribute access syntax.
+Direct attribute access: accessing attributes of an object directly, without using methods.
+Constraining values: limiting the range of values that can be assigned to attributes.
+Private attributes: attributes that are not meant to be accessed directly, indicated by a single underscore prefix.
+
+
+Write a class Person with private attribute _age and public property age. The age property should have a setter method that ensures the age is between 0 and 150.
+
+class Person:
+    def __init__(self, age: int):
+        self._age = age
+    
+    @property
+    def age(self):
+        return self._age
+    
+    @age.setter
+    def age(self, value: int):
+        if value < 0 or value > 150:
+            raise ValueError("Age must be between 0 and 150")
+        self._age = value
+
+person = Person(20)
+print(person.age) # 20
+person.age = 200 # ValueError: Age must be between 0 and 150
+
+
+Modify the Rectangle class to have a private attribute _dir_x and a public property dir_x. The dir_x property should have a setter method that ensures the value is either 1 or -1.
+
+class Rectangle:
+    def __init__(self, dir_x: int):
+        self._dir_x = dir_x
+    
+    @property
+    def dir_x(self):
+        return self._dir_x
+    
+    @dir_x.setter
+    def dir_x(self, value: int):
+        if value != 1 and value != -1:
+            raise ValueError("dir_x must be 1 or -1")
+        self._dir_x = value
+
+rectangle = Rectangle(1)
+print(rectangle.dir_x) # 1
+rectangle.dir_x = -1
+print(rectangle.dir_x) # -1
+rectangle.dir_x = 0 # ValueError: dir_x must be 1 or -1
+
+
+
+Decorator: a way to extend or modify the behavior of a function without changing the function itself
+Wrapper function: a function defined inside a decorator function that adds the desired new functionality to another function
+Property decorator: a decorator that controls how class attributes are accessed and modified while still using the direct attribute access syntax
+Getter method: a method provided by the developer to control access to attributes of a class instance when they are retrieved
+Setter method: a method provided by the developer to control access to attributes of a class instance when they are modified
+Deletor method: a method provided by the developer to delete an attribute
+@property decorator: defines a method as a getter for an attribute
+@attribute.setter decorator: defines a method as a setter for an attribute
+@attribute.deleter decorator: defines a method as a deletor for an attribute
+
+
+Write a function is_valid_string that takes in a string and checks if it is a non-empty string.
+
+def is_valid_string(string: str) -> bool:
+    return bool(string and isinstance(string, str))
+
+
+Write a decorator log_time that logs the time it takes for a function to execute. The decorator should work with any function that takes in a single parameter and returns a value.
+
+import time
+from functools import wraps
+
+def log_time(func):
+    @wraps(func)
+    def wrapper(param):
+        start_time = time.time()
+        result = func(param)
+        end_time = time.time()
+        print(f"{func.__name__} took {end_time - start_time} seconds to run")
+        return result
+    return wrapper
+
+
+
+Write a function constrain_value that takes in an integer value and two other integers min_value and max_value, and returns value if it is between min_value and max_value, or min_value if value is less than min_value, or max_value if value is greater than max_value.
+
+def constrain_value(value: int, min_value: int, max_value: int) -> int:
+    return min(max(value, min_value), max_value)
+
+
+Flashcard 1:
+
+Term: decorator
+Definition: A decorator is a way to extend or modify the behavior of a function without changing the function itself.
+
+Flashcard 2:
+
+Term: @timing_decorator
+Definition: The @ symbol is used to "decorate" a function with a decorator, creating a callable instance of the now wrapped function.
+
+Flashcard 3:
+
+Term: wrapper function
+Definition: A wrapper function is a function defined inside another function. The outer function returns the inner function, which can be used to wrap or extend the behavior of other functions.
+
+Flashcard 4:
+
+Term: function signature
+Definition: The function signature refers to the name, number, and type of arguments a function accepts. Functions with the same signature can be decorated with a decorator to add additional functionality.
+
+
+Exercise 1:
+
+Create a decorator called "counter_decorator" that counts the number of times a decorated function is called. The decorator should print the number of times the decorated function has been called when the function is called.
+
+Solution:
+
+def counter_decorator(func):
+count = 0
+def wrapper(*args, **kwargs):
+nonlocal count
+count += 1
+print(f"Function {func.name} has been called {count} times.")
+return func(*args, **kwargs)
+return wrapper
+
+@counter_decorator
+def say_hello(name):
+print(f"Hello, {name}!")
+
+say_hello("Alice")
+say_hello("Bob")
+say_hello("Charlie")
+
+Output:
+Function say_hello has been called 1 times.
+Hello, Alice!
+Function say_hello has been called 2 times.
+Hello, Bob!
+Function say_hello has been called 3 times.
+Hello, Charlie!
+Exercise 2:
+
+Create a decorator called "upper_case_decorator" that converts the output of the decorated function to upper case.
+
+Solution:
+
+def upper_case_decorator(func):
+def wrapper(*args, **kwargs):
+result = func(*args, **kwargs)
+return result.upper()
+return wrapper
+
+@upper_case_decorator
+def say_hello(name):
+return f"Hello, {name}!"
+
+print(say_hello("Alice"))
+print(say_hello("Bob"))
+print(say_hello("Charlie"))
+
+Output:
+HELLO, ALICE!
+HELLO, BOB!
+HELLO, CHARLIE!
+
+
+#groupe 5
+
+Inheritance: a way to create a new class that is a modified version of an existing class, called the parent class. The new class is called the child class.
+Parent class: an existing class that a new class is based on.
+Child class: a new class that is based on an existing class, called the parent class.
+Base class: another term for the parent class.
+Derived class: another term for the child class.
+Superclass: another term for the parent class.
+Subclass: another term for the child class.
+Nop (no operation): a Python statement that does nothing and is used to make a class definition syntactically correct.
+Shape: a parent class that collects common attributes and methods for different shapes that can be drawn on the screen.
+Rectangle: a child class of the Shape class, with its own unique attributes and methods for drawing rectangles on the screen.
+
+
+Inheritance: A way to create a new class that is a modified version of an existing class, without modifying the existing class.
+Parent class: The existing class that a new class is based on.
+Child class: The new class that is based on the parent class.
+Abstract class: A class that cannot be instantiated directly, but is meant to be inherited from to create specific child classes.
+Override: To replace or modify a method or attribute of a parent class in a child class.
+IS-A relationship: A relationship between classes where a child class is a specific version of a parent class. For example, a square is a specific type of rectangle, so a Square IS-A Rectangle.
+
+Exercise 1:
+
+Create a class called ParentClass with an attribute called attribute with a default value of "parent".
+
+Solution:
+
+class ParentClass:
+    attribute = "parent"
+
+
+Exercise 2:
+
+Create a class called ChildClass that inherits from ParentClass.
+
+Solution:
+
+class ChildClass(ParentClass):
+    pass
+
+
+Exercise 3:
+
+Create an instance of ChildClass and print the value of attribute.
+
+Solution:
+
+child = ChildClass()
+print(child.attribute)  # Output: "parent"
+
+
+Exercise 4:
+
+Create a class called Square that inherits from Rectangle and has an __init__ method that takes a single parameter size. In the __init__ method, call super().__init__ and pass size as both the height and width arguments.
+
+Solution:
+
+class Square(Rectangle):
+    def __init__(self, size):
+        super().__init__(size, size)
+
+
+Inheritance allows objects in Python to share common attributes and behavior.
+Parent and child classes are terms used to describe the inheritance relationship between objects.
+Base and derived classes, superclass and subclass, are also terms used to describe the inheritance relationship.
+Inheritance allows child classes to add unique attributes and behavior, or modify inherited attributes and behavior.
+To create an inheritance relationship in Python, use the class name of the parent class within parentheses in the definition of the child class.
+The pass statement is used in class definitions to make them syntactically correct, but with no functionality.
+Abstract classes are classes that shouldn't be instantiated directly, and are usually indicated by italicizing the class name.
+A method in an abstract class can also be italicized to indicate that it has no functionality, and must be implemented in a child class.
+Inheritance allows for the creation of multiple child classes with different attributes and behavior, while still inheriting common attributes and methods from a parent class.
+A child class can override a method in the parent class by providing its own implementation of the method.
+A child class can call the method of the same name in the parent class using the super() function.
+It's important to keep inheritance hierarchies small to avoid complexity and obscurity of root class functionality in distant child classes.
+
+
+Exercise 1:
+
+Create a class called Shape with the following attributes: x, y, height, width, pen_color, and fill_color. The Shape class should also have a move() method that updates the x and y position of the shape based on its current x and y position and a speed attribute.
+
+Solution:
+
+class Shape:
+def init(self, x, y, height, width, pen_color, fill_color, speed):
+self.x = x
+self.y = y
+self.height = height
+self.width = width
+self.pen_color = pen_color
+self.fill_color = fill_color
+self.speed = speed
+
+def move(self):
+    self.x += self.speed
+    self.y += self.speed
+
+
+Exercise 2:
+
+Create a class called Rectangle that inherits from the Shape class. The Rectangle class should have a draw() method that prints out a message indicating that it is drawing a rectangle.
+
+Solution:
+
+class Rectangle(Shape):
+def draw(self):
+print("Drawing a rectangle at position ({}, {}) with dimensions {}x{}".format(self.x, self.y, self.width, self.height))
+
+Exercise 3:
+
+Create an instance of the Rectangle class and call its move() and draw() methods.
+
+Solution:
+
+rectangle = Rectangle(10, 20, 30, 40, "red", "blue", 5)
+rectangle.move()
+rectangle.draw()
+
+Output:
+
+Drawing a rectangle at position (15, 25) with dimensions 30x40
+
+
+#groupe 6
+
+Polymorphism: A programming concept that allows calling a method of multiple objects by the same method name, but getting different behavior depending on which instance of an object is called.
+Inheritance: A feature in object-oriented programming that allows creating a child class that inherits attributes and behavior from a parent class.
+Abstract class: A class that serves as a template for other classes, but cannot be instantiated itself.
+Subclass: A class that inherits attributes and behavior from a parent class, also known as a child class.
+Superclass: A class that serves as a parent class for other classes, also known as a base class.
+IS-A relationship: A relationship between two classes where one class is a subclass of the other, and can be considered an instance of the parent class.
+Method overloading: A programming concept that allows defining multiple methods with the same name, but different parameters, in a single class.
+Method overriding: A programming concept that allows a subclass to provide its own implementation for a method defined in the parent class.
+Polymorphic method: A method that takes advantage of polymorphism to allow calling the same method of multiple objects, but getting different behavior depending on which instance of an object is called.
+
+
+Exercise 1:
+
+Create a class called "Animal" that has a method called "speak()" that prints "I am an animal" to the console.
+
+Solution:
+
+class Animal:
+def speak(self):
+print("I am an animal")
+
+Exercise 2:
+
+Create a class called "Dog" that inherits from the "Animal" class and has a method called "bark()" that prints "Woof woof!" to the console.
+
+Solution:
+
+class Dog(Animal):
+def bark(self):
+print("Woof woof!")
+
+Exercise 3:
+
+Create a list of "Animal" objects that includes a "Dog" object and a "Cat" object (create the "Cat" class that also inherits from "Animal" and has a method called "meow()" that prints "Meow meow!" to the console). Iterate through the list and call the "speak()" method for each object.
+
+Solution:
+
+class Cat(Animal):
+def meow(self):
+print("Meow meow!")
+
+animals = [Dog(), Cat()]
+for animal in animals:
+animal.speak()
+
+
+#groupe 7
+
+Inheritance: A way for a class to inherit attributes and behavior from its parent class. This creates an IS-A relationship between the child class and its parent class.
+Polymorphism: The ability to call a method on multiple objects by the same method name, but getting different behavior depending on the object being called.
+Composition: A way to include attributes and behavior into a class by creating custom classes to be used as attributes, instead of using inheritance.
+Color class: A class that provides a consistent abstraction for color in an application and has a class-level definition for the supported colors, with a mechanism to allow only defined colors to be set.
+UML diagram: A graphical representation of the relationships between classes, including inheritance and composition. The black diamond symbol indicates a composite relationship.
+
+
+Write a function called get_color_names that takes in a Color object and returns a list of strings representing the color names in the PALETTE attribute.
+
+def get_color_names(color: Color) -> List[str]:
+    color_names = []
+    for c in color.PALETTE:
+        color_names.append(c.name)
+    return color_names
+
+
+Write a function called set_color that takes in a Color object and a color name string, and sets the color attribute of the Color object to the corresponding color in the PALETTE attribute. If the provided color name is not in the PALETTE, the function should raise a ValueError with the message "Invalid color name."
+
+def set_color(color: Color, color_name: str) -> None:
+    if color_name not in [c.name for c in color.PALETTE]:
+        raise ValueError("Invalid color name.")
+    color.color = next(c for c in color.PALETTE if c.name == color_name)
+
+
+Write a class called ShapeWithColor that has the following attributes:
+x (int): the x-coordinate of the top-left corner of the shape
+y (int): the y-coordinate of the top-left corner of the shape
+width (int): the width of the shape
+height (int): the height of the shape
+pen_color (Color): a Color object representing the pen color of the shape
+fill_color (Color): a Color object representing the fill color of the shape
+
+The class should have the following methods:
+
+__init__: a constructor that initializes the x, y, width, height, pen_color, and fill_color attributes
+draw: a method that prints a message to the console indicating that the shape is being drawn
+
+class ShapeWithColor:
+    def __init__(self, x: int, y: int, width: int, height: int, pen_color: Color, fill_color: Color):
+        self.x = x
+        self.y = y
+        self.width = width
+        self.height = height
+        self.pen_color = pen_color
+        self.fill_color = fill_color
+    
+    def draw(self):
+        print("Drawing shape...")
+
+
+Write a class called CircleWithColor that inherits from ShapeWithColor and has the following additional attribute:
+radius (int): the radius of the circle
+The class should have the following additional method:
+
+area: a method that returns the area of the circle (πr^2)
+
+class CircleWithColor(ShapeWithColor):
+    def __init__(self, x: int, y: int, radius: int, pen_color: Color, fill_color: Color):
+        super().__init__(x, y, radius * 2, radius * 2,
+
+
+
+#groupe 8
+
+
+Inheritance: a feature in object-oriented programming that allows you to create class hierarchies, where a child class can inherit attributes and behavior from its parent class.
+Polymorphism: a feature in object-oriented programming that allows you to call a method of multiple objects by the same method name, but getting different behavior depending on which instance of an object is called.
+Composition: a way to add attributes and behavior to a class by creating custom classes to be used as attributes, composing behavior into your own classes. This creates a HAS-A relationship between the two classes, rather than an IS-A relationship created through inheritance.
+UML diagram: a visual representation of a class hierarchy, showing the relationships between classes through inheritance (IS-A) or composition (HAS-A).
+Dataclass: a decorator in Python that allows you to define simple classes that are mostly data more easily.
+
+Exercise 1:
+
+Create a class called "Person" with the following attributes: name (str), age (int), and occupation (str).
+
+Solution:
+
+class Person:
+def init(self, name: str, age: int, occupation: str):
+self.name = name
+self.age = age
+self.occupation = occupation
+
+Exercise 2:
+
+Create a class called "Employee" that inherits from the "Person" class and adds an additional attribute called "employee_id" (str).
+
+Solution:
+
+class Employee(Person):
+def init(self, name: str, age: int, occupation: str, employee_id: str):
+super().init(name, age, occupation)
+self.employee_id = employee_id
+
+
+Exercise 1:
+
+Create a class called "Animal" with a method called "make_sound" that prints "Some generic animal sound" when called.
+
+Solution:
+
+class Animal:
+    def make_sound(self):
+        print("Some generic animal sound")
+Exercise 2:
+
+Create a class called "Dog" that inherits from the "Animal" class and overrides the "make_sound" method to print "Bark" when called.
+
+Solution:
+
+class Dog(Animal):
+    def make_sound(self):
+        print("Bark")
+Exercise 3:
+
+Create a class called "Cat" that inherits from the "Animal" class and overrides the "make_sound" method to print "Meow" when called.
+
+Solution:
+
+class Cat(Animal):
+    def make_sound(self):
+        print("Meow")
+Exercise 4:
+
+Create a class called "Farm" with a method called "animal_sounds" that takes in a list of "Animal" objects and calls the "make_sound" method on each of them.
+
+Solution:
+
+class Farm:
+    def animal_sounds(self, animals):
+        for animal in animals:
+            animal.make_sound()
+Exercise 5:
+
+Create an instance of the "Farm" class and use the "animal_sounds" method to make a list of "Dog" and "Cat" objects make their respective sounds.
+
+Solution:
+
+f = Farm()
+f.animal_sounds([Dog(), Cat(), Dog(), Cat()])
+
+
+
+#goupe 9
+
+Classes: A way to create code that's clean and well-controlled in its usage. Can also be used to provide users with an API into application functionality.
+Inheritance: Allows a child class to inherit attributes and behavior from a parent class, creating a hierarchy of classes.
+Polymorphism: The ability to call a method of multiple objects by the same method name, but getting different behavior depending on which object is called.
+Composition: A way to add attributes and behavior to a class using custom classes as attributes, rather than using inheritance.
+DRY principle: Stands for "Don't Repeat Yourself." The idea that code should not be unnecessarily repeated, to keep it clean and maintainable.
+Single responsibility principle: The idea that a class should have only one reason to change, which helps to keep class design clean and focused.
+
+
+
+
+
+
+
+
+

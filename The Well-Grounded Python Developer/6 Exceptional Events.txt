@@ -1,0 +1,396 @@
+#groupe 1
+
+
+Binary: In computer science, binary refers to using only two digits, 0 and 1, to represent information.
+Real world: The physical world outside of computers and software.
+Bug: An error or failure in a software application that causes it to produce unexpected results.
+Venn diagram: A graphical representation of the relationships between different sets of data.
+Good: In the context of software development, good refers to an application that meets the requirements and expectations of its users with a low occurrence of bugs.
+Fast: In the context of software development, fast refers to creating an application quickly.
+Cheap: In the context of software development, cheap refers to creating an application at a low cost.
+Tradeoff: The act of choosing one option over another, often because it is more beneficial in some ways but less so in others.
+Quality: In the context of software development, quality refers to an application that meets the needs of its users by providing the intended functionality and not behaving unexpectedly when things go wrong.
+Exception: In programming, an exception is an unexpected event that occurs during the execution of a program. Exceptions can be handled in order to gracefully deal with unexpected events.
+
+
+#groupe 2
+
+Exceptions: Unforeseen events that occur while a program is running.
+Exception class: The base class for most exceptions in Python.
+Call stack: The series of function calls that led to the code that raised the exception.
+Stack trace: A chronological listing of functions called, from root of the application to the point where the exception was raised.
+ZeroDivisionError: An exception raised when dividing a number by zero, which is undefined.
+Exception handler: Code that intercepts an exception and does something with it.
+float division by zero: An exception raised when dividing a number by zero, which is undefined.
+ValueError: An exception raised when a value can't be converted to the correct type.
+
+Exercise 1:
+
+Write a function called "divide" that takes in two parameters, "dividend" and "divisor", and returns the result of dividing the dividend by the divisor. If the divisor is 0, raise a ZeroDivisionError exception.
+
+Solution:
+
+def divide(dividend, divisor):
+if divisor == 0:
+raise ZeroDivisionError("Division by 0 is not allowed")
+return dividend / divisor
+
+Exercise 2:
+
+Modify the "divide" function from exercise 1 to handle the case where the user inputs a string that can't be converted to a float for the dividend or divisor. In this case, raise a ValueError exception.
+
+Solution:
+
+def divide(dividend, divisor):
+try:
+dividend = float(dividend)
+divisor = float(divisor)
+except ValueError:
+raise ValueError("Dividend and divisor must be numbers")
+if divisor == 0:
+raise ZeroDivisionError("Division by 0 is not allowed")
+return dividend / divisor
+
+
+#groupe 3
+
+Exceptions are exceptional conditions that occur while a Python program is running.
+When an exception occurs, Python stops executing the program code and searches for an exception handler to intercept the exception.
+Exception handling in Python is done using a try / except block.
+The try block contains code that might raise an exception.
+The except block contains code that is executed if an exception is raised.
+The else block is optional and contains code that is executed if no exception is raised.
+The finally block is also optional and contains code that is executed whether an exception is raised or not.
+
+
+Exercise 1:
+Write a try/except block that divides two numbers and catches the ZeroDivisionError exception if it is raised. The numbers should be entered by the user as input.
+
+Solution:
+
+try:
+num1 = float(input("Enter the dividend: "))
+num2 = float(input("Enter the divisor: "))
+result = num1 / num2
+except ZeroDivisionError:
+print("Cannot divide by zero!")
+
+Exercise 2:
+Write a try/except block that prompts the user to enter a number and catches the ValueError exception if the user enters a string that cannot be converted to a float.
+
+Solution:
+
+try:
+user_input = input("Enter a number: ")
+number = float(user_input)
+except ValueError:
+print("Invalid input, please enter a valid number.")
+
+
+#groupe 4
+
+Exception: a problem that occurs during the execution of a program, which causes the program to stop running
+Try/except block: a structure in Python that allows you to handle exceptions by identifying code that might raise an exception and code to execute if an exception occurs
+Else clause: an optional clause in a try/except block that executes if no exception occurs
+Finally clause: an optional clause in a try/except block that executes whether an exception occurs or not
+Exception handler: a block of code that intercepts an exception and decides what to do with it
+Call stack: a list of function calls that lead to the code that raised an exception
+Stack trace: a chronological list of function calls in the call stack that caused an exception to be raised
+Exception variable: a variable in a try/except block that stores the exception object that was raised
+Narrow context: a specific and limited scope of work that code is performing
+Higher context: a broader and more general scope of work that code is performing within a program
+
+
+Exceptions are events that occur while a program is running.
+Exception handling involves intercepting and responding to exceptions.
+The try/except block allows you to define code that might raise an exception and specify how to handle it.
+It is often possible to handle exceptions at the function level, where the code can make decisions or take corrective action within the context of the function.
+It is generally better to allow exceptions to flow upwards to higher levels of context, where more information is available and more decisions can be made about how to handle the exception.
+It is important to log exceptions, including the stack trace, for debugging and problem resolution.
+In some cases, it may be necessary to exit the program after logging an exception.
+
+
+Flashcard 1:
+
+Exceptions in Python are used to handle unexpected events in running applications.
+Flashcard 2:
+
+Exception handling in Python is done using a try/except block.
+The try block contains code that might raise an exception.
+The except block intercepts the exception and assigns it to a variable.
+The else and finally blocks are optional and are used less often in practice.
+Flashcard 3:
+
+If an exception occurs in a function, it might be possible for the exception handler to make choices within the context of the function to avoid raising the exception.
+If the exception cannot be handled within the function, it is better to let it flow upward to a higher level of context where more information is available to make decisions about how to handle the exception.
+At higher levels of context, decisions can be made about retrying operations, taking alternative paths, and presenting information to the user.
+It is also important to log the exception and stack trace so that application developers have information about the problem when debugging.
+Flashcard 4:
+
+Silencing an exception means catching it and not doing anything with it, either by using the 'pass' statement or by not providing an except block at all.
+Silencing an exception is poor practice because it deprives the user and developer of important information about the problem and makes it difficult to debug the application.
+
+
+Exercise 1:
+
+Write a function that takes a list of integers as an argument and returns the sum of the integers in the list. If the list is empty, raise a ValueError exception with the message "The list is empty".
+
+Solution:
+
+def sum_list(int_list):
+if not int_list:
+raise ValueError("The list is empty")
+return sum(int_list)
+
+Exercise 2:
+
+Write a function that takes a string as an argument and returns the string with all vowels removed. If the string is empty, raise a ValueError exception with the message "The string is empty".
+
+Solution:
+
+def remove_vowels(string):
+if not string:
+raise ValueError("The string is empty")
+vowels = "aeiouAEIOU"
+return "".join([char for char in string if char not in vowels])
+
+Exercise 3:
+
+Write a function that takes two integers as arguments and returns their product. If either of the integers is negative, raise a ValueError exception with the message "Cannot multiply negative numbers".
+
+Solution:
+
+def multiply(a, b):
+if a < 0 or b < 0:
+raise ValueError("Cannot multiply negative numbers")
+return a * b
+
+
+#groupe 5
+
+Exceptions are unexpected events that occur while an application is running.
+An exception handler is a block of code that intercepts an exception and does something with it.
+The call stack is the series of function calls leading to the code that raised the exception.
+A stack trace is a chronological listing of the functions called, with the line numbers where the functions are called, until the line that raised the exception.
+The try/except block is used to handle exceptions in Python. It consists of a try statement, an except statement, and optional else and finally statements.
+The try statement begins a block of code that might raise an exception. The except statement ends the block of code and is where the exception is intercepted and handled.
+The else statement is executed if no exception occurs in the try block. The finally statement is executed whether an exception occurs or not.
+It is often better to let exceptions flow upwards through the call stack to a higher level of context where more information is available to handle the exception.
+It is important to inform the user about the problem and suggest a solution when handling exceptions, and never to silence an exception.
+It is good practice to log the exception and the stack trace, especially when debugging an application.
+
+Write a try/except block that catches a ZeroDivisionError and prints "Cannot divide by zero" if the error occurs.
+
+try:
+     # code that might raise a ZeroDivisionError
+except ZeroDivisionError:
+     print("Cannot divide by zero")
+
+
+Write a try/except block that catches a ValueError and prints "Invalid input" if the error occurs.
+
+try:
+     # code that might raise a ValueError
+except ValueError:
+     print("Invalid input")
+
+
+Write a try/except block that catches a TypeError and prints "Invalid type" if the error occurs.
+
+try:
+     # code that might raise a TypeError
+except TypeError:
+     print("Invalid type")
+
+
+Write a try/except block that catches a KeyError and prints "Key not found" if the error occurs.
+
+try:
+     # code that might raise a KeyError
+except KeyError:
+     print("Key not found")
+
+Write a try/except block that catches an IndexError and prints "Index out of range" if the error occurs.
+
+try:
+     # code that might raise an IndexError
+except IndexError:
+     print("Index out of range")
+
+
+#groupe 6
+
+Handling exceptions in Python is done with a try / except block.
+The try block includes code that might raise an exception.
+The except block includes code that executes if an exception occurs.
+The except block can assign the exception to a variable, like "e", to be used later.
+The else block is optional and executes if no exception occurs.
+The finally block is optional and executes whether an exception occurs or not.
+It's better to let exceptions flow upwards to a higher context if the current code can't do anything useful with the exception.
+Higher contexts can make better decisions about how to handle the exception, such as retrying the operation or informing the user.
+Logging exceptions is useful for debugging and can be done with Python's logging module.
+An exception should never be silenced, except in specific cases with forethought.
+It's better to catch specific exceptions or custom exceptions rather than all exceptions.
+
+Exercise 1:
+
+Write a function that takes in two arguments, a dividend and a divisor, and returns the result of dividing the dividend by the divisor. If the divisor is 0, raise a ZeroDivisionError exception with the message "The divisor cannot be 0".
+
+Solution:
+
+def divide(dividend, divisor):
+if divisor == 0:
+raise ZeroDivisionError("The divisor cannot be 0")
+return dividend / divisor
+
+Exercise 2:
+
+Write a try-except block that calls the divide function from Exercise 1 with a dividend of 10 and a divisor of 0. Catch the ZeroDivisionError exception and print the message "Cannot divide by 0".
+
+Solution:
+
+try:
+divide(10, 0)
+except ZeroDivisionError as e:
+print("Cannot divide by 0")
+
+Exercise 3:
+
+Modify the divide function from Exercise 1 to handle a ValueError exception if either the dividend or divisor are not numbers. The function should raise a ValueError exception with the message "Both the dividend and divisor must be numbers" if either argument is not a number.
+
+Solution:
+
+def divide(dividend, divisor):
+if not isinstance(dividend, (int, float)) or not isinstance(divisor, (int, float)):
+raise ValueError("Both the dividend and divisor must be numbers")
+if divisor == 0:
+raise ZeroDivisionError("The divisor cannot be 0")
+return dividend / divisor
+
+
+Flashcards:
+
+Exception: a problem that occurs during the execution of a program
+Programmatically: controlled by a program or computer
+Range: a set of numbers or values
+User input: data entered by a user
+Function: a block of code that performs a specific task
+Context: the situation or background in which an event occurs
+Call stack: the series of nested function calls that lead to the current function call
+Try/except block: a structure used to handle exceptions in a program
+Prompt: a message asking for input from the user
+Restart: to start again
+
+Flashcard 1:
+
+Raising an exception allows you to handle exceptional conditions within your code that are not necessarily programmatic errors.
+Flashcard 2:
+
+To raise an exception, you can use the "raise" keyword followed by the exception type and an optional message.
+Flashcard 3:
+
+The calling function can handle the exception raised by the called function by using a try/except block. The exception type in the except clause should match the type of exception that was raised.
+Flashcard 4:
+
+It is recommended to let exceptions flow upwards to higher levels of context, where they can be handled appropriately. This allows the called function to focus on its specific task and not worry about handling exceptional cases.
+Flashcard 5:
+
+In the example provided, the range_check_user_input function raises a ValueError exception if the user input is not within the acceptable range. The get_data_from_user function handles the ValueError exception by printing an error message and restarting the process to get data from the user.
+
+
+Exercise 1:
+Write a function check_range that takes an integer parameter n and raises a ValueError if n is not within the range 0 < n <= 100. Otherwise, the function should print "Number within range".
+
+Solution:
+
+def check_range(n):
+    if not 0 < n <= 100:
+        raise ValueError("Number out of range")
+    print("Number within range")
+
+
+Exercise 2:
+Write a function get_input that calls the check_range function inside a try/except block to handle a ValueError exception. If the ValueError exception is raised, the function should print "Number out of range" and ask the user to enter a new number. Otherwise, the function should print "Number within range".
+
+Solution:
+
+def get_input():
+    while True:
+        try:
+            n = int(input("Enter a number: "))
+            check_range(n)
+            break
+        except ValueError:
+            print("Number out of range")
+    print("Number within range")
+
+
+
+
+#groupe 7
+
+
+Raising an exception is a way to handle conditions in your code that are exceptional, but not necessarily errors.
+You can create custom exception classes in Python to narrow the scope of exceptions your code handles.
+Inheriting from the parent Exception class allows you to create a new exception class.
+You can raise a custom exception in your code and handle it in a specific way.
+Using a specific exception class narrows the scope of exceptions your code handles, making it easier to determine the source of the exception.
+The logging module can be used to log exceptions and their information, such as a timestamp, module name, and error level.
+
+Create a custom exception class called "NegativeNumberException" that inherits from the base class Exception. This exception should be raised when a negative number is passed as an argument to a function.
+Code solution:
+
+class NegativeNumberException(Exception):
+    pass
+
+
+Write a function called "square_root" that calculates the square root of a number passed as an argument. If the number is negative, raise the custom "NegativeNumberException" exception.
+Code solution:
+
+def square_root(number):
+    if number < 0:
+        raise NegativeNumberException("Cannot calculate square root of negative number")
+    return math.sqrt(number)
+
+
+Write a try-except block to handle the "NegativeNumberException" in the main part of your program. If the exception is caught, print a message to the user stating that a negative number was entered.
+Code solution:
+
+try:
+    result = square_root(number)
+except NegativeNumberException:
+    print("Cannot calculate square root of negative number")
+
+
+Modify the "square_root" function to also raise a "ValueError" exception if the number passed as an argument is not an integer.
+Code solution:
+
+def square_root(number):
+    if not isinstance(number, int):
+        raise ValueError("Number must be an integer")
+    if number < 0:
+        raise NegativeNumberException("Cannot calculate square root of negative number")
+    return math.sqrt(number)
+
+
+Write a try-except block to handle both the "NegativeNumberException" and the "ValueError" exceptions in the main part of your program. If the "NegativeNumberException" is caught, print a message to the user stating that a negative number was entered. If the "ValueError" is caught, print a message to the user stating that a non-integer value was entered.
+Code solution:
+
+try:
+    result = square_root(number)
+except NegativeNumberException:
+    print("Cannot calculate square root of negative number")
+except ValueError:
+    print("Number must be an integer")
+
+
+#groupe 8
+
+Exceptions are events that occur when something goes wrong in a program.
+Exceptions can occur because of errors or unexpected events in the real world.
+Exception handling is the process of dealing with exceptions when they occur.
+You can raise exceptions in your code to handle exceptional conditions.
+You can create custom exception classes to narrow the scope of exceptions your code handles.
+Understanding how to use exceptions is important for creating successful programs.
+
+

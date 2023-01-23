@@ -1,0 +1,19 @@
+1 Deploying to Kubernetes
+2 Kubernetes Architecture
+3 The Kubernetes Cluster
+4 Kubernetes Objects
+5 Deploying an Application
+6 Creating a Cluster
+7 Uploading your Container
+8 Deploying to Kubernetes
+9 The Podspec
+10 Publishing your Service
+11 Interactive with the Deployment
+12 Updating your Application
+13 Cleaning Up
+14 Declarative Commands
+15 Local Kubernetes Environments
+16 Docker Desktop’s Kubernetes Cluster
+17 Minikube
+18 Using your Local Kubernetes Cluster
+19 Summary

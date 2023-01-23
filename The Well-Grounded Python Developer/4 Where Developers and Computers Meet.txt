@@ -1,0 +1,485 @@
+
+#groupe 1
+
+Communication: The exchange of information or ideas through the use of words, gestures, or other forms of expression.
+Interface: A device or system that allows communication between people and computers.
+Keyboards: A mechanical device that allows users to enter written text into a computer system.
+Mouse: A device that allows users to indicate gestures and events to a computer system by moving it around on a flat surface.
+Display screen: A device that allows a computer to represent digital information in a way that can be viewed by users.
+Speakers: A device that allows a computer to produce audio information.
+Operating system: The software that controls the overall functioning of a computer and provides access to its services and functionality.
+File system: The organization and management of files on a computer's storage system.
+Network: A group of computers connected together to share resources and information.
+API (Application Programming Interface): A set of interfaces that allow access to the services and functionality of a computer system.
+
+
+#groupe 2
+
+Interface: a device or system that allows communication between a person and a computer, or between different parts of a computer system.
+Application Programming Interface (API): a set of rules and protocols that allows different software programs to communicate with each other.
+Abstraction: the process of separating the essential features of something from the details that are not relevant.
+Standard library: a collection of pre-written code that comes with a programming language and can be used by developers in their own programs.
+Python Package Index (PyPI): a repository of third-party Python packages that can be installed and used in a Python program.
+Glue language: a programming language that is particularly good at connecting different libraries or modules of code together.
+
+API: An Application Programming Interface (API) is a set of tools and protocols that allows different pieces of software to communicate and work together. An API specifies how different components of a system can interact with each other, providing a way for code to access certain functionality and data from another piece of code.
+Contract: In programming, an API can be thought of as a contract between two pieces of code. The contract specifies what the API does and how it should be used, such as what input it expects and what output it returns.
+Black-box model: The black-box model is a way of thinking about code in which the internals of a function or piece of software are treated as a black box, and the only thing that matters is the behavior of the function or software. In other words, you don't need to know how a function or software works internally, only what it does and how it can be used.
+Local API: A local API is an API that is within the context of a particular program or codebase and can be accessed directly by calling the functions and methods provided.
+Remote API: A remote API is an API that is hosted on a separate machine or system and can be accessed over a network connection.
+
+
+#groupe 3
+
+Application Programming Interface (API): a set of rules and protocols that defines how two pieces of software can interact with each other.
+Black-box model: a way of thinking about code in which only the behavior of a piece of code needs to be known, not its implementation.
+Local API: an API that is within the context of your program code and is accessed directly by calling its functions and class instance methods.
+Remote API: an API that is hosted remotely and accessed over a network connection.
+Positional arguments: arguments in a function or method call that are passed based on their position in the function signature.
+Keyword arguments: arguments in a function or method call that are passed using the name of the argument and a value, rather than relying on their position in the function signature.
+Tuple: a sequence of values that can't be modified once created.
+Default value: a value that is used by a function or method if no value is provided for a particular argument.
+Standard output: the default destination for output in a program, usually the screen.
+Write method: a method that allows an object to be used as a file destination.
+AttributeError exception: an exception that is raised when an object does not have a particular attribute or method.
+
+
+#groupe 4
+
+print function: a built-in function in Python used to output text or data to the console
+API: a set of rules and protocols for building and accessing software or services
+function signature: the inputs and outputs of a function, including their data types
+separator: a character used to separate different items in a list or series of items
+well-conceived API: a well-designed and user-friendly API that is easy to use and can be easily expanded upon
+work going on inside the print function: the internal processes and functionality of the print function that are not visible to the user
+earmarks of a good API: characteristics or features that make an API effective and user-friendly
+input: the data or information that is passed into a function or program
+utility: the usefulness or practicality of a function or program
+
+Define a function called "greet" that takes in a string argument called "name". The function should return a string that says "Hello, [name]!"
+
+def greet(name):
+  return "Hello, " + name + "!"
+
+print(greet("John"))  # Output: "Hello, John!"
+print(greet("Mary"))  # Output: "Hello, Mary!"
+
+
+Modify the "greet" function from exercise 1 to also take in an optional boolean argument called "formal". If "formal" is True, the function should return a string in the form "Good evening, [name]." If "formal" is False or not provided, the function should return the original greeting.
+
+def greet(name, formal=False):
+  if formal:
+    return "Good evening, " + name + "."
+  else:
+    return "Hello, " + name + "!"
+
+print(greet("John"))  # Output: "Hello, John!"
+print(greet("Mary", formal=True))  # Output: "Good evening, Mary."
+print(greet("Mike", formal=False))  # Output: "Hello, Mike!"
+
+Define a class called "Shape" that has a method called "area" that returns 0. Then, define a subclass called "Rectangle" that has a method called "init" that takes in two arguments, "length" and "width", and sets them as attributes of the rectangle. Also define a "area" method for the "Rectangle" class that returns the area of the rectangle (length * width).
+
+class Shape:
+  def area(self):
+    return 0
+
+class Rectangle(Shape):
+  def __init__(self, length, width):
+    self.length = length
+    self.width = width
+  
+  def area(self):
+    return self.length * self.width
+
+rect = Rectangle(5, 10)
+print(rect.area())  # Output: 50
+
+
+
+#groupe 14
+
+API: an interface that allows one piece of code to communicate with another piece of code and access its functionality
+Black-box model: a way of using an API where you only need to know its behavior, not its implementation
+Input arguments: the information passed from the calling code to the API
+Output: the result of calling an API, which can include a return value, side effects, and exceptions
+Return value: the value returned by an API when it is called
+Side effects: actions on the system performed by an API, in addition to its return value
+Exceptions: errors that can be raised by an API when it is called
+Tuple: a sequence of values, similar to a list, that can be returned by an API to pass back multiple values to the calling code
+Unpacking: assigning the values of a tuple to separate variables
+
+
+#groupe 15
+
+API (Application Programming Interface): a set of functions or methods that allow different sections of programming code to communicate and interact with each other
+Black-box model: a way of thinking about an API where the input and output are well understood, but the internal functionality is not necessary to know
+Input arguments: the information passed from the context of the calling program to the context of the API
+Return value: the most commonly thought of output of a function, which is an object in Python
+Actions on the system: actions taken by API functions that are not related to returning data, such as interacting with networks or controlling real-world devices
+Exceptions: unexpected behaviors that may occur when using an API, such as a network becoming unreliable or a divide by zero error
+Retry: an attempt to perform an operation again after it has failed
+Timeout: a predetermined amount of time to wait before retrying an operation
+Exception handling: the process of knowing whether or not an exception can be resolved and taking the appropriate action, such as retrying an operation or letting the exception bubble upwards
+Documentation: a way of informing users of an API what exceptions they might expect and how to handle them
+
+
+Exercise 1:
+
+Create a function that takes in two integer arguments and returns their sum. Use proper variable naming conventions for the function and its arguments.
+
+Solution:
+
+def add_numbers(x: int, y: int) -> int:
+return x + y
+
+Exercise 2:
+
+Create a function that takes in a string and returns a copy of that string with all vowels removed. Use proper variable naming conventions for the function and its argument.
+
+Solution:
+
+def remove_vowels(string: str) -> str:
+vowels = ['a', 'e', 'i', 'o', 'u']
+return ''.join([char for char in string if char.lower() not in vowels])
+
+
+#groupe 15
+
+Function: a block of code that performs a specific task and can be called from other parts of a program.
+Object-oriented programming: a programming paradigm that centers around the concept of "objects" that can contain both data and code.
+Method: a function that is associated with an object instance.
+
+
+#groupe 16
+
+A function is a way to interface with an API in programming
+It is important to give functions descriptive and full names in snake_case format and to avoid using domain-specific acronyms
+There are four ways to pass arguments to functions: positional arguments, keyword arguments, argument list, and argument dictionary
+Positional arguments are mandatory and must be in the same order as defined in the function
+Keyword arguments are optional and have default values; they can be in any order when calling the function
+The argument list is a tuple of non-keyword arguments preceded by a *; it allows for a variable number of arguments to be passed to the function
+The argument dictionary is a dictionary of keyword arguments preceded by two **; it allows for a variable number of keyword arguments to be passed to the function
+It is good practice to document functions with docstrings that explain the purpose and usage of the function
+Functions can return multiple values by using a tuple or other compound data type
+Exceptions should be handled gracefully and documented in the function's docstring
+
+Naming - refers to the process of giving names to functions in a programming language
+
+Snake case - a naming convention where multiple words are separated by underscores, e.g. snake_case
+
+Abbreviations - shortened forms of words or phrases
+
+Docstring - a triple quoted string in Python containing information about a function that appears immediately after the function definition
+
+Namespace - a container for a set of identifiers, used to avoid naming conflicts between functions
+
+Positional argument - a type of function argument that is passed by position, rather than by name
+
+Keyword argument - a type of function argument that is passed by name, rather than by position
+
+Argument list - a function argument in the form of a list, indicated by a * preceding the argument name
+
+Keyword-only argument - a type of function argument that can only be passed by name, and not by position
+
+Variable-length argument list - a type of function argument that can accept an arbitrary number of arguments
+
+Function definition - the process of creating a function in a programming language
+
+Mandatory argument - a type of function argument that must be supplied by the caller
+
+Optional argument - a type of function argument that is not mandatory and has a default value
+
+TypeError exception - an exception raised in Python when a function is called with the wrong type of arguments
+
+Function API: A set of functions that provide an interface to perform specific tasks or access data.
+Naming: The process of giving a name to a function in a way that makes sense and is easy to understand. Functions should use full English words in snake_case format, avoid abbreviations and domain-specific acronyms, and use namespaces to avoid name collisions.
+Docstring: A tripled quoted string containing information about a function in Python, immediately following the function definition. It can elaborate on the intended use of the function.
+Arguments: Values or variables that are passed to a function when it is called. There are four types of arguments: positional, keyword, argument list, and keyword argument dictionary.
+Positional arguments: Arguments that are passed to a function in a specific order, and are mandatory unless they have a default value.
+Keyword arguments: Arguments that are passed to a function using the argument name, and have default values. They are optional.
+Argument list: A way of passing a variable number of arguments to a function using the * symbol. It allows the caller to pass any number of arguments, which are stored in a tuple.
+Keyword argument dictionary: A way of passing a variable number of keyword arguments to a function using the ** symbol. It allows the caller to pass any number of keyword arguments, which are stored in a dictionary.
+Consistency: The idea of maintaining a pattern or structure in function signatures, especially when working with common data or resources passed between functions. This helps make the API more understandable.
+Refactoring: The process of breaking down a large, complex function into smaller, simpler functions with a single purpose. It helps improve the readability and maintainability of the code.
+
+
+Create a function called calculate_total that takes in two arguments: price and quantity. The function should return the total cost by multiplying price by quantity.
+Solution:
+
+
+
+def calculate_total(price, quantity):
+    return price * quantity
+
+print(calculate_total(10, 5))  # Output: 50
+print(calculate_total(20, 3))  # Output: 60
+
+
+Create a function called greet that takes in one argument: name. The function should return a greeting message using the name argument. Use snake case for the function name and the argument.
+Solution:
+
+def greet(name):
+    return f"Hello, {name}!"
+
+print(greet("Alice"))  # Output: "Hello, Alice!"
+print(greet("Bob"))  # Output: "Hello, Bob!"
+
+
+Create a function called convert_temperature that takes in two arguments: temp and unit. The function should convert the temperature from Celsius to Fahrenheit if unit is "C", or from Fahrenheit to Celsius if unit is "F". The function should return the converted temperature. Use camel case for the function name and the arguments.
+Solution:
+
+def convertTemperature(temp, unit):
+    if unit == "C":
+        return (temp * 9 / 5) + 32
+    elif unit == "F":
+        return (temp - 32) * 5 / 9
+    else:
+        return "Invalid unit"
+
+print(convertTemperature(0, "C"))  # Output: 32.0
+print(convertTemperature(32, "F"))  # Output: 0.0
+
+
+
+#groupe 15
+
+API: A set of functions that allow a programmer to access and use the features or data of an application or system.
+Single Responsibility Principle: A principle in software development stating that a function should only have one purpose.
+Return Value: The value that a function returns to the caller when it is called.
+Positional Arguments: Arguments to a function that are passed in a specific order and are required to be provided when the function is called.
+Keyword Arguments: Arguments to a function that have default values and are not required to be provided when the function is called.
+Argument List: A special argument in a function that allows the caller to pass an arbitrary number of arguments to the function.
+Keyword Argument Dictionary: A special argument in a function that allows the caller to pass an arbitrary number of keyword arguments to the function as a dictionary.
+Snake Case: A naming convention for variables and functions in which words are separated by underscores.
+Docstring: A triple-quoted string that immediately follows the definition of a function, class, or module and provides information about the purpose and usage of the code.
+Namespace: A system for organizing and grouping related variables and functions.
+Modules: A Python file containing code that can be imported and used in other Python scripts.
+
+Exercise 1:
+
+Create a function named validate_password that takes in a string parameter password and returns a boolean value indicating whether the password is valid or not. The password is considered valid if it is at least 8 characters long and contains at least one uppercase letter, one lowercase letter, and one digit.
+
+Solution:
+
+def validate_password(password: str) -> bool:
+    if len(password) < 8:
+        return False
+    has_upper = False
+    has_lower = False
+    has_digit = False
+    for c in password:
+        if c.isupper():
+            has_upper = True
+        elif c.islower():
+            has_lower = True
+        elif c.isdigit():
+            has_digit = True
+    return has_upper and has_lower and has_digit
+
+
+
+Exercise 2:
+
+Create a function named convert_temperature that takes in two parameters: a temperature value temp and a string unit indicating the unit of the temperature (either "C" for Celsius or "F" for Fahrenheit). The function should convert the temperature to the opposite unit and return the converted temperature value.
+
+Solution:
+
+def convert_temperature(temp: float, unit: str) -> float:
+    if unit == "C":
+        return (temp * 9/5) + 32
+    elif unit == "F":
+        return (temp - 32) * 5/9
+    else:
+        raise ValueError("Invalid temperature unit")
+
+
+Exercise 3:
+
+Create a function named calculate_bmi that takes in two parameters: a weight value weight and a height value height. The function should calculate and return the body mass index (BMI) using the formula: BMI = weight / (height * height).
+
+Solution:
+
+def calculate_bmi(weight: float, height: float) -> float:
+    return weight / (height * height)
+
+
+I hope these exercises help you practice the concepts discussed in the previous paragraph! Let me know if you have any questions.
+
+
+#groupe 17
+
+Flashcard 1:
+
+Term: Single Responsibility Principle
+Definition: A principle that states that a function should only do one thing.
+
+Flashcard 2:
+
+Term: Function length
+Definition: The number of lines in a function. It is generally recommended to keep functions short, around 25 lines, to make them easier to understand and reason about.
+
+Flashcard 3:
+
+Term: Refactoring
+Definition: The process of restructuring and reorganizing code to make it more efficient, readable, and maintainable. In the context of function length, refactoring may involve breaking down a long function into smaller, more focused functions.
+
+Flashcard 4:
+
+Term: Class
+Definition: In object-oriented programming, a class is a blueprint for creating objects. A class can contain data (variables) and methods (functions) that operate on that data. When creating a class, you can use methods to organize related functions and make the code more readable.
+
+
+
+#groupe 18
+
+Function: a piece of code that performs a specific task and can be called multiple times in a program
+Snake_case: a naming convention in which all words are separated by underscores, e.g. snake_case
+Docstring: a string of documentation immediately following a function definition, used to provide information about the function's purpose and use
+Positional argument: an argument in a function definition that is assigned a value based on its position in the function call, e.g. in full_name("John", "James", "Smith"), "John" is assigned to the first positional argument, "James" to the second, and "Smith" to the third
+Keyword argument: an argument in a function definition that is assigned a default value and can be optional in the function call, e.g. in def full_name(fname, mname=None, lname=None), mname and lname are keyword arguments
+Argument list: a special syntax in a function definition that allows a variable number of arguments to be passed, denoted by the * symbol, e.g. def print_all(*objects)
+Keyword argument dictionary: a special syntax in a function definition that allows a variable number of keyword arguments to be passed, denoted by the ** symbol, e.g. def full_name(**kwargs)
+Single Responsibility Principle: a software design principle stating that a function should only do one thing and do it well
+Idempotence: the property of a function to always return the same result given the same input arguments, regardless of the number of times it is called
+
+
+#groupe 19
+
+
+Term: Return Value
+Definition: The output of a function, which can be a value of any data type, or None if no return statement is included in the function code.
+
+Term: Single Responsibility
+Definition: A principle in software development that states that a function should only do one thing and do it well, rather than trying to perform multiple tasks.
+
+Term: Function Length
+Definition: The number of lines in a function, which can affect its readability and ease of understanding. A good rule of thumb is to aim for functions around 25 lines long, but this can vary based on personal preference.
+
+Term: Idempotence
+Definition: A property of a function that always returns the same result given the same input arguments, regardless of how many times it is called.
+
+Term: Side Effects
+Definition: Changes to variables or other elements outside of a function's scope, which can include modifying global variables, performing IO operations, or other actions. It is important to consider the intended and unintended side effects of a function when designing it.
+
+
+Create a function called modify_list that takes in a list and modifies it by adding the number 3 to the end of the list.
+
+def modify_list(lst):
+    lst.append(3)
+    
+my_list = [1, 2]
+modify_list(my_list)
+print(my_list)  # [1, 2, 3]
+
+
+Create a function called better_modify_list that takes in a list and returns a new list with the number 3 added to the end of it, without modifying the original list.
+
+def better_modify_list(lst):
+    new_list = lst + [3]
+    return new_list
+    
+my_list = [1, 2]
+modified_list = better_modify_list(my_list)
+print(my_list)  # [1, 2]
+print(modified_list)  # [1, 2, 3]
+
+
+Create a function called add_global that takes in a number and adds it to a global variable called total.
+
+total = 0
+
+def add_global(num):
+    global total
+    total += num
+    
+add_global(5)
+print(total)  # 5
+add_global(10)
+print(total)  # 15
+
+
+Create a function called print_hello that takes in a name and prints out "Hello, [name]!".
+
+def print_hello(name):
+    print(f"Hello, {name}!")
+    
+print_hello("John")  # Hello, John!
+print_hello("Mary")  # Hello, Mary!
+
+
+Create a function called get_full_name that takes in a first name, middle name, and last name and returns the full name as a string.
+
+def get_full_name(fname, mname, lname):
+    full_name = f"{fname} {mname} {lname}"
+    return full_name
+    
+print(get_full_name("John", "Doe"))  # "John Doe"
+print(get_full_name("Jane", "Smith", "Doe"))  # "Jane Smith Doe"
+
+
+Documentation: a necessary process when building and defining an API, it briefly describes the functionality of the module and the functions it contains.
+Docstrings: short descriptions of a module, function, or class method that explain what the code does and provide information about the parameters and return value.
+Code readability: refers to how easy it is to understand and follow the logic of a piece of code.
+External documentation systems: tools that extract and process Python docstrings as part of creating documentation for code.
+Built-in help system: a feature in Python that allows you to see the docstring of a function by typing "help(<function name>)".
+
+Exercises:
+
+Write a docstring for a function that calculates the area of a circle. The function should take a radius as a parameter and return the area.
+
+def calc_circle_area(radius: float) -> float:
+    """Calculate the area of a circle.
+    
+    Arguments:
+        radius (float): The radius of the circle.
+    
+    Returns:
+        float: The area of the circle.
+    """
+    return 3.14 * radius ** 2
+
+
+Write a docstring for a function that checks if a number is prime. The function should take an integer as a parameter and return a boolean value indicating whether the number is prime.
+
+
+def is_prime(n: int) -> bool:
+    """Check if a number is prime.
+    
+    Arguments:
+        n (int): The number to check.
+    
+    Returns:
+        bool: True if the number is prime, False otherwise.
+    """
+    if n < 2:
+        return False
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+
+
+#groupe 20
+
+API (Application Programming Interface): a set of protocols, routines, and tools for building software and applications. A good API is easy to use, discoverable, and well documented.
+
+Good API: an API that is easy to use, well documented, and follows best practices in terms of naming conventions, function signatures, and behavior.
+
+API user: someone who uses an API, either by calling its functions or methods, or by integrating it into their own software or application.
+
+API affordance or discoverability: the ease with which someone can understand and use an API. Good naming conventions, clear documentation, and consistent function signatures all contribute to the affordance of an API.
+
+Consistent function signatures: using the same order and types of arguments in function definitions, as well as using the same names for similar arguments, helps make an API more discoverable and easier to use.
+
+Documentation: written information that explains the functionality, behavior, and usage of an API. Good documentation is essential for users to understand and make use of an API.
+
+
+
+
+
+
+
+
+
+

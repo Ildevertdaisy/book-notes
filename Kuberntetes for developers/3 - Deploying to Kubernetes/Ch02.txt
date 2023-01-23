@@ -1,0 +1,809 @@
+
+#group1
+
+Term: Containerizing
+Definition: Packaging an application and its dependencies into an executable container
+
+Term: Kubernetes
+Definition: A container orchestration system for deploying and managing containerized applications
+
+Term: Docker
+Definition: A tool for creating, deploying, and running containerized applications
+
+Term: Container configuration file
+Definition: A file, such as a Dockerfile, that captures an application's dependencies and configuration in a container
+
+Term: Bash scripts
+Definition: Text-based instructions for a computer to execute, typically written in the Bash programming language
+
+Term: Full virtualization
+Definition: A technique for running multiple operating systems on a single host machine, each with its own set of resources and isolated from the others
+
+Term: Overhead
+Definition: The additional resources required to perform a task or run a system, beyond those necessary for the task or system itself
+
+
+#group 2
+
+Term: Docker
+Definition: A tool for creating, deploying, and running containerized applications
+
+Term: Container image
+Definition: A file artifact that contains an operating system and configuration, used to create a container instance
+
+Term: Container instance
+Definition: An invocation of a container image, creating a running instance of the configured operating system
+
+Term: Virtual machine (VM)
+Definition: A software implementation of a computer that executes programs like a physical machine
+
+Term: VM image
+Definition: A file artifact that contains an operating system and configuration, used to create a virtual machine instance
+
+Term: VM instance
+Definition: An instance of a virtual machine, created from a VM image
+
+Term: Kubernetes
+Definition: A container orchestration system for deploying and managing containerized applications
+
+Here are some knowledge test questions and solutions based on the paragraph:
+
+Q: How do you start an interactive bash terminal in a Docker container?
+A: You can start an interactive bash terminal in a Docker container by using the docker run command with the -it flag, followed by the image name and the command to run in the container, like so: docker run -it ubuntu bash.
+
+Q: How do you install Python in a Docker container?
+A: To install Python in a Docker container, you can use the apt-get command to update the package manager and install Python, like so:
+
+# apt-get update
+# apt-get install -y python3
+
+
+Q: How do you start a stopped Docker container?
+A: To start a stopped Docker container, you can use the docker ps -a command to get the container ID, then use the docker start command with the container ID to start the container. You can then use the docker attach command with the container ID to reconnect to the container's shell. For example:
+
+$ docker ps -a
+CONTAINER ID IMAGE COMMAND CREATED STATUS
+c5e023cab033 ubuntu "bash" 5 minutes ago Exited (0) 1 second ago
+ 
+$CONTAINER_NAME=c5e023cab033
+$ docker start $CONTAINER_NAME
+$ docker attach $CONTAINER_NAME
+
+
+Q: How do you remove stopped Docker containers to reclaim disk space?
+A: To remove stopped Docker containers and reclaim disk space, you can use the docker system prune command with the -a flag, like so: docker system prune -a. This will remove all stopped containers, as well as any unused images, networks, and volumes.
+
+
+Q: How do you run a Python script in a Docker container?
+A: To run a Python script in a Docker container, you can use the python3 command followed by the script name. For example:
+
+# python3 hello.py
+
+
+Q: How do you create a Python script in a Docker container?
+A: To create a Python script in a Docker container, you can use the echo command to write the script to a file, then use the python3 command to run the script. For example:
+
+# echo 'print("Hello Docker")' > hello.py
+# python3 hello.py
+
+Q: How do you exit a Docker container's interactive shell?
+A: To exit a Docker container's interactive shell, you can use the exit command. For example:
+
+# exit
+
+
+Q: How do you list all stopped Docker containers?
+A: To list all stopped Docker containers, you can use the docker ps -a command. This will show a list of all containers, including those that are stopped.
+
+Q: How do you stop a running Docker container?
+A: To stop a running Docker container, you can use the docker stop command followed by the container ID or name. For example:
+
+$ docker stop CONTAINER_ID
+
+
+Alternatively, you can use the CTRL + C keyboard shortcut to stop a running container if it's in an interactive shell.
+
+
+
+#group 3
+
+Term: Dockerfile
+Definition: A set of procedural instructions used to build a Docker container image
+
+Term: Container image
+Definition: A file artifact that contains an operating system and configuration, used to create a container instance
+
+Term: Container instance
+Definition: An invocation of a container image, creating a running instance of the configured operating system
+
+Term: Base container image
+Definition: A container image used as the starting point for building a new container image
+
+Term: WORKDIR
+Definition: A Dockerfile instruction that sets the working directory for the container
+
+Term: COPY
+Definition: A Dockerfile instruction that copies files or directories from the host machine into the container image
+
+Term: RUN
+Definition: A Dockerfile instruction that runs a command during the build process of the container image
+
+Term: FROM
+Definition: A Dockerfile instruction that specifies the base container image to use as the starting point for building a new container image
+
+Here are some knowledge test questions and solutions based on the paragraph:
+
+Q: What is a Dockerfile used for?
+A: A Dockerfile is used to build a Docker container image. It consists of a set of procedural instructions that specify the base container image to use, the commands to run during the build process, and the files and directories to include in the container image.
+
+Q: What is a container image used for?
+A: A container image is used to create a container instance, which is a running instance of the configured operating system. Container images can be used to deploy and run applications in a containerized environment.
+
+Q: How do you specify the base container image to use as the starting point for building a new container image in a Dockerfile?
+A: To specify the base container image to use as the starting point for building a new container image in a Dockerfile, you can use the FROM instruction followed by the image name. For example:
+
+FROM ubuntu
+
+Q: How do you run a command during the build process of a container image in a Dockerfile?
+A: To run a command during the build process of a container image in a Dockerfile, you can use the RUN instruction followed by the command. For example:
+
+
+RUN apt-get update
+RUN apt-get install -y python3
+
+
+Q: How do you copy files or directories from the host machine into a container image in a Dockerfile?
+A: To copy files or directories from the host machine into a container image in a Dockerfile, you can use the COPY instruction followed by the source and destination paths. For example:
+
+COPY . /app
+
+
+This will copy the current directory (.) from the host machine into the /app directory in the container image.
+
+Q: How do you set the working directory for a container in a Dockerfile?
+A: To set the working directory for a container in a Dockerfile, you can use the WORKDIR instruction followed by the directory path. For example:
+
+WORKDIR /
+
+Q: How do you build a Docker container image from a Dockerfile?
+A: To build a Docker container image from a Dockerfile, you can use the docker build command followed by the path to the Dockerfile and the desired image name. For example:
+
+$ docker build -t my-image .
+
+This will build a Docker container image using the Dockerfile in the current directory (.) and name it my-image.
+
+Q: What is the FROM instruction used for in a Dockerfile?
+A: The FROM instruction in a Dockerfile specifies the base container image to use as the starting point for building a new container image. It is typically the first instruction in a Dockerfile.
+
+Q: What is the RUN instruction used for in a Dockerfile?
+A: The RUN instruction in a Dockerfile is used to run a command during the build process of the container image. It can be used to install dependencies, configure the container, or perform other tasks.
+
+Q: What is the COPY instruction used for in a Dockerfile?
+A: The COPY instruction in a Dockerfile is used to copy files or directories from the host machine into the container image. It is typically used to include application code, configuration files, or other assets in the container image.
+
+Q: What is the WORKDIR instruction used for in a Dockerfile?
+A: The WORKDIR instruction
+
+
+Term: Docker build
+Definition: A command used to build a Docker container image from a Dockerfile
+
+Term: Container image tag
+Definition: A name assigned to a Docker container image, used to identify it and distinguish it from other images
+
+Term: Docker run
+Definition: A command used to start a new container instance from a Docker container image, and run a command in the container
+
+Term: Base image
+Definition: A container image used as the starting point for building a new container image
+
+Term: Dependency hell
+Definition: A situation where multiple applications have conflicting dependencies, making it impossible to satisfy them all simultaneously
+
+Term: Isolation
+Definition: The separation of resources and processes, such as applications and their dependencies, into separate units (e.g. containers)
+
+Here are some knowledge test questions and solutions based on the paragraph:
+
+Q: How do you build a Docker container image from a Dockerfile and tag it with a name?
+A: To build a Docker container image from a Dockerfile and tag it with a name, you can use the docker build command followed by the path to the Dockerfile, the -t flag, and the desired image name. For example:
+
+$ docker build . -t hello
+
+
+This will build a Docker container image using the Dockerfile in the current directory (.) and name it hello.
+
+Q: How do you start a new container instance from a Docker container image and run a command in the container?
+A: To start a new container instance from a Docker container image and run a command in the container, you can use the docker run command followed by the image name and the command to run. For example:
+
+$ docker run hello python3 hello.py
+
+
+This will start a new container instance from the hello image and run the python3 hello.py command in the container.
+
+Q: What is a base image used for in building a new Docker container image?
+A: A base image is used as the starting point for building a new Docker container image. It provides the base operating system and configuration for the new image, and can be customized with additional instructions in the Dockerfile.
+
+Dependency hell refers to a situation where multiple applications have conflicting dependencies, making it impossible to satisfy them all simultaneously. 
+
+
+#group 4
+
+Base image: a pre-configured container image that serves as the starting point for building a new container image.
+Ubuntu: a popular Linux distribution that can be used as a base image for building container images.
+Centos: a popular Linux distribution that can be used as a base image for building container images.
+Alpine: a minimalistic Linux distribution that can be used as a base image for building container images.
+Python image: a base image configured specifically for running Python applications.
+Dockerfile: a set of instructions for building a container image.
+FROM: a Dockerfile instruction that specifies the base image to use.
+COPY: a Dockerfile instruction that copies files or directories from the host file system into the container image.
+WORKDIR: a Dockerfile instruction that sets the current working directory in the container image.
+Ruby image: a base image configured specifically for running Ruby applications.
+Httpd image: a base image configured specifically for running Apache HTTP server.
+Scratch container: a completely blank base image that can be used as the starting point for building a new container image.
+Docker Hub: a registry for container images, including base images.
+
+What is the command to build a Docker container with the current directory and tag it "hello2"?
+
+Solution:
+$ docker build . -t hello2
+
+Exercise 2:
+
+What is the command to run the "hello2" container and execute the command "python3 hello.py"?
+
+Solution:
+$ docker run hello2 python3 hello.py
+
+Exercise 3:
+
+What is the command to build a Docker container with the current directory and tag it "hello_ruby2"?
+
+Solution:
+$ docker build . -t hello_ruby2
+
+Exercise 4:
+
+What is the command to run the "hello_ruby2" container and execute the command "ruby hello.rb"?
+
+Solution:
+$ docker run hello_ruby2 ruby hello.rb
+
+
+#group 5
+
+Docker: a containerization platform that allows developers to package their applications and dependencies into a single container
+Dockerfile: a set of instructions used to build a container image
+Base image: a container image that is used as the starting point for building a new container image
+CMD: a command in a Dockerfile that specifies the default command to run when a container is started
+docker build: a command used to build a container image from a Dockerfile
+docker run: a command used to start a new container from an image
+container: a lightweight, stand-alone, and executable package that includes everything needed to run an application: code, runtime, system tools, and libraries
+
+Exercise 1:
+What is the command to build the container with the tag "hello3" in the above example?
+
+Solution:
+$ docker build . -t hello3
+
+Exercise 2:
+What is the command to run the container in the above example without specifying a command?
+
+Solution:
+$ docker run hello3
+
+Exercise 3:
+What is the command to run the container in the ruby version of the above example without specifying a command?
+
+Solution:
+$ docker run hello_ruby3
+
+
+#group 6
+
+FROM: specifies the base image to use as the starting point for the container image
+RUN: runs a command and creates a new layer in the container image
+COPY: copies files from the host file system into the container image
+WORKDIR: sets the working directory for the commands that follow
+CMD: specifies the default command to run when the container is started
+apt-get: package manager for Debian-based systems
+mariadb-client: a client for connecting to MariaDB databases
+bsdtar: a tool for manipulating tar archives
+curl: a command-line tool for transferring data with URLs
+fc-cache: a tool for rebuilding font information cache files
+font: a file containing a set of characters and symbols in a particular style and size
+TLS certificate: a digital certificate used to secure communication over the internet
+
+Quelle commande Docker est utilisée pour ajouter des dépendances à un conteneur ?
+Réponse : RUN
+Comment installez-vous mariadb-client sur un conteneur basé sur une image python en utilisant apt-get ?
+Réponse : RUN apt-get install -y mariadb-client
+Comment installez-vous les polices Noto depuis le site Google sur un conteneur basé sur une image python ?
+Réponse :
+RUN apt-get update
+RUN apt-get install -y bsdtar
+RUN mkdir -p ~/.fonts; cd ~/.fonts
+RUN curl "https://noto-website-2.storage.googleapis.com/pkgs/Noto-hinted.zip" | bsdtar -xvf-
+RUN fc-cache -f -v
+
+
+#group 7
+
+Compiling Code in Docker: a process of building an application from source code inside a Docker container.
+COPY command: a Dockerfile command that copies files from the host file system into the container.
+RUN command: a Dockerfile command that runs a command inside the container during the build process.
+WORKDIR directive: a Dockerfile directive that specifies the working directory for subsequent actions.
+javac: a command-line tool for compiling Java source code.
+openjdk: a base image for building Java applications, containing the OpenJDK runtime environment.
+compiled_code: the name of the built Docker image in the example.
+Chapter02/2.1.7_CompiledCode: the directory containing the example code for compiling a Java application in Docker.
+Chapter02-swift/2.1.7_CompiledCode: the directory containing the example code for compiling a server-side Swift application in Docker.
+
+What is the command to build an image called "compiled_code" using the current directory as the build context?
+Solution: docker build . -t compiled_code
+
+What is the command to run the "compiled_code" image?
+Solution: docker run compiled_code
+
+How do you specify the directory where the build process should be performed in a Dockerfile?
+Solution: Use the WORKDIR directive to specify the directory where the build process should be performed, for example: WORKDIR /app
+
+How do you compile a Java file called "Hello.java" in a Dockerfile?
+Solution: Use the RUN command to compile the Java file, for example: RUN javac Hello.java
+
+
+
+#group 8
+
+Base image: a base image is a pre-configured environment that is used as the starting point for creating a container image. Base images can include operating systems, programming languages, and other dependencies needed to run an application.
+Dockerfile: a Dockerfile is a configuration file that contains instructions for building a container image.
+FROM: the FROM command in a Dockerfile specifies the base image to use for the container image.
+COPY: the COPY command in a Dockerfile copies files or directories from the host system into the container image.
+WORKDIR: the WORKDIR command in a Dockerfile sets the working directory for subsequent commands in the Dockerfile.
+CMD: the CMD command in a Dockerfile specifies the default command to run when a container is started from the image.
+RUN: the RUN command in a Dockerfile executes a command in the container image and saves the result as a new layer in the image.
+Multi-stage build: a multi-stage build is a way of building a container image in multiple steps, using different base images for each step. This allows for separating the build process from the runtime environment, resulting in a smaller and more secure final image.
+Intermediate artifact: an intermediate artifact is a temporary image created during a multi-stage build process. It is not included in the final container image and is discarded after the build is complete.
+
+
+Exercise 1:
+
+Create a Docker container using the multi-stage build process that compiles a C++ program.
+
+Solution:
+
+FROM gcc AS buildstage
+COPY . /app
+WORKDIR /app
+RUN g++ main.cpp -o app
+
+FROM ubuntu:latest
+COPY --from=buildstage /app/app /app/
+WORKDIR /app
+CMD ./app
+
+Exercise 2:
+
+Create a Docker container using the multi-stage build process that compiles a .NET application.
+
+Solution:
+
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS buildstage
+COPY . /app
+WORKDIR /app
+RUN dotnet build
+
+FROM mcr.microsoft.com/dotnet/aspnet:5.0
+COPY --from=buildstage /app/bin/Debug/net5.0/publish /app
+WORKDIR /app
+ENTRYPOINT ["dotnet", "app.dll"]
+
+Exercise 3:
+
+Create a Docker container using the multi-stage build process that compiles a Java application and copies it to a final container that is built from the openjdk:8-jre-alpine base image.
+
+Solution:
+
+FROM openjdk:8 AS buildstage
+COPY . /app
+WORKDIR /app
+RUN javac Hello.java
+
+FROM openjdk:8-jre-alpine
+COPY --from=buildstage /app/Hello.class /app/
+WORKDIR /app
+CMD java Hello
+
+
+
+#group 9
+
+
+Containerizing: the process of packaging an application and its dependencies into a container
+Server application: a type of application that listens for and processes incoming requests, such as a web server
+HTTP service: a type of server application that serves HTTP requests
+Web server: a server application that listens for and processes HTTP requests
+Kubernetes: a container orchestration platform that allows users to deploy and manage containerized applications
+Port forwarding: the process of directing network traffic from one port on a local machine to another port on a remote machine
+Container orchestration: the process of managing the deployment, scaling, and maintenance of containerized applications
+
+
+#group 10
+
+Base image: A Docker image that is used as the starting point for creating a new Docker image
+Application specific dependencies: Additional libraries or tools that are required for the application to run
+COPY command: Copies files from the host machine into the container
+ENV command: Sets an environment variable in the container
+PYTHONUNBUFFERED environment variable: When set to 1, output from the Python application is not buffered, allowing the output to be streamed to the console as it is generated
+WORKDIR command: Sets the working directory for subsequent commands
+CMD command: Specifies the command that is run when the container is started
+Port forwarding: The process of forwarding traffic from a port on the host machine to a port in the container
+-it parameter: Allows the container to be terminated by sending a SIGTERM signal, typically by pressing Ctrl+C
+-d parameter: Runs the container in the background
+docker ps command: Lists running containers
+docker stop command: Stops a running container
+SIGTERM signal: A signal that is sent to a process to request that it terminate gracefully
+
+Exercise 1:
+
+Using the Dockerfile provided in the previous paragraph, build an image for the HTTP server application and name it "timeserver".
+
+Solution:
+
+$ docker build . -t timeserver
+
+Exercise 2:
+
+Start the "timeserver" image in the background, forwarding port 8080 on the host machine to port 80 in the container.
+
+Solution:
+
+$ docker run -d -p 8080:80 timeserver
+
+Exercise 3:
+
+List all running Docker containers.
+
+Solution:
+
+$ docker ps
+
+Exercise 4:
+
+Stop the "timeserver" Docker container.
+
+Solution:
+
+$ docker stop $(docker ps -q)
+
+
+
+How do you import the ThreadingHTTPServer and BaseHTTPRequestHandler classes from the http.server module in Python?
+Solution: You can import these classes using the following code:
+
+from http.server import ThreadingHTTPServer, BaseHTTPRequestHandler
+
+
+How do you create an HTTP server in Python that listens on port 80 and serves requests using the ThreadingHTTPServer class?
+Solution: You can create an HTTP server using the following code:
+
+server = ThreadingHTTPServer(('', 80), RequestHandler)
+
+
+How do you start an HTTP server in Python and keep it running indefinitely until a keyboard interrupt is received?
+Solution: You can start an HTTP server and keep it running indefinitely with the following code:
+
+server.serve_forever()
+
+
+How do you create a Dockerfile that starts from the Python 3.10 base image and copies the current directory to the /app directory in the container?
+Solution: You can create a Dockerfile with the following content:
+
+FROM python:3.10
+COPY . /app
+
+How do you build an image using the Dockerfile in the current directory and give it the name timeserver?
+Solution: You can build an image using the following command:
+
+docker build . -t timeserver
+
+How do you run a container based on the timeserver image and forward port 8080 on the host machine to port 80 in the container?
+Solution: You can run a container with port forwarding using the following command:
+
+docker run -p 8080:80 timeserver
+
+How do you run a container based on the timeserver image in the background and forward port 8080 on the host machine to port 80 in the container?
+Solution: You can run a container in the background with port forwarding using the following command:
+
+docker run -d -p 8080:80 timeserver
+
+
+
+#group 11
+
+
+docker container ls: lists all running containers
+docker exec: runs a command in a running container
+docker cp: copies files between host and container
+sh: command to open a shell inside the container
+bundle exec: runs a command in the context of a specific bundle (e.g., a Ruby on Rails project)
+rails console: opens the Rails console inside the container
+CONTAINER_ID: unique identifier of a container
+Dockerfile: file that specifies the steps to build a Docker image
+docker cp: copies files between host and container
+VM: virtual machine
+
+
+Exercise 1:
+
+Use the docker container ls command to list all running containers.
+
+Solution:
+
+docker container ls
+
+
+Exercise 2:
+
+Use the docker exec command to shell into a running container with ID CONTAINER_ID.
+
+Solution:
+
+docker exec -it CONTAINER_ID sh
+
+
+Exercise 3:
+
+Use the docker cp command to copy a file server.py from the host machine to the /app directory in the container with ID CONTAINER_ID.
+
+Solution:
+
+docker cp server.py CONTAINER_ID:/app
+
+
+Exercise 4:
+
+Use the docker cp command to copy a file server.py from the /app directory in the container with ID CONTAINER_ID to the current working directory on the host machine.
+
+Solution:
+
+docker cp CONTAINER_ID:/app/server.py .
+
+
+#group 12
+
+Docker Compose: a tool for defining and running multi-container Docker applications.
+Local testing: testing an application on a local machine, rather than a remote server or cloud environment.
+Container orchestrator: a tool for managing the deployment and scaling of containerized applications.
+docker-compose.yaml: a configuration file used by Docker Compose to define the containers and their settings in a multi-container application.
+services: a section in the docker-compose.yaml file that specifies the individual containers in the application.
+build: a setting in the docker-compose.yaml file that specifies the location of the Dockerfile for building the container image.
+command: a setting in the docker-compose.yaml file that specifies the command to run when starting the container.
+ports: a setting in the docker-compose.yaml file that specifies the port mapping between the host and the container.
+docker-compose build: a command that builds the container images defined in the docker-compose.yaml file.
+docker-compose up: a command that brings up the containers defined in the docker-compose.yaml file.
+
+
+Write the instructions to build and run the container using Docker Compose in one command.
+Solution: docker-compose build; docker-compose up
+
+How would you copy a file named "config.json" from your host into the "website" service's container using Docker Compose?
+Solution: docker-compose cp config.json website:/app/config.json
+
+How would you open a shell in the "website" service's container using Docker Compose?
+Solution: docker-compose exec website sh
+
+How would you stop and remove all containers created by Docker Compose?
+Solution: docker-compose down
+
+
+#group 13
+
+Docker Compose: a tool for defining and running multi-container Docker applications
+Volume binding: a way to map local folders to the container, allowing changes to be immediately read in the container without a rebuild
+Tight development loop: a workflow where changes made to the source code can be immediately seen in the browser after saving
+Skaffold: a developer tool for building and deploying applications in Kubernetes, providing a tight development loop for compiled code
+
+Volume binding: a feature in Docker Compose that allows you to map a local folder to a directory in a container, allowing you to access and modify files in the container from your local machine
+Development loop: the process of making changes to code, building the code, and testing the changes, typically in a continuous and rapid manner
+Container: a lightweight, standalone, and executable package that includes everything needed to run an application, including the application code and its dependencies
+Rails: a popular web application framework written in the Ruby programming language
+Gem: a package manager for the Ruby programming language, used to install and manage libraries and frameworks such as Rails
+
+
+Use the docker-compose command to build and run the container using the docker-compose.yaml file.
+Solution:
+$ docker-compose build
+$ docker-compose up
+
+Use the docker cp command to copy the server.py file from the container to the current directory on the host machine.
+Solution:
+$ docker cp CONTAINER_ID:/app/server.py .
+
+Use the docker exec command to run the python3 server.py command inside the container.
+Solution:
+$ docker exec -it CONTAINER_ID python3 server.py
+
+Use the docker-compose command to stop the container.
+Solution:
+$ docker-compose stop
+
+Use the docker command to remove the container.
+Solution:
+$ docker rm CONTAINER_ID
+
+
+#group 14
+
+Compose: A tool for defining and running multi-container Docker applications. It allows users to define a set of interconnected services in a single file and start them with a single command.
+Kubernetes: An open-source container orchestration platform for automating the deployment, scaling, and management of containerized applications.
+Local development: The process of building and testing an application on a developer's local machine.
+Standard components: Pre-packaged and pre-configured services that are provided by cloud providers, such as databases or message queues.
+Service dependencies: Services that are required by an application in order to function properly. These can be other standalone servers or standard components.
+MySQL: A popular open-source relational database management system.
+Environment variables: Variables that can be passed to a container at runtime, allowing users to customize the behavior of an application without modifying its code.
+Container orchestration: The process of managing and coordinating multiple containers as a single system.
+Deployment: The process of releasing an application or service into production.
+Scaling: The process of increasing or decreasing the number of instances of an application or service in response to changes in demand.
+Management: The process of maintaining and administering an application or service, including tasks such as monitoring, updates, and backups.
+
+
+Exercise 1:
+
+Create a docker-compose.yaml file that includes two services: a web server and a database. The web server should be built from a Dockerfile in the current directory, and the database should use the official MySQL image from Docker Hub. The database should have a volume attached to store its data, and it should have the following environment variables set: MYSQL_ROOT_PASSWORD, MYSQL_DATABASE, MYSQL_USER, and MYSQL_PASSWORD.
+
+Solution:
+
+services:
+web:
+build: .
+db:
+image: mysql:5.7
+volumes:
+- db_data:/var/lib/mysql
+restart: always
+environment:
+MYSQL_ROOT_PASSWORD: password
+MYSQL_DATABASE: my_database
+MYSQL_USER: user
+MYSQL_PASSWORD: password
+volumes:
+db_data:
+
+Exercise 2:
+
+Use the docker-compose command to build and bring up the two services defined in the docker-compose.yaml file from the previous exercise.
+
+Solution:
+
+$ docker-compose build
+$ docker-compose up
+
+
+
+#group 15
+
+Faking External Dependencies: the process of replacing remote dependencies, like a cloud storage API, with lightweight local versions called fakes to speed up development and testing.
+S3-compatible APIs: a set of APIs used by cloud storage providers, like Amazon S3, Google Cloud Storage, and Azure, that are supported by other object stores.
+Adobe's S3Mock: a container that provides a fake S3-compatible API for local development.
+MinIO: a fully-fledged S3-compatible local storage solution that can be used as a high-quality fake for local development or as a block storage service in production.
+Docker Compose file: a configuration file used to define the services, networks, and volumes in a Docker application.
+Service: a containerized application in a Docker Compose file.
+Volume: a persistent data storage location in a Docker Compose file.
+Environment variable: a variable that can be passed to a container at runtime and used to configure the container.
+
+
+1 - Create a new docker-compose.yaml file and use it to bring up a container running the "nginx" image.
+Solution:
+
+Create a file called "docker-compose.yaml" and add the following content to it:
+
+version: '3'
+services:
+  web:
+    image: nginx
+
+
+Run the command "docker-compose up" to bring up the container
+
+2 - Add a new service to your docker-compose.yaml file that runs a PostgreSQL database and creates a volume to store the data.
+Solution:
+
+Add the following content to your docker-compose.yaml file:
+
+services:
+  db:
+    image: postgres
+    volumes:
+      - db_data:/var/lib/postgresql/data
+volumes:
+  db_data:
+
+
+- Run the command "docker-compose up" to bring up the container
+
+3 - Modify the "web" service in your docker-compose.yaml file to bind the container's port 80 to port 8000 on the host machine.
+Solution:
+
+Modify the "web" service in your docker-compose.yaml file to include the "ports" configuration:
+
+services:
+  web:
+    image: nginx
+    ports:
+      - "8000:80"
+
+
+Run the command "docker-compose up" to bring up the container and access it on port 8000 on your host machine.
+
+4 - Create a new docker-compose.yaml file and use it to bring up a container running a Python web server that serves files from a local folder.
+Solution:
+
+Create a file called "docker-compose.yaml" and add the following content to it:
+
+version: '3'
+services:
+  web:
+    build: .
+    command: python3 -m http.server 8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+
+
+Create a file called "Dockerfile" in the same directory with the following content:
+
+FROM python:3
+WORKDIR /app
+
+Run the command "docker-compose up" to bring up the container and access the files in your local folder on port 8000.
+
+
+#group 16
+
+
+Term: Containerization
+Definition: The process of packaging an application and its dependencies into a standardized container that can be run with VM-like properties on a host.
+
+Term: Docker Compose
+Definition: A lightweight container orchestrator that can be used to create a development environment for multiple services using containers.
+
+Term: Folder mapping
+Definition: A feature of Docker Compose that allows local folders to be mapped to the container, allowing for real-time editing of non-compiled applications.
+
+Term: Container orchestrator
+Definition: A tool that manages the deployment and scaling of containers in a distributed system.
+
+Term: Kubernetes
+Definition: An open-source container orchestration system for automating the deployment, scaling, and management of containerized applications.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

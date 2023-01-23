@@ -1,0 +1,173 @@
+
+#Groupe 1
+
+In this project, you will create a small blogging platform called MyBlog. 
+It will be a web-based application written in Python that allows users to join a blogging community, create and post content, view and comment on other users' content, and mark content as inactive. 
+Administration users will have additional ability to mark any content or comments as inactive. The content can be styled using markdown.
+
+#Groupe 2
+The MyBlog is a web application that lets users create and share blog posts. It has features that allow users to share their work and skills.
+
+#Groupe 3
+A web application is a program that is accessed through a web browser and is run on a server. 
+It can be easier to distribute and update than other types of applications. 
+Web servers are computers that provide web content to users, and web browsers are programs used to access the internet and view web content. 
+Web-based applications have become popular for delivering applications and can be accessed through a user interface on a web browser.
+
+
+
+Web applications can be created using multiple technical domains, including Python, HTML, CSS, and JavaScript.
+Web-based systems are widely accepted for delivering applications.
+Web servers are computers that serve web content to users.
+Web browsers are programs used to access the internet and view web content.
+Web applications have advantages for distribution, centralized updates, and user interface availability through web browsers.
+GUI applications have graphical user interfaces.
+The client-server model refers to multiple applications accessing the functionality of a central server.
+HTTP status codes indicate the success or failure of a request.
+The Flask development server is not suitable for production, but can be used for development.
+The event loop is where a server waits for events to process.
+URLs that are not defined in an application will result in a "Not Found" error.
+Web servers can handle errors and continue to function.
+
+
+#groupe 4
+Creating a web application involves working with multiple technical domains, including Python, HTML, CSS, and JavaScript. 
+While desktop-based applications offer more direct access to hardware and computing power, web-based applications are becoming more popular and have a lot of acceptance as a method of delivering applications. 
+The MyBlog application is a web application for creating and sharing blog posts, but it is not intended to offer groundbreaking features or technology. 
+The goal is to see the big picture and understand the application's intent to create a functioning application.
+
+#groupe 5
+A server is a computer or application that provides functionality to other applications over a network. 
+The MyBlog web application is a type of server that will run on your local computer. 
+The client-server model refers to multiple applications accessing the functionality of a central server. 
+Client applications, such as those on desktop or mobile devices, use servers to provide functionality. 
+Servers can be used in multiplayer games to coordinate actions. Commercial server hardware is optimized for server software.
+
+
+#groupe 6
+A server is a computer or program that provides functionality to other applications across a network. 
+The client-server model is when multiple applications access the functionality of a central server. 
+Web applications use the request-response model, where the client makes a request to the server and the server responds with a response, often an HTML page. 
+The MyBlog web application will use this model to get data from the server and present it to users.
+
+#groupe 7
+A web server is a computer program that responds to requests from client applications, such as web browsers, and sends them HTML documents, images, audio and video content, and other files. 
+The client's web browser renders the HTML documents and can execute JavaScript code and use CSS files to modify the look and feel of the web page. 
+The web server can also receive requests from JavaScript code running in the client's browser and send back data or text in response.
+
+An HTTP request is a message sent by a client application (such as a web browser) to a server, asking it to perform a specific task or retrieve some information. 
+The request consists of a method (such as GET or POST), a URL (which specifies the location of the resource on the server), headers (which contain additional information about the request), and an optional message body. 
+The server processes the request, and sends back a response, which includes a status code, headers, and a message body. The message body can contain the requested resource (such as an HTML page or an image), or an error message. 
+The client application then processes the response and displays the results to the user. 
+HTTP requests are used to communicate with web servers, and form the basis for the communication between client and server in web-based applications.
+
+Flask is a web application framework for Python that provides tools to create and run web applications. 
+It allows Python to act as a web application server and handle HTTP requests to build and send responses. 
+Flask is not included in the standard Python library but can be installed using pip, a tool for installing third-party Python modules.
+
+In short, Flask is a tool that allows you to create web applications in Python. 
+It is popular because it is small, easy to learn, and has many additional modules that can be used to add features as needed. 
+The author of the text is familiar with Flask and therefore chose to use it for the MyBlog application.
+
+
+#groupe 8
+Flask is a web application framework for Python that provides tools and plumbing to create web applications and respond to HTTP requests. 
+The first example of a server using Flask is a "Hello World" application that can be run by navigating to the correct directory in a terminal and using the command "flask run". 
+This starts a development server at the localhost IP address (127.0.0.1) on port 5000, which can be accessed using a web browser. 
+When the server receives a request, it returns the response "Hello World!" and prints a log message indicating the request was handled successfully.
+
+
+#Groupe 9
+In Flask, decorators connect Python functions to URL routes.
+Flask runs forever waiting for HTTP requests to respond to.
+If a route is not defined, the server will return a "Not Found" error.
+Flask can handle errors and continue to function.
+Errors can help determine problems in the application and how to fix them.
+
+#groupe 10
+Web servers and web applications are programs that run on computers and provide functionality to other applications across a network. 
+The client-server model is a common arrangement where multiple applications access the functionality of a central server. 
+Web servers are applications that respond to HTTP requests from client applications, such as web browsers. 
+Flask is a popular web application framework for Python that provides the necessary tools and features for building web applications. 
+The Flask development server is a tool for running web applications in development mode, but it is not suitable for production use. 
+HTML content can be separated from Python code and built as files using Jinja2, a template language for Flask. 
+Jinja2 allows for the insertion of dynamic information and data into templates to create completed end result documents.
+
+
+Flask is a web application framework for Python that allows developers to create web applications and servers. 
+It includes features like routing HTTP requests to Python code and rendering templates using Jinja2. 
+The Flask development server is not suitable for production, but it can be used for testing and development. 
+Template files can be used to separate HTML code and dynamic data, which can be injected into the template using Jinja2 syntax. 
+The render_template function in Flask uses Jinja2 to parse templates and substitute elements with data.
+
+
+Flask is a lightweight web application framework for Python. 
+It can be used to create useful applications that perform and scale well. 
+Flask includes the ability to answer HTTP requests for URL resources and connect them to Python code that dynamically builds the response. 
+Jinja2 is a template language that can be used with Flask to merge dynamic information with HTML content. 
+Flask and Jinja2 can be used to create web pages with dynamic content and interactivity, such as changing the banner background color and maintaining a page visits counter. 
+The PageVisit and BannerColors classes are used to provide these features in the updated example web application.
+
+Flask is a Python framework for creating web applications. 
+The first example of a Flask web server is a simple "Hello World" application that runs on a local server. 
+To create a web page with Flask, you can use a template language called Jinja2 to separate HTML code from Python code. 
+The Jinja2 template can be filled with dynamic data, such as the current time, by using Flask's render_template function. 
+The updated example of a Flask web application includes a banner and a sticky footer, a page visit counter, and a list of colors that the banner can be changed to. 
+The application also includes styling information in the form of CSS files and client-side interactivity in the form of a JavaScript file. 
+The PageVisit and BannerColors classes are used to provide these features.
+
+
+The paragraphs describe the process of creating a web application using Flask and Jinja2 templates, including how to use template inheritance to reuse common elements across multiple pages. 
+The application also includes classes for managing page visits and a list of banner colors, and serves static CSS and JavaScript files from the "static" directory. 
+The directory structure includes a "templates" directory for Jinja2 templates and a "static" directory with "css" and "js" subdirectories for static CSS and JavaScript files.
+
+
+The "base.html" template file contains common elements of an HTML page, such as the head and footer, that will be used on all pages of a web application. 
+It also includes Jinja2 template code that allows a child template to reference and modify certain sections, called blocks, of the parent template. 
+The "index.html" file will inherit from the "base.html" template and use references to inject content and include a specific JavaScript file containing interactivity code.
+
+
+In summary, the Jinja2 template inheritance feature allows a web application to reuse common HTML code and elements across different pages. 
+The base.html file serves as the parent template, containing blocks of code that can be overridden by child templates. 
+The child templates extend the base template and fill in the blocks with their own content. The app.py file passes data to the templates for rendering. 
+The PageVisit and BannerColors classes provide additional functionality for the web application, such as maintaining a page visit count and generating a list of random banner colors.
+
+
+The PageVisit and BannerColors classes are added to the app.py file and used in the home() function that renders the web page. 
+The function calls the render_template function, passing in the name of the template file "index.html" and a data variable. 
+The data variable is a dictionary containing key/value pairs of information used in the template, including the current time, an instance of the PageVisit class, and a list of banner colors. 
+Template inheritance is used to create a parent template, "base.html", containing common elements and a child template, "index.html", which inherits from the parent and includes specific content and interactivity. 
+The "base.html" and "index.html" templates are rendered by Jinja2 and the resulting HTML is presented by the browser. 
+The web page's presentation is controlled by two CSS files, "myblog.css" which applies to the parent template and "index.css" which applies to the child template.
+
+
+In summary, the code in these paragraphs describes the use of HTML templates in a Flask web application to create a web page with dynamic content. 
+The templates use Jinja2 syntax to define areas that can be customized by child templates, which inherit from parent templates. 
+The templates also use expressions to insert data provided by the application and URL generation functions to create links to static resources such as CSS and JavaScript files. 
+The CSS files provide styles for the HTML elements and the JavaScript file adds interactivity to the page by changing the banner color when a button is clicked.
+
+
+To run the web server for the updated app, you need to set the environment variables FLASK_ENV and FLASK_APP to point to your application. 
+Then, you can run the web server by entering "flask run" in the terminal. 
+The built-in web server is suitable for development, but for production use, you should use a production-ready WSGI server like uWSGI or Gunicorn. 
+These servers provide a simple way to forward requests from a web server to your Python web application.
+
+#Groupe 11
+To run the web server using Gunicorn, you need to install it using the command "pip install gunicorn" in your Python virtual environment. 
+Then, in the terminal, navigate to the directory where your application is located and run the command "gunicorn -w 4 app:app". 
+This starts four worker instances of your application, which Gunicorn finds using the "app:app" part of the command. 
+The recommended number of workers for an application running on a single production server is (2 x number_of_cores) + 1, according to the Gunicorn documentation. This allows the application to scale up and handle a large number of requests per second, depending on the workload and time it takes to generate a response.
+
+
+#Groupe 12
+To make a Flask-based Python application available for public use, you need to use a hosting service. 
+Options include hosting with Apache or Nginx web servers, and using uWSGI or Gunicorn as the WSGI interface with your Python application. 
+Deploying with Docker containers is also possible. The choice of hosting service and configuration depends on your goals for the application and cost. 
+Deploying an application is a complex topic that is beyond the scope of this book.
+
+
+#Groupe 13
+
+In this chapter, the concept of creating a web application using Flask was introduced. 
+The reader learned about the role of a server and a web server, and created their first three web applications with Flask, increasing in complexity. 
+In the next chapter, the reader will continue to build the MyBlog application, including integrating it with a database and handling the development of a larger project.

@@ -1,0 +1,128 @@
+
+#Groupe 1
+In object-oriented programming (OOP), data and the functions that work on that data are organized into objects. 
+Each object has its own data and functions, known as methods, that work on that data. 
+Objects can interact with each other through methods and can also be organized into hierarchies with inheritance, where objects can inherit properties and behaviors from their parent objects. 
+OOP allows for the creation of more modular and reusable code and helps to keep data and functions organized and connected.
+
+
+#Groupe 2
+In object-oriented programming, data and the functions that act on it are combined into a single "thing," called an object. 
+This allows developers to design and create objects that have specific behaviors and functionality. 
+Classes are used to design these objects and connect data and functions to them. Objects can be thought of as a single entity with specific functionality.
+
+
+#Groupe 3
+In Python, a class is a template for creating objects. It defines the characteristics (attributes) and behavior (methods) of the object. 
+When an object is created from a class, it is called an instance of the class. 
+In the example above, the Person class has three attributes (fname, mname, lname) and one method (full_name). 
+The self parameter in the method is a reference to the instance of the class. 
+The example creates a Person instance called p1 and prints the full name by calling the full_name method on it.
+
+#Groupe 4
+In object-oriented programming, a class is a template that defines the attributes and methods of objects. 
+A class definition includes a constructor method, which initializes the object's attributes, and methods, which are functions that act on the object's data. 
+An object is an instance of a class, created by calling the class. 
+Classes can have public attributes and methods, which can be accessed and used by any code. 
+The Unified Modeling Language (UML) is a standard way to visually represent the design of systems, including classes and their attributes and methods. 
+In Python, all attributes and methods of a class are public and have no notion of protected or private access.
+
+
+#Groupe 5
+In Python, you can define a class called "Rectangle" that has attributes like position, dimensions, pen color, fill color, direction of movement, and speed. 
+You can also define methods for the class, like set_pen_color, set_fill_color, draw, and move, which allow you to set the pen color and fill color of the rectangle, draw it on the screen, and move it. 
+You can also use inheritance, polymorphism, and composition to give attributes and behavior to the class. 
+The arcade module can be used to create a drawing surface on the screen and draw and animate objects on that screen.
+
+The CH_05/example02 application is an object-oriented program that creates a rectangle object and animates it on the screen. 
+The Window class has on_update() and on_draw() methods that change the position and appearance of the rectangle object. 
+The rectangle object has set_pen_color() and set_fill_color() methods that change its appearance and a draw() method that renders it on the screen. 
+The change_colors() method of the Window class uses these methods to set random colors for the rectangle object. 
+The application runs on the arcade module and creates a window on the screen that shows the moving and changing rectangle.
+
+In Python, a class can use property decorators to control how attributes are accessed and modified. 
+The Rectangle class has been modified to use property decorators to limit the range of values that can be assigned to the x and y attributes, which control the position of the rectangle on the screen. 
+The x and y attributes are now considered private and are prefixed with an underscore '_' character to indicate they should not be accessed directly. 
+The property decorators allow the class to use the direct attribute access syntax while still controlling how the attributes are accessed and modified.
+
+
+In Python, you can use property decorators to control how class attributes are accessed and modified. 
+Property decorators allow you to define getter and setter functions for an attribute, which can be used to constrain the values of the attribute or perform other actions when the attribute is accessed or modified. 
+You can also use the @deleter decorator to delete an attribute, but this is rarely used. 
+Property decorators allow you to control access to attributes while still using the direct attribute access syntax, making your code more readable. 
+You can also create read-only or write-only attributes by using only a getter or setter decorator.
+
+
+A decorator is a function that takes another function and extends the behavior of the latter function without explicitly modifying its code. 
+It allows developers to add extra functionality to existing functions without changing the original function itself. 
+In the example given, the timing_decorator function is used to log information before and after the complex_task function is called, including the elapsed time it took to execute. 
+The timing_decorator function does this by defining a wrapper function that takes the same parameters as the original complex_task function and returns the same result. 
+The timing_decorator function itself takes the original complex_task function as a parameter and returns the wrapper function. 
+This means that when the complex_task function is called, it is actually the wrapper function that is called, and the original complex_task function is executed within the wrapper function.
+
+In Python, decorators are a way to extend or modify the behavior of a function without changing the function itself. 
+They are created by defining a function that takes another function as a parameter and returns a modified version of that function. 
+The original function can be "decorated" by adding the decorator function's name followed by an @ symbol before the function definition. 
+When the decorated function is called, the decorator function's code will be executed along with the original function's code. 
+Decorators are useful for adding functionality to multiple functions without having to change the functions themselves.
+
+
+#Groupe 6
+Inheritance is a way to use attributes and behavior from a parent class in a child class. 
+A parent class is called a base class or superclass and a child class is called a derived class or subclass. 
+Inheritance allows for multiple child classes to be created from a parent class, each with their own unique attributes and behaviors but still having characteristics from the parent. 
+In Python, inheritance is created by including the parent class name in parentheses after the child class name. 
+An abstract class is a class that should not be instantiated directly and has methods with no functionality of their own. 
+The abstract methods must be implemented by the child class.
+
+Inheritance is a way to create a new class that is a modified version of an existing class. 
+The new class is called the child class or subclass and the existing class is the parent class or superclass. 
+The child class can have additional attributes and behaviors, or it can override or modify the attributes and behaviors of the parent class. 
+This allows you to avoid duplicating code and create a hierarchy of classes that share common attributes and behaviors. 
+In the example given, the Shape class is the parent class and the Rectangle class is the child class. 
+The Rectangle class has a unique draw() method, but it inherits all other attributes and behaviors from the Shape class. 
+This allows the Rectangle class to have all the same attributes and behaviors as the original Rectangle class, but it is now organized in a more scalable and maintainable way.
+
+Inheritance is a way in Python to structure classes so that they can share attributes and behavior. 
+A parent class, such as Shape, can define common attributes and methods that child classes, such as Rectangle, Square, and Circle, can inherit and potentially modify. 
+This allows for code reuse and helps to follow the principle of "Don't Repeat Yourself" (DRY). 
+The child classes can also have their own unique attributes and methods, such as a unique draw() method for each shape. 
+In the example given, Square inherits from Rectangle and both inherit from Shape, while Circle only inherits from Shape. 
+The Circle and Square classes also have their own init() methods and the Circle class has a unique draw() method.
+
+Inheritance is a way to create a new class that is a modified version of an existing class. 
+It allows you to reuse code and add new features to the new class. 
+In Python, you use the class keyword followed by the name of the new class and the name of the class it is inheriting from in parentheses. 
+The new class is called the child class or derived class and the existing class is the parent class or base class. 
+The child class can override or extend the methods and attributes of the parent class. 
+You can also create multiple child classes that inherit from the same parent class. 
+It is helpful to use inheritance when you want to avoid repeating code and when you want to create a class that is similar to an existing class, but with some differences.
+
+
+Polymorphism is a feature of inheritance that allows a method to behave differently depending on the object it is called on. 
+In the example provided, the method draw() is used to render different shapes on the screen, with each shape having its own implementation of the method. 
+This allows the code to iterate through a list of shapes and call the draw() method on each one, without needing to know the specific type of shape being drawn. 
+Polymorphism allows for more flexible and efficient code, as it allows the same method to be used on different objects without the need for separate method names or conditional statements to handle each object type.
+
+
+Inheritance is a feature of object-oriented programming that allows you to create useful and powerful class hierarchies by merging data and behavior relevant to that data into classes. 
+Polymorphism is the ability to call a method of multiple objects by the same method name and get different behavior depending on which object is called. 
+Membership is a way to include attributes and behavior into classes by creating custom classes to be used as attributes, which is known as composition. 
+The Color class is an example of composition, as it is connected to the Shape class as a composite and provides a consistent abstraction for color in the application. 
+The Color class has a class-level definition for the colors supported and has a mechanism to allow only defined colors to be set.
+
+
+Inheritance is a feature of object-oriented programming that allows you to create useful and powerful class hierarchies. 
+Polymorphism is a feature of inheritance that allows you to call a method of multiple objects by the same method name, but get different behavior depending on which instance of an object is called. 
+Composition is a way to include attributes and behavior into classes without using inheritance. 
+The Color class was added to the Shape class using composition to provide a consistent abstraction for color in the application. 
+The Shape class now has a HAS-A relationship with the Color class, meaning it has Color attributes but is not a Color itself. 
+Running the updated application produces a screen with three shapes bouncing around the window and changing colors.
+
+
+#Groupe 7
+In this chapter, the concept of classes in object-oriented programming was introduced. 
+Class hierarchies were created using inheritance, where child classes inherit attributes and behavior from parent classes. 
+Polymorphism was also explained, which allows calling a method of multiple objects by the same method name, but getting different behavior depending on which instance of an object is called. 
+Composition was introduced as an alternative to inheritance, which allows including attributes and behavior in classes without creating contrived hierarchies. 
+Classes provide a way to reuse code and create clear APIs for users, as well as create namespaces and control scope.

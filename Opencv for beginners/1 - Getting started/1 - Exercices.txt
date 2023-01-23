@@ -1,0 +1,19 @@
+Exercise:
+
+Read the image "Apollo-8-Launch.jpg" using the imread() function and store it in a variable called "image".
+Display the image using the imshow() function from matplotlib.
+Save the image to the file system as a PNG file using the imwrite() function.
+Read the saved image from the file system and store it in a variable called "image_png".
+Display the saved image using the imshow() function from matplotlib.
+
+To complete the exercise, you will need to use the following functions:
+
+cv2.imread()
+plt.imshow()
+cv2.imwrite()
+Remember to import the necessary libraries and modules.
+
+Here is the code that you can use to check your solutions:
+
+Solutio: 1.py
+

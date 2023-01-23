@@ -1,0 +1,102 @@
+
+#groupe 1
+pixel ops: operations that modify individual pixels in an image.
+imread(): a function in OpenCV that reads an image file and returns an image array.
+cv2.IMREAD_GRAYSCALE: a flag in the imread() function that specifies to read the image as grayscale.
+plt.imshow(): a function in matplotlib that displays an image array.
+numpy array: a multi-dimensional array used to store data in Python, often used to represent images.
+matrix notation: a way of accessing and modifying elements in a numpy array by specifying the row and column indices.
+copy(): a function in numpy that returns a copy of an array.
+numpy array slicing: a way of selecting a subset of elements from an array using indices.
+plt.imshow(): a function in matplotlib that displays an image array.
+
+
+#groupe 2
+Pixel Ops: A method of modifying individual pixels in an image using matrix notation, such as matrix[r, c], where r is the row number and c is the column number.
+
+Cropping Images: Selecting a specific region of an image. This can be done by specifying the pixel indexes for the region to be included in the cropped image.
+
+Resizing Images: Changing the size of an image using the resize() function in OpenCV. The function takes the input image and the desired output size as arguments. Optional arguments include fx and fy, which specify the scaling factor along the horizontal and vertical axes, respectively.
+
+imread(): A function in OpenCV used to read an image from a file. The function takes the file path and a flag indicating the color format of the image as arguments.
+
+IMREAD_GRAYSCALE: A flag used in the imread() function to indicate that the image should be read as grayscale.
+
+copy(): A function in NumPy used to make a copy of an array.
+
+cvtColor(): A function in OpenCV used to convert an image from one color space to another. The function takes the input image and the desired output color space as arguments.
+
+IMREAD_COLOR: A flag used in the imread() function to indicate that the image should be read in the BGR color format.
+
+merge(): A function in OpenCV used to combine multiple images or image channels into a single image. The function takes a tuple of images or channels as an argument.
+
+resize(): A function in OpenCV used to resize an image. The function takes the input image and the desired
+
+
+
+#groupe 3
+Pixel ops: a set of operations that allow you to access and modify individual pixels in an image.
+Cropping images: the process of selecting a specific region of an image.
+Resizing images: the process of changing the size of an image using the resize() function. The size and type of the output image are determined by the src, dsize, fx, and fy arguments.
+Flipping images: the process of reversing an image along one or more axes using the flip() function. The flipCode argument specifies which axes to flip along.
+imread(): a function in OpenCV that reads an image from a file and returns it as a NumPy array.
+imwrite(): a function in OpenCV that saves an image to a file.
+cvtColor(): a function in OpenCV that converts an image from one color space to another.
+copy(): a NumPy function that creates a copy of an array.
+resize(): a function in OpenCV that resizes an image.
+flip(): a function in OpenCV that flips an image along one or more axes.
+plt.imshow(): a function in matplotlib that displays an image.
+shape: a property of a NumPy array that returns its dimensions.
+dsize: a required argument in the resize() function that specifies the size of the output image.
+fx and fy: optional arguments in the resize() function that specify scaling factors along the horizontal and vertical axes
+
+
+5. Exercise
+Please complete the code in the cells below.
+
+img = cv2.imread('New_Zealand_Boat.jpg', cv2.IMREAD_COLOR)
+plt.figure(figsize=[3,3])
+plt. imshow(img[:, :, ::-1]);
+
+# Crop the image to extract the region around the sale boat.
+# YOUR CODE HERE
+
+# Resize the image up by a factor of 2x.
+# YOUR CODE HERE
+
+# Flip the cropped/resized image horizontally.
+# YOUR CODE HERE
+
+# Display the final result.
+# YOUR CODE HERE
+# plt. figure(figsize = [5, 5])
+
+# Read the image as a color image
+img = cv2.imread('New_Zealand_Boat.jpg', cv2.IMREAD_COLOR)
+
+# Crop the image to extract the region around the sail boat
+cropped_img = img[200:550, 400:800]
+
+# Resize the image up by a factor of 2x
+resized_img = cv2.resize(cropped_img, None, fx=2, fy=2)
+
+# Flip the cropped/resized image horizontally
+flipped_img = cv2.flip(resized_img, 1)
+
+# Display the final result
+plt.figure(figsize=[5,5])
+plt.imshow(flipped_img[:, :, ::-1])
+
+
+Here's a brief explanation of the code:
+
+The image is first read using cv2.imread(). The cv2.IMREAD_COLOR flag specifies that the image should be read as a color image.
+
+The image is then cropped to extract the region around the sail boat. This is done using numpy array slicing.
+
+The cropped image is then resized using the cv2.resize() function. The fx and fy parameters specify the scaling factor along the horizontal and vertical axes, respectively.
+
+The resized image is then flipped horizontally using the cv2.flip() function. The 1 parameter specifies that the image should be flipped along the horizontal axis.
+
+Finally, the flipped image is displayed using plt.imshow(). The [:,:,::-1] indexing is used to convert the image from BGR to RGB format, which is required for proper display using matplotlib.
+

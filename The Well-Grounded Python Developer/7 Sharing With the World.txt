@@ -1,0 +1,275 @@
+
+#groupe 1
+
+Exception: An event that occurs when a problem or error occurs while a program is running.
+Handling exceptions: The process of responding to and managing exceptions that occur while a program is running.
+Raising exceptions: The process of intentionally causing an exception to occur in a program.
+Custom exceptions: User-defined exception classes that can be raised in a program.
+MyBlog: A web-based Python application that provides tools for users to create and view blog posts and comments.
+Registered users: Users who have signed up for a MyBlog account and can post content and comments.
+Administration users: Users who have special privileges to mark content and comments as inactive.
+
+#groupe 2
+What is MyBlog?
+MyBlog is a web application for sharing thoughts and work.
+
+What can users do with MyBlog?
+Users can join a blogging community, create and view blog posts, and comment on them.
+
+What can registered users do with MyBlog?
+Registered users can post content using markdown, mark their own content as inactive, and comment on posts.
+
+What can administration users do with MyBlog?
+Administration users can mark any content or comments as inactive.
+
+Why is MyBlog a good way to share work?
+MyBlog is a way to show off the skills involved in creating a web application with a variety of features.
+
+
+#groupe 3
+
+Exceptions: événements qui se produisent lorsqu'il y a un problème dans un programme
+Gestion des exceptions: prendre une action lorsqu'une exception se produit
+Lever des exceptions: provoquer intentionnellement une exception
+Exceptions personnalisées: créer vos propres exceptions pour des fins spécifiques
+MyBlog: une application Web pour créer et partager des billets de blog
+Avantages des applications Web: facile à distribuer, emplacement central pour les mises à jour et les changements, interface utilisateur disponible via les navigateurs Web
+Serveur Web: un ordinateur qui sert du contenu Web aux utilisateurs
+Application GUI: un type d'application avec une interface utilisateur graphique
+Navigateur Web: un programme utilisé pour accéder à Internet et afficher du contenu Web
+
+
+#groupe 4
+MyBlog is a web application that allows users to create and share blog posts
+MyBlog uses markdown for styling and allows registered users to comment on posts
+Administration users can mark content or comments as inactive
+Registered users can mark their own content as inactive
+The MyBlog project was chosen because it builds on the topics covered in previous chapters and is easy to share with others
+A web application has advantages over other types of applications because it can be centrally located and updates are immediately available to all users
+A web application also takes advantage of web browsers, which are installed on most computers and can be used to create powerful user interfaces
+Creating a web application also involves working with HTML, CSS, and JavaScript code files, and may not have direct access to hardware and computing power like a desktop application
+However, the performance gap between desktop and web-based applications is closing and web-based systems are widely accepted as a method of delivering applications
+The goal of MyBlog is not to create a groundbreaking blog, but to understand the intent of a blog application and think like a developer to bring the necessary parts together to create it
+
+
+#groupe 5
+
+Exceptions: events that occur when something goes wrong in a program
+Handling exceptions: taking action when an exception occurs
+Raising exceptions: causing an exception to occur on purpose
+Custom exceptions: creating your own exceptions for specific purposes
+MyBlog: a web application for creating and sharing blog posts
+Web application benefits: easy to distribute, central location for updates and changes, user interface available through web browsers
+Web server: a computer that serves web content to users
+GUI application: a type of application with a graphical user interface
+Web browser: a program used to access the internet and view web content
+Server: an application running on a computer providing functionality to other applications across a network
+Client-server model: multiple applications accessing the functionality of a central server
+
+#groupe 6
+
+Request-response model: a server implementation where the client application makes a request to the server, which processes the request and returns a response.
+HTTP request: a request made by a client browser to a server for a response, often a stream of text representing an HTML page.
+Client browser: a software application used to access and view websites.
+HTTP response: the response from the server to a client browser's HTTP request, often an HTML page.
+HTML: a markup language used to structure and format web pages.
+CSS: a style sheet language used to describe the look and formatting of a document written in HTML.
+JavaScript: a programming language used to create interactive effects on websites.
+Client-server communication: the exchange of information between a client application and a server.
+
+
+#groupe 7
+
+Flashcard 1:
+
+Term: request/response model
+Definition: A type of server implementation where a client application makes a request to the server, and the server processes the request and returns a response
+Flashcard 2:
+
+Term: web server
+Definition: An application that responds to HTTP requests from a client application, such as a web browser
+Flashcard 3:
+
+Term: web browser
+Definition: A client application that makes requests to a web server, interprets the responses, and displays them on the screen
+Flashcard 4:
+
+Term: HTML
+Definition: A markup language used to create and structure web pages; often sent to a web browser as a response from a web server
+Flashcard 5:
+
+Term: CSS
+Definition: A style sheet language used to describe the look and formatting of a document written in HTML; embedded in HTML documents and accessed via additional requests to the web server
+Flashcard 6:
+
+Term: JavaScript
+Definition: A programming language that is executed in the client's web browser; used to create dynamic web pages and handle user actions
+
+
+#groupe 8
+
+HTTP: a protocol for communicating between clients and servers on the World Wide Web.
+HTTP request: a message sent from a client to a server to request information or data.
+HTTP response: a message sent from a server to a client in response to a request.
+Host: the domain and port number of the server that the client is requesting information from.
+Accept: the format that the client prefers the server to provide the response in.
+CR-LF: a carriage return and line feed character that indicates the end of a request or response header.
+URL: a Uniform Resource Locator that uniquely identifies the location of a resource on the Internet.
+Client: a computer or device that sends an HTTP request to a server.
+Server: a computer or device that receives an HTTP request and sends an HTTP response.
+File system: a way of organizing and storing files on a computer.
+Logical hierarchy: a structure that organizes information or data in a logical way.
+File resource: a file that can be accessed by a client through an HTTP request.
+File path: the location of a file on a file system.
+Logical path: a path that is used to navigate through a logical hierarchy, rather than a physical file system.
+
+
+#groupe 9
+
+HTTP request: a request made by a client application to a web server using the HTTP protocol
+HTTP response: a response from a web server to a client application's HTTP request
+HTTP method: the action to be performed on a resource specified in an HTTP request, such as GET to retrieve a resource or POST to submit data to a resource
+HTTP header: additional information included in an HTTP request or response, such as the client's acceptable response types or the server's location
+URL (Uniform Resource Locator): a string that identifies a specific resource on the internet, including the protocol, domain, and path to the resource
+DNS (Domain Name Server): a network service that translates a domain name into an IP address
+Port: a logical communication endpoint used by networking protocols to identify a specific process or service
+Suffix: a short string appended to a domain name to identify the type of organization or use of the domain
+Flask: a lightweight web application framework for Python that allows for the creation of dynamic web applications using Python code
+
+#groupe 10
+
+Flask: A lightweight web application framework for Python, which provides mechanisms and plumbing for Python to be used as a web application server and create useful applications that perform and scale well.
+Python Package Index (PyPI): A repository of software for the Python programming language, where third-party modules such as Flask can be found and installed using the pip utility.
+Django: A free and open-source web framework written in Python, used for building web applications quickly.
+Bottle: A fast, simple, and lightweight micro web-framework for Python.
+Pyramid: A web framework for Python, which aims to be flexible and easy to use.
+TurboGears: A web framework for Python, which allows developers to quickly build web applications.
+CherryPy: A web application framework for Python, which aims to be fast and easy to use.
+Learning curve: The amount of time and effort required to learn and become proficient in using a new tool or framework.
+Integration: The process of combining different software components or systems to work together.
+Database: A system for storing and organizing data, often in the form of tables with rows and columns.
+Authentication: The process of verifying the identity of a user or system.
+Authorization: The process of granting access to resources or actions based on a user's identity and permissions.
+Form creation: The process of creating a form, which is a template used to collect information from users.
+
+
+#groupe 11
+
+HTTP requests: A request made by a client application to a server to retrieve or process data.
+Flask: A lightweight web application framework for Python, used to create web applications that perform and scale well.
+Virtual environment: A separate Python environment, used to keep the dependencies for different projects separate.
+Development mode: A mode in which a web server is running, which is not suitable for production (meaning it is not suitable for public use).
+Localhost: An IP address (127.0.0.1) that refers to the current device being used.
+Port number: A number between 0 and 65535 that identifies a specific process to which data is to be sent once it has arrived at the host machine.
+HTTP status code: A numerical status code that is returned by a server in response to an HTTP request, indicating whether the request was successful or not.
+MyBlog application: The name of a hypothetical web application being used as an example in this text.
+
+
+Web server: a computer that serves web content to users
+Client-server model: a arrangement of multiple applications accessing the functionality of a central server
+Virtual environment: a tool to keep the dependencies required by different projects in separate places, by creating virtual Python environments for them
+Flask: a microweb framework written in Python
+Development mode: a mode for running a web server that is not suitable for production use
+Production: running a web server so it's publicly available
+Loopback interface: a virtual network interface in a computer's network stack that serves as a connection to itself
+Port: a number used to identify a specific process to which data is to be sent once it has arrived at the host machine
+HTTP status code: a numerical code that is returned by a server to a client to indicate the status of the requested resource
+Web browser: a program used to access the internet and view web content
+
+Modify the code to change the "Hello World!" message to something else.
+Solution:
+
+from flask import Flask
+
+app = Flask(name)
+
+@app.route("/")
+defhome():
+return "Hello, Python!"
+
+Add a new route to the web server that displays a different message.
+Solution:
+
+from flask import Flask
+
+app = Flask(name)
+
+@app.route("/")
+def home():
+return "Hello, Python!"
+
+@app.route("/greet")
+def greet():
+return "Hello, World!"
+
+Modify the code to run the web server on a different IP address and port number.
+Solution:
+
+from flask import Flask
+
+app = Flask(name)
+
+@app.route("/")
+def home():
+return "Hello, Python!"
+
+if name == "main":
+app.run(host="0.0.0.0", port=8080)
+
+Add a new route that displays the current date and time.
+Solution:
+
+import datetime
+from flask import Flask
+
+app = Flask(name)
+
+@app.route("/")
+def home():
+return "Hello, Python!"
+
+@app.route("/time")
+def show_time():
+now = datetime.datetime.now()
+return "The current date and time is: " + str(now)
+
+Exercise 1:
+
+What is the purpose of the FLASK_ENV environment variable in the Flask application?
+
+Solution:
+
+The FLASK_ENV environment variable sets the environment in which the Flask application will run. This can be either "development" or "production". In development mode, Flask enables debugging and reloading of the application when code changes. In production mode, Flask disables debugging and reloading and is optimized for performance.
+
+Exercise 2:
+
+How do you set the FLASK_ENV environment variable to "development" in a Windows environment?
+
+Solution:
+
+To set the FLASK_ENV environment variable to "development" in a Windows environment, you can use the following command:
+
+set FLASK_ENV=development
+
+Exercise 3:
+
+What is the purpose of the FLASK_APP environment variable in the Flask application?
+
+Solution:
+
+The FLASK_APP environment variable specifies the name of the Flask application. It should be set to the name of the Python file that contains the Flask application instance. For example, if your Flask application is stored in a file named "app.py", you would set the FLASK_APP environment variable to "app.py".
+
+Exercise 4:
+
+How do you set the FLASK_APP environment variable to "app.py" in a Mac or Linux environment?
+
+Solution:
+
+To set the FLASK_APP environment variable to "app.py" in a Mac or Linux environment, you can use the following command:
+
+export FLASK_APP=app.py
+
+
+
+
+

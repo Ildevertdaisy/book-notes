@@ -1,0 +1,6 @@
+Dans cette première partie, nous allons explorer GraphQL. GraphQL est une "langue" que les consommateurs d'API peuvent utiliser pour demander des données. 
+Dans le chapitre 1, vous découvrirez exactement ce qu'est GraphQL, quels problèmes il résout et quels problèmes il crée. 
+Vous étudierez les concepts de conception derrière lui et comment il diffère des alternatives, comme les API REST. 
+Dans le chapitre 2, nous allons explorer l'aire de jeux interactive de GraphQL, qui permet d'explorer ce que vous pouvez faire avec GraphQL et d'écrire et de tester des demandes GraphQL. 
+Dans le chapitre 3, nous allons vous présenter les nombreuses fonctionnalités intégrées de la langue GraphQL qui vous permettent de personnaliser et d'organiser les demandes et les réponses de données. 
+Vous apprendrez à propos de champs et d'arguments, d'aliases, de directives, de fragments, d'interfaces et de unions.

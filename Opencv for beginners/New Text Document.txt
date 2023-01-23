@@ -1,0 +1,103 @@
+
+#groupe 1
+Read Grayscale Image as "Color"
+OpenCV function cv2.imread() reads an image file into memory and returns it as a NumPy array.
+The function has two required arguments: the file path and the image read mode.
+The image read mode specifies how the image should be read and interpreted. cv2.IMREAD_COLOR reads the image as a color image, even if the original image is grayscale.
+Annotating images requires them to be read as color images, even if the original image is grayscale.
+Define Colors for Annotations
+In OpenCV, colors are represented as tuples of three 8-bit integers, representing blue, green, and red channels respectively.
+For example, (0, 255, 255) is yellow, (0, 0, 255) is red, (255, 0, 255) is magenta, and (0, 255, 0) is green.
+
+#groupe 2
+Pixel Ops:
+Pixel ops refers to operations that are performed on individual pixels in an image.
+In OpenCV, images are represented as NumPy arrays, and pixels can be accessed and modified using matrix notation (e.g. matrix[r, c], where r is the row number and c is the column number).
+Examples of pixel ops include reading an image as grayscale, accessing and modifying individual pixels, and displaying an image.
+Cropping Images:
+Cropping an image in OpenCV refers to selecting a specific region of the image.
+This is achieved by specifying the row and column indices of the region to be cropped.
+Example: cropped_region = img[20:420, 150:600]
+Resizing Images:
+The resize() function in OpenCV is used to resize an image.
+The size and type of the output image can be specified using the src, dsize, fx, and fy arguments.
+Optional arguments include fx (scale factor along the horizontal axis) and fy (scale factor along the vertical axis).
+Flipping Pictures:
+The flip() function in OpenCV is used to flip an image horizontally, vertically, or both.
+The flipCode argument specifies the direction of the flip (e.g. 0 for horizontal flip, 1 for vertical flip, -1 for both).
+Annotating Images:
+OpenCV provides functions for annotating images, such as drawing lines, circles, rectangles, and adding text.
+Colors for annotations can be specified using a tuple of (B, G, R) values.
+The line() function is used to draw a line on an image, and takes arguments for the image, start and end points of the line, color, and optional arguments for thickness and line type.
+The circle() function is used to draw a circle on an image, and takes arguments for the image, center point of the circle, radius, color, and optional arguments for thickness and line type.
+The rectangle() function is used to draw a rectangle on an image, and takes arguments for the image, top-left and bottom-right points of the rectangle, color, and optional arguments for thickness and line type.
+The putText() function is used to add text to an image, and takes arguments for the image, text to be added, bottom-left starting point, font, scale, color, and optional arguments for thickness and line type.
+
+
+#groupe 3
+Flashcard 1:
+
+Cropping images: selecting a specific region of an image in OpenCV
+Syntax: cropped_region = img[y1:y2, x1:x2] where img is the original image and (y1, x1) and (y2, x2) are the coordinates of the top-left and bottom-right corners of the desired cropped region
+Flashcard 2:
+
+Resizing images: changing the size of an image in OpenCV
+Syntax: cv2.resize(src, dsize[, dst[, fx[, fy[, interpolation]]]]) where src is the input image, dsize is the desired size of the output image, fx and fy are scale factors, and interpolation specifies the interpolation method to use
+To specify the exact size of the output image, set dsize to a tuple of the desired width and height
+To maintain the aspect ratio while resizing, set one of the dimensions to None and specify the other dimension and the corresponding scale factor (fx or fy)
+Flashcard 3:
+
+Flipping images: reversing the orientation of an image in OpenCV
+Syntax: cv2.flip(src, flipCode[, dst]) where src is the input image and flipCode is a flag that specifies how to flip the image (0 for horizontal flip, 1 for vertical flip, or -1 for both)
+Flashcard 4:
+
+Drawing lines: adding a line to an image in OpenCV
+Syntax: cv2.line(img, pt1, pt2, color[, thickness[, lineType[, shift]]]) where img is the output image, pt1 and pt2 are the coordinates of the start and end points of the line, color is the color of the line, thickness is the thickness of the line, and lineType is the type of line (e.g. cv2.LINE_8 or cv2.LINE_AA)
+
+
+#groupe 5
+Term: Display resized (2x) cropped region
+Definition: A command to show an image that has been cropped to a specific region and resized to be twice its original size.
+
+Term: Method 2: Specifying Exact Size of the Output Image
+Definition: A way to resize an image by specifying the exact dimensions for the output image.
+
+Term: Method 3: Resize Dimension while Maintaining Aspect Ratio
+Definition: A way to resize an image by specifying the desired width and automatically adjusting the height to maintain the aspect ratio.
+
+Term: Flipping Pictures
+Definition: A process of changing the orientation of an image by reversing its rows or columns, or both.
+
+Term: Drawing a Line
+Definition: A process of adding a line to an image using the cv2.line() function in OpenCV.
+
+Term: Drawing a Circle
+Definition: A process of adding a circle to an image using the cv2.circle() function in OpenCV.
+
+Term: Drawing a Rectangle
+Definition: A process of adding a rectangle to an image using the cv2.rectangle() function in OpenCV.
+
+Term: Adding Text
+Definition: A process of adding text to an image using the cv2.putText() function in OpenCV.
+
+
+#groupe 6
+Exercice
+# Read in the image ('Apollo-11-launch.jpg').
+image = cv2.imread('Apollo-11-launch.jpg', cv2.IMREAD_COLOR)
+
+# Add the following text to the dark area at the bottom of the image (centered on the image):
+# 'Apollo 11 Saturn V Launch, July 16, 1969'.
+text='Apollo 11 Saturn V Launch, July 16, 1969'
+font_face = cv2.FONT_HERSHEY_PLAIN
+
+# Use putText() to add the text to the image
+image = cv2.putText(image, text, (image.shape[1]//2, image.shape[0]-20), font_face, 1, (255,255,255), 2, cv2.LINE_AA)
+
+# Draw a magenta rectangle that encompasses the launch tower and the rocket.
+rect_color=magenta
+image = cv2.rectangle(image, (200, 100), (600, 400), rect_color, thickness = 3, lineType = cv2.LINE_8)
+
+# Display the final annotated image
+plt.figure(figsize=[12, 12])
+plt.imshow(image[:,:,::-1]);

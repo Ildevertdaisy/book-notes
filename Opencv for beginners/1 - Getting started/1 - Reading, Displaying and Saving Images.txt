@@ -1,0 +1,103 @@
+#Group 1
+
+Flashcard 1:
+
+Definition: Displaying images directly in the browser
+
+Term: IPython Image() function
+
+Flashcard 2:
+
+Definition: Reading and displaying an image with a single command
+
+Term: IPython Image() function
+
+Flashcard 3:
+
+Definition: Displaying images with the actual size faithfully rendered
+
+Term: IPython Image() function
+
+Flashcard 4:
+
+Definition: Displaying images within a Jupyter notebook
+
+Term: IPython Image() function
+
+Flashcard 5:
+
+Definition: Displaying images within a python script
+
+Term: imshow() function from OpenCV
+
+Flashcard 6:
+
+Definition: Displaying images within a Jupyter notebook
+
+Term: imshow() function from matplotlib
+
+
+#Group 2
+
+cv2.imread: a function in OpenCV that reads an image and stores it in a 2D NumPy array.
+filename: the path to the image file. Can be absolute or relative.
+flags: optional argument that specifies how to read the image (e.g. as grayscale, color, with alpha channel).
+cv2.IMREAD_GRAYSCALE: flag to read an image in grayscale mode.
+cv2.IMREAD_COLOR: flag to read a color image. Transparency is neglected.
+cv2.IMREAD_UNCHANGED: flag to read an image using its original channels, which could include the alpha channel.
+bw_img.shape: attribute of a NumPy array that returns the size of the image as a tuple (rows, columns).
+bw_img.dtype: attribute of a NumPy array that returns the data type of the image.
+Image(): function in IPython that displays an image in the browser (e.g. Jupyter notebook).
+imshow(): function in matplotlib that displays an image in a window.
+
+#group3
+
+Flashcards:
+
+Image Coordinates: The coordinate system used to represent image pixel data, where the origin is in the upper left corner of the image, the width is measured along the x-axis, and the height is measured along the y-axis.
+NumPy Array: A 2D matrix where the first index position corresponds to the y-axis and the second index position corresponds to the x-axis.
+Coordinate System: A system used to specify the position of an object in space.
+X-axis: The horizontal direction in a coordinate system.
+Y-axis: The vertical direction in a coordinate system.
+Point(x,y): A pixel coordinate specified in standard mathematical notation, where x represents the horizontal position and y represents the vertical position.
+
+
+#group4
+
+Flashcards:
+
+imread: a function in OpenCV that reads different types of images (JPG, PNG, etc.) and stores them in 2D NumPy arrays. Can read images as grayscale, color, or with an alpha channel.
+cv2.IMREAD_GRAYSCALE or 0: a flag used in the imread function to load the image in grayscale mode.
+cv2.IMREAD_COLOR or 1: a flag used in the imread function to load the image in color mode. Any transparency of the image will be ignored. This is the default flag.
+cv2.IMREAD_UNCHANGED or -1: a flag used in the imread function to load the image using its original channels, which may include the alpha channel.
+imshow: a function in matplotlib that displays an image stored in a 2D NumPy array. Can set a specific color map by passing an optional argument to the function.
+plt.figure: a function in matplotlib that sets the size of the displayed image.
+rc: a function in matplotlib that sets the color map globally. Can be used to avoid specifying a specific color map each time imshow is called.
+
+#group5
+
+Flashcards:
+
+Term: imread()
+Definition: A function in OpenCV used to read images. It has 1 required input argument (filename) and one optional flag (flags) which determines how the image is read (grayscale, color, etc.).
+
+Term: imshow()
+Definition: A function in matplotlib used to display images stored in a 2D NumPy array. It has 1 required input argument (image array) and one optional argument (colormap) to specify how the image should be displayed.
+
+Term: imwrite()
+Definition: A function in OpenCV used to save an image to the filesystem. It has 2 required input arguments: a filename and an image array. The image format is determined by the filename extension.
+
+Term: colormap
+Definition: A list of colors used to map the values of an image array to the colors of a display. Matplotlib uses different colormaps to interpret pixel intensities when displaying images.
+
+Term: image array
+Definition: A 2D NumPy array that stores the pixel data of an image. The size of the array is determined by the width and height of the image and the data type is typically 8-bit unsigned integers (uint8). The intensity values of the pixels can range from 0 (pure black) to 255 (pure white).
+
+Term: grayscale image
+Definition: An image that consists of only shades of gray and does not contain any color information. Grayscale images are typically stored in a 2D NumPy array where each element represents the intensity of the pixel.
+
+Term: color image
+Definition: An image that contains color information and is typically stored in a 3D NumPy array where the depth is three (one channel for each color: red, green, and blue).
+
+Term: image coordinates
+Definition: The position of a pixel in an image. The coordinate system used in image processing typically has the origin in the upper left corner of the image and the width of the image is measured along the x-axis and the height along the y-axis.

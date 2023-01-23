@@ -1,0 +1,63 @@
+#groupe 1
+
+Computer Programming: l'ensemble des activités liées à l'écriture de programmes informatiques
+Formal languages: des langages formels utilisés pour décrire des idées, en particulier des calculs
+Problem solving: la capacité à formuler des problèmes, à trouver des solutions de manière créative et à exprimer clairement et précisément ces solutions
+Java: un langage de programmation informatique
+
+
+#groupe 2
+Computer: un appareil qui stocke et traite des données
+Processor (CPU): une unité de traitement qui effectue des calculs simples
+Memory (RAM): une mémoire qui stocke temporairement les informations
+Hardware: l'ensemble des éléments matériels d'un ordinateur, comme le processeur et la mémoire
+Touchscreen: un écran tactile
+Keyboard: un clavier
+Monitor: un moniteur
+Processor: un processeur
+Memory: une mémoire
+Hardware: l'ensemble des éléments matériels d'un ordinateur, comme le processeur et la mémoire
+Processor (CPU): une unité de traitement qui effectue des calculs simples
+Memory (RAM): une mémoire qui stocke temporairement les informations
+
+#groupe 3
+Programming: l'ensemble des activités liées à l'écriture de programmes informatiques
+Instructions: des ordres qui spécifient comment effectuer un calcul sur du matériel informatique
+Computation: un calcul
+Mathematical operations: des opérations mathématiques
+Symbolic computation: un calcul symbolique
+Input: entrer des données à partir du clavier, d'un fichier, d'un capteur ou d'un autre dispositif
+Output: afficher des données à l'écran ou envoyer des données à un fichier ou à un autre dispositif
+Math: effectuer des opérations mathématiques de base comme l'addition et la division
+Decision: vérifier certaines conditions et exécuter le code approprié
+Repetition: effectuer une action de manière répétée, généralement avec une certaine variation
+Subtask: une tâche plus petite et simple qui compose une tâche plus complexe
+
+#groupe 4
+Hello World Program: le premier programme généralement écrit lors de l'apprentissage d'un nouveau langage de programmation, qui affiche simplement "Hello, World!" à l'écran
+Java: un langage de programmation informatique
+Class: une collection de méthodes dans Java
+Method: une séquence nommée de instructions dans Java
+Statement: une instruction qui effectue une action de base dans un programme
+Print statement: une instruction qui affiche un message à l'utilisateur
+Semicolon (;): un signe de ponctuation utilisé pour terminer une instruction dans de nombreux langages de programmation
+Case-sensitive: sensible à la casse, ce qui signifie que la majuscule et la minuscule ne sont pas considérées comme identiques
+Main method: la méthode spéciale qui est exécutée en premier lorsqu'un programme Java est lancé
+Comment: un texte en anglais qui explique le code, ignoré par le compilateur
+Curly braces ({ et }): des accolades utilisées pour grouper des éléments ensemble dans Java
+File: un fichier sur un ordinateur
+
+
+Exercice 1:
+Quel mot manque-t-il pour compléter la phrase suivante? "______class Hello {"
+Solution: public
+
+Exercice 2:
+Quel mot manque-t-il pour compléter la phrase suivante? "public static _____ main(String[] args) {"
+Solution: void
+
+Exercice 3:
+Quel mot manque-t-il pour compléter la phrase suivante? "_____.out.println("Hello, World!");"
+Solution: System
+
+

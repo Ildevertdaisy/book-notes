@@ -1,0 +1,100 @@
+
+#groupe 1
+
+Docker: logiciel de conteneurisation de logiciels
+Conteneurs: exécution d'applications dans un environnement isolé
+Fonctionnalités de base de Docker: exécution d'applications dans des conteneurs
+Contexte: informations de base sur ce qu'est un conteneur et pourquoi il est si léger pour exécuter des applications
+
+#groupe 2
+Conteneurs: exécution d'applications dans un environnement isolé
+Terminal: invite de commande d'un système d'exploitation
+Commande Docker: instruction pour faire exécuter une tâche par Docker
+Image: paquet contenant une application prête à être exécutée dans Docker
+Téléchargement d'image: processus de récupération d'une image depuis un dépôt en ligne
+Conteneur: instance exécutant une image
+Nom de machine: nom unique d'un ordinateur
+Système d'exploitation: logiciel de base d'un ordinateur permettant de gérer les ressources matérielles et de lancer des applications
+Adresse réseau: identifiant unique d'un ordinateur sur un réseau informatique
+
+docker container run: commande pour exécuter une application dans un conteneur
+diamol/ch02-hello-diamol: nom de l'image à utiliser pour exécuter le conteneur
+
+#groupe 3
+Workflow Docker: processus de création, de partage et d'exécution de conteneurs
+Portabilité: possibilité de faire exécuter un conteneur sur n'importe quel ordinateur compatible avec Docker
+Nom de machine: nom unique d'un ordinateur
+Adresse réseau: identifiant unique d'un ordinateur sur un réseau informatique
+Exécution de conteneur: processus d'exécution d'une application dans un conteneur
+Téléchargement d'image: processus de récupération d'une image depuis un dépôt en ligne
+Commande Docker: instruction pour faire exécuter une tâche par Docker
+Image: paquet contenant une application prête à être exécutée dans Docker
+
+docker container run: commande pour exécuter une application dans un conteneur
+diamol/ch02-hello-diamol: nom de l'image à utiliser pour exécuter le conteneur
+
+
+#groupe 4
+Conteneur: exécution d'une application dans un environnement isolé
+Ressources virtuelles: objets logiques gérés par Docker permettant de créer un environnement pour exécuter une application
+Nom de machine: nom unique d'un ordinateur
+Adresse réseau: identifiant unique d'un ordinateur sur un réseau informatique
+Système de fichiers: ensemble de fichiers et dossiers stockés sur un support de stockage
+Windows Registry: base de données contenant les paramètres de configuration de Windows
+Isolation: séparation de différentes applications pour éviter les conflits
+Densité: utilisation au maximum de la capacité de calcul et de la mémoire disponibles
+Machines virtuelles (VM): exécution d'une application dans un environnement simulé par logiciel
+Licences: droits d'utilisation d'un logiciel
+Maintenance: processus de mise à jour et de maintenance d'un logiciel ou d'un matériel
+Efficacité: utilisation au mieux des ressources disponibles
+
+#groupe 5
+Conteneur interactif: conteneur permettant de se connecter à une session de terminal à l'intérieur du conteneur
+Flag: argument supplémentaire passé à une commande
+Image: package contenant tout le contenu et les instructions nécessaires pour exécuter une application dans un conteneur Docker
+Session de terminal: interface de ligne de commande permettant de communiquer avec un ordinateur
+Secure Shell (SSH): protocole de réseau permettant d'établir une connexion sécurisée entre deux ordinateurs
+Remote Desktop Protocol (RDP): protocole de réseau permettant d'afficher l'interface d'un ordinateur à distance sur un autre ordinateur
+Syntaxe: règles de construction d'une commande dans un langage de programmation ou d'interaction avec un ordinateur
+
+docker container run: commande Docker permettant de lancer un conteneur
+docker container run --interactive --tty: commande Docker permettant de lancer un conteneur interactif et de se connecter à une session de terminal à l'intérieur du conteneur
+hostname: commande permettant d'afficher le nom de l'hôte (ordinateur ou conteneur) sur lequel elle est exécutée
+date: commande permettant d'afficher la date et l'heure actuelles sur l'hôte (ordinateur ou conteneur) sur lequel elle est exécutée
+ls: commande permettant de lister les fichiers et dossiers dans le dossier courant (utilisée dans les systèmes d'exploitation basés sur Unix, comme Linux)
+dir: commande permettant de lister les fichiers et dossiers dans le dossier courant (utilisée dans Windows)
+ping: commande permettant de vérifier la connectivité avec un autre ordinateur en envoyant un paquet de données et en affichant le temps de réponse.
+
+
+#groupe 6
+Docker: un logiciel open-source qui permet de développer, tester et déployer des applications de manière rapide et fiable en utilisant des conteneurs.
+Conteneur: une isolation logicielle qui permet à une application de fonctionner avec toutes les ressources dont elle a besoin, y compris des bibliothèques et des outils, sans interférer avec d'autres applications sur la même machine.
+docker container run: une commande utilisée pour exécuter une application dans un conteneur Docker.
+docker container ls: une commande qui affiche la liste des conteneurs en cours d'exécution sur la machine.
+docker container top: une commande qui affiche les processus en cours d'exécution dans un conteneur spécifique.
+docker container logs: une commande qui affiche les journaux générés par une application exécutée dans un conteneur Docker.
+docker container inspect: une commande qui affiche les détails de configuration d'un conteneur Docker.
+
+docker container ls: Affiche les détails de tous les conteneurs en cours d'exécution.
+docker container top: Affiche les processus en cours d'exécution dans le conteneur.
+docker container logs: Affiche les entrées de journal du conteneur.
+docker container inspect: Affiche tous les détails du conteneur.
+docker container run: Exécute un conteneur à partir d'une image.
+docker container: Groupe de commandes pour interagir avec les conteneurs.
+
+
+#groupe 7
+docker container ls: Affiche la liste des containers en cours d'exécution
+docker container ls --all: Affiche la liste de tous les containers, quel que soit leur statut
+Exited container: Container qui n'est plus en cours d'exécution, ne consomme plus de temps CPU ou de mémoire
+docker container run --detach: Exécute un container en arrière-plan
+docker container run --publish: Publie les ports d'un container sur la machine hôte
+
+docker container ls: Affiche la liste des containers en cours d'exécution
+docker container run --detach: Exécute un container en arrière-plan
+docker container run --publish: Publie les ports d'un container sur la machine hôte
+localhost: Adresse IP qui représente la machine hôte sur laquelle est exécutée le container
+port publishing: Permet d'écouter le trafic réseau sur un port de la machine hôte et de le rediriger vers un port du container.
+virtual network: Réseau géré par Docker au sein duquel sont exécutés les containers
+portability: Capacité d'un container à être exécuté de manière identique sur différentes machines, sans se soucier de la configuration de celles-ci.
+

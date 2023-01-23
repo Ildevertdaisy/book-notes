@@ -1,0 +1,101 @@
+#Groupe 1
+
+Software development involves balancing the quality of an application, how fast it can be created, and how much it costs to create. 
+It is not possible to achieve all three at the same time, and trade-offs must be made. 
+Good quality software meets the needs of its users and is reliable, even when things go wrong. 
+Unexpected events in software can be handled by raising exceptions in Python.
+
+
+#Groupe 2
+In Python, exceptions are used to handle unexpected events or errors that occur while a program is running. 
+Exceptions are raised when an error occurs, and Python will look for an exception handler to deal with the exception. 
+If no handler is found, Python will exit the program and print a stack trace, which shows the series of function calls leading to the point where the exception occurred. 
+Exceptions can be raised by dividing by zero, or by trying to convert a string to a floating-point value that cannot be converted.
+
+
+#Groupe 3
+The try statement starts a block of code that could potentially raise an exception. 
+The except statement is used to catch any exceptions that are raised in the try block and assign them to a variable. 
+The else statement is optional and is executed if no exceptions are raised in the try block. 
+The finally statement is also optional and is always executed, regardless of whether an exception is raised or not.
+
+#Groupe 4
+Exceptions are errors or exceptional conditions that occur while a program is running. 
+Handling exceptions in Python involves using a try/except block to intercept and handle exceptions that might be raised by the code in the try block. 
+The except clause is where the exception is intercepted and can be assigned to a variable. 
+The else and finally clauses of the try/except block are optional and are used less frequently in practice. 
+When an exception occurs within the context of a function, it may be possible for the exception handler to make choices within the function's context to retry the operation, make assumptions, or change data to allow the code to continue without raising an exception.
+
+
+#Groupe 5
+Exceptions in Python are used to handle unexpected events during the execution of a program. 
+They can be handled using a try/except block, where code that may raise an exception is placed in the try block and the exception is intercepted and handled in the except block. 
+It is important to decide whether the code can do something useful to handle the exception or if it should be allowed to flow upwards to a higher level of context. 
+Logging the exception and stack trace can be helpful for debugging purposes. 
+In some cases, it may be necessary to exit the program if the exception is fatal.
+
+
+#Groupe 6
+Exceptions in Python are errors or failures that occur while running a program. 
+They can be handled by using try/except blocks in the code. 
+If an exception occurs, it is intercepted and the code in the except block is executed. 
+It is possible to handle exceptions within the context of a function, or allow them to flow up to a higher level of context where decisions can be made about how to handle them. 
+It is also important to inform the user about the status of the application and the events occurring in it, including exceptions.
+
+
+#Groupe 7
+Exceptions are events that happen while running a program that may be errors or not. 
+They can be handled with a try/except block in the code. 
+It is important to handle exceptions properly and inform the user if necessary, but never silently ignore an exception. 
+It is important to log exceptions and their stack traces to help with debugging and inform the user about the problem. 
+Catching a broad scope of exceptions or ignoring exceptions altogether is a sign of a low-quality application.
+
+#Groupe 8
+In Python, exceptions are errors or unexpected events that occur during the execution of a program. 
+They can be handled with a try-except block, which allows the program to continue running even if an exception occurs. 
+It is important to handle exceptions properly, rather than silently ignoring them, as this can provide useful information to both the user and the developer. 
+In the example provided, a program that prompts the user for input and divides two numbers is improved by adding a try-except block to handle exceptions, such as a ZeroDivisionError or ValueError, and provide the user with information on how to proceed. 
+The program also includes an else clause and a finally clause, which are optional but can be useful in certain situations.
+
+Exceptions are unexpected events that occur while a Python program is running. 
+They can be handled by using a try/except block in the program code. 
+The try block contains code that might raise an exception, and the except block handles the exception. 
+The else and finally clauses are optional and are used less often. 
+It's important to allow exceptions to flow upward in the call stack to a higher level of context where they can be handled in a way that makes sense for the program. 
+It's also important to inform the user about the problem and suggest a solution, and to never silence an exception. 
+Logging exceptions can be done using Python's logging module.
+
+Exception handling in Python is done using a try/except block, where the code that might raise an exception is placed in the try block and the handling code is placed in the except block. 
+It is generally recommended to not silence exceptions, and instead handle them only if the code can do something useful about it. 
+Exception handling should be intentional and specific rather than broad and accidental. 
+It is also recommended to inform the user and log the exception and stack trace for debugging purposes.
+
+#Groupe 9
+Exceptions in Python can be handled using a try/except block in code. 
+They can also be raised programmatically in code for certain conditions that are not necessarily errors. 
+An example of this is a function that checks if a user-entered parameter is within a certain range. 
+If the parameter is not within the range, the function raises a ValueError exception and passes the responsibility for handling it to the calling function, which can prompt the user to enter the parameter value again.
+
+
+#Groupe 10
+To summarize, creating custom exceptions allows for better organization and handling of errors in a program. 
+It allows for more specific handling of errors and avoids having to check the error arguments to determine the cause of the error. 
+Custom exceptions can be created by creating a new class that inherits from the built-in Exception class, and raising that custom exception in the appropriate parts of the code.
+
+
+In this example, a custom exception class called OutsideRangeException is created. 
+The range_check_user_input() function raises this exception if the user input is not within the acceptable range. 
+The get_data_from_user() function handles the OutsideRangeException and prompts the user to re-enter a valid number. 
+If any other exception is raised, it is logged using the logging module and the process continues. 
+The program continues to ask the user for input until a valid number within the acceptable range is entered.
+
+
+#Groupe 11
+Exceptions are events that occur when something goes wrong in a program. 
+They allow the program to handle errors and other unexpected situations. 
+Exception handling involves wrapping code that might raise an exception in a try block, and providing an except block to handle the exception if it is raised. 
+It is important to allow exceptions to flow upward to higher-level contexts, where they can be properly handled. 
+Custom exceptions can be created by creating a new class that inherits from the base Exception class. 
+Exception handling is an important tool for developing successful programs that can handle errors and unexpected situations.
+
+

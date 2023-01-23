@@ -1,0 +1,111 @@
+composants de MongoDB => MongoDB Community Edition, MongoDB Compass, MongoDB Atlas, MongoDB Shell et MongoDB Database Tools.
+MongoDB Community Edition => C'est une version gratuite de MongoDB qui s'exécute sur tous les principaux systèmes d'exploitation (Linux, Windows ou macOS).
+MongoDB Compass => C'est une GUI pour la gestion, l'interrogation, l'agrégation et l'analyse de données dans un environnement visuel.
+MongoDB Atlas => C'est la solution de base de données en tant que service de MongoDB qui nous évite des installations manuelles et nous permet de mettre en place une base de données facilement.
+MongoDB Shell => Une ligne de commandes qui nous permet de faire des opérations CRUD et des tâches administratives sur des bases de données.
+MongoDB Database Tools => Ce sont des utilitaires de ligne de commande qui permettent aux administrateurs et aux développeurs d'exporter ou d'importer des données vers et depuis une base de données, de fournir des diagnostics ou de permettre la manipulation de fichiers stockés dans le système GridFS de MongoDB.
+Realm => C'est une plateforme de développement en temps réel pour crée par MongoDB pour construire des applications mobiles ou des applications Internet des objets (IoT).
+
+
+Can you make me flashcards of the most important concepts of this text  with short sentences in the form terms => definitions: 
+
+MongoDB => A NoSQL database management system that uses a document-oriented data model.
+Compass => A GUI tool for MongoDB database management.
+Windows => A computer operating system developed by Microsoft Corporation.
+64-bit => A type of computer architecture that supports more memory and larger data sets than 32-bit architectures.
+Windows network service => A service that runs in the background of a Windows operating system, used to perform tasks or provide resources to other programs.
+Data directory => A location on a computer's storage where data files are stored.
+Log directory => A location on a computer's storage where log files are stored.
+User Account Control (UAC) => A security feature in Windows that prompts users to confirm certain actions that could potentially harm the system.
+Command prompt => A command-line interface for interacting with the operating system.
+cmder => A command-line interface for Windows that provides advanced functionality and customization options.
+show dbs => A command that displays a list of all databases on a MongoDB server.
+C:\Program Files\MongoDB\Server\5.0 => The default directory in Windows where MongoDB stores its database files and executable files.
+MongoDB Database Tools => A group of utilities for managing MongoDB databases.
+ 
+
+MongoDB => A database-as-a-service
+Linux => A operating system that offers numerous benefits for the development and management of local servers
+Ubuntu => A Linux distribution
+Bash shell => A command-line interface for interacting with an operating system
+public key => A key used by the package manager
+package manager => A tool for managing software packages
+systemctl => A process manager for Linux
+mongosh => MongoDB shell command
+
+MongoDB Atlas => A cloud service by MongoDB, which is a database-as-a-service that manages all the hard work and abstracts the majority of operations such as deployment, management, and diagnostics while running on a provider of our choice (AWS, GCP, or Azure).
+Shared Cluster => A type of cluster option that is free on MongoDB Atlas
+Cloud Provider & Region => The location of where the cluster will be hosted, it is advisable to select the region nearest to your geographical location in order to have the fastest response.
+M0 Sandbox => A free tier option that offers shared RAM and 512 MB storage on MongoDB Atlas.
+authentication method => A way to verify the identity of a user, in this case, the option is password.
+built-in roles => a predefined set of privileges that can be assigned to a user.
+
+comma-separated values (CSV) => A file format that stores tabular data in plain-text form, where each line of the file is a data record and each field (column) within that record is separated by a comma.
+Compass => A MongoDB GUI tool that allows for data manipulation and management.
+Collection => A group of MongoDB documents that have a similar structure, stored in a database.
+Import Data button => A button in Compass that allows for the import of data from a file, such as a CSV.
+Connection string => A string of characters that contains all the information required to connect to a MongoDB instance.
+MongoDB drivers => A software library that allows a client to connect and interact with a MongoDB server.
+Motor => A MongoDB driver for Python.
+PyMongo => A MongoDB driver for Python.
+Database Deployments page => A page on MongoDB Atlas that displays all the deployed clusters and allows for the connection to Compass.
+
+
+MongoDB => a document-oriented NoSQL database that stores data in semi-structured BSON format
+query language => a language used to retrieve and manipulate data in MongoDB, based on methods rather than SQL
+find() => A MongoDB query method for finding and selecting documents matching simple or complex criteria
+insertOne() => A MongoDB query method that inserts a new document into the collection
+insertMany() => A MongoDB query method that inserts an array of documents into the collection
+updateOne() and updateMany() => MongoDB query methods that update one or more documents according to some criteria
+deleteOne() and deleteMany() => MongoDB query methods that delete documents from the collection
+MongoDB shell => A command line interface for interacting with a MongoDB server
+ObjectId => A unique identifier assigned to each document in MongoDB, represented as a 12-byte value
+BSON => A binary-encoded serialization of JSON-like documents, used by MongoDB for storing data
+
+
+insertOne() => method for creating new documents in MongoDB
+insertMany() => method for inserting many documents at once in MongoDB
+updateOne() => method for updating the first encountered document with the data provided in the fields
+updateMany() => method for updating multiple documents with a specific criteria
+$set => operator for updating existing properties in MongoDB
+$inc => operator for incrementing the value of a field in MongoDB
+replaceOne() => method for replacing a document in MongoDB
+upsert => parameter for updateOne() method, creates a new document if it doesn't exist.
+atomic operation => property of MongoDB, ensures that the first update to reach the server is applied.
+ID => using the document's ID is generally recommended when updating single documents.
+
+insertOne() => method for creating new documents in MongoDB
+insertMany() => method for inserting multiple documents in MongoDB
+updateOne() => method for updating the first encountered document with the data provided in the fields
+updateMany() => method for updating many documents
+deleteMany() => method for deleting multiple documents based on a filter
+deleteOne() => method for deleting a single document based on a filter
+drop() => method for deleting a collection and all documents in it.
+
+Cursors => A cursor is a MongoDB object that enables you to perform operations on the results of a query, such as limiting the number of results, ordering by one or more keys, and skipping records. The find() method returns a cursor, but the actual iteration through the cursor is executed in a particular and customized way through the use of a language driver.
+
+Chaining => Chaining is a technique that enables a developer to apply several operations on a cursor and return a fine-tuned result set. It's similar to jQuery or D3.js, it allows to chain multiple methods on cursor like sort, limit, and projection to fine-tune the query results.
+
+Aggregation Framework => MongoDB aggregation framework is a powerful tool that enables developers to offload some of the computing burden of making calculations and aggregations of varying complexity to the MongoDB server. It's especially useful for building analytics charts showcasing prices, years, brands, and models.
+
+
+MongoDB: A database management system that uses a document-oriented model to store data
+insertOne(): A method used in MongoDB to create new documents in a database
+insertMany(): A method used in MongoDB to create multiple new documents in a database at once
+updateOne(): A method used in MongoDB to update the first encountered document in a database
+updateMany(): A method used in MongoDB to update multiple documents in a database
+replaceOne(): A method used in MongoDB to replace a document in a database
+upsert: A parameter in updateOne() method that allows to check whether the document to be updated exists and then update it, but in the case that no such document exists, the method will create it.
+deleteMany(): A method used in MongoDB to delete multiple documents in a database
+drop(): A method used in MongoDB to delete an entire collection
+Cursor: An object returned by MongoDB's find method that enables us to perform some standard database operations on the returned documents
+Chaining: A technique in MongoDB that allows us to apply several operations on a cursor and returning a fine-tuned result set.
+Aggregation framework: A feature in MongoDB that enables us to perform data processing in different stages or steps and retrieve sets of documents from a collection
+Pipeline: A concept in MongoDB aggregation framework which is an alternative way to retrieve sets of documents from a collection
+Aggregate: A method in MongoDB that performs the aggregation pipeline and takes a list of stages as a parameter
+$match: A stage in MongoDB's aggregation framework that is used to include only a subset of the entire collection
+$group: A stage in MongoDB's aggregation framework that is used to group documents by a specific key
+Accumulator operators: Functions in MongoDB's aggregation framework such as average, count, sum, maximum, minimum, etc. that can be used to perform calculations and aggregations of varying complexity.
+
+Can you make me flashcards of the most important concepts of this text  with short sentences in the form terms => definitions:
+

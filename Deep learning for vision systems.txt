@@ -1,0 +1,23 @@
+Flashcard 1:
+
+Definition: A matrix is a 2D or 3D array of numbers used to represent images in computers.
+
+Term: Matrix
+
+Flashcard 2:
+
+Definition: A grayscale image has one channel and can be represented in a 2D matrix, where each element represents the intensity of brightness of a pixel.
+
+Term: Grayscale image
+
+Flashcard 3:
+
+Definition: A color image has three channels (red, green, blue) and can be represented in a 3D matrix, where the depth is three.
+
+Term: Color image
+
+Flashcard 4:
+
+Definition: Image processing involves performing mathematical operations on images in order to transform or extract information from them.
+
+Term: Image processing

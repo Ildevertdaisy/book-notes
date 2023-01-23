@@ -1,0 +1,301 @@
+
+#groupe 1
+Flashcards:
+
+Term: Reading and displaying images
+Definition: Process of opening and displaying an image on a screen
+
+Term: Accessing image attributes
+Definition: Getting information about an image, such as its size or data type
+
+Term: Matrix representation of an image
+Definition: A way of representing an image as a grid of numbers, using a library like NumPy
+
+Term: Image coordinates
+Definition: A system for specifying the location of pixels in an image
+
+Term: Saving images
+Definition: The process of storing an image file on a computer or other device
+
+Term: IPython Image() function
+Definition: A function that can be used to display an image directly in a Jupyter notebook
+
+Term: imshow() function
+Definition: A function that can be used to display an image in a python script or Jupyter notebook using the matplotlib library
+
+
+Reading and displaying images: process of using OpenCV to read and display images in a Jupyter notebook or python script.
+Accessing image attributes: process of using OpenCV to access information about an image such as its data type and shape.
+Matrix representation of an image in NumPy: representation of an image as a matrix, using the NumPy library in Python.
+Image coordinates: system used to represent the pixel-level data of an image, with the origin at the top-left corner of the image.
+Saving images: process of using OpenCV to save an image to the file system.
+imshow(): function from the matplotlib library in Python used to display an image that has been read into a NumPy array using OpenCV.
+Image(): function from IPython used to read and display an image directly in the browser (notebook).
+
+
+#groupe 2
+OpenCV: a python library used for image processing tasks
+imread(): a function in OpenCV used to read different types of images (JPG, PNG, etc…)
+flags: used to read an image in a particular format (grayscale, color, with alpha channel)
+cv2.IMREAD_GRAYSCALE or 0: loads image in grayscale mode
+cv2.IMREAD_COLOR or 1: loads a color image
+cv2.IMREAD_UNCHANGED or -1: loads image using its original channels, which could include the alpha channel
+shape: the size of an image, represented as a tuple (rows, columns)
+dtype: the data type of an image
+coordinates: system used to represent image pixel data, with origin in upper left corner and width along x-axis and height along y-axis
+imshow(): a function from matplotlib used to display image data as an "image"
+color map: a list of colors used to display an image
+imwrite(): a function in OpenCV used to save an image to file
+cv2.IMWRITE_JPEG_QUALITY: flag to specify JPEG image quality when saving an image
+cv2.IMWRITE_PNG_COMPRESSION: flag
+
+
+#groupe 3
+Term: Grayscale Image
+Definition: An image that consists of only shades of gray, with no color.
+
+Term: Colormap
+Definition: A list of colors that are used to interpret the pixel intensities in an image.
+
+Term: imshow()
+Definition: A function in OpenCV that displays an image in a window.
+
+Term: matplotlib
+Definition: A Python library for creating visualizations of data.
+
+Term: cmap
+Definition: A parameter in the imshow() function that specifies the colormap to use when displaying an image.
+
+Term: 'gray' colormap
+Definition: A colormap that maps pixel intensities to shades of gray.
+
+Term: MNIST_3_img
+Definition: A grayscale image that contains middle tone (gray) values.
+
+Term: cv2.imread()
+Definition: A function in OpenCV that reads an image from a file and stores it in a variable.
+
+Term: cv2.IMREAD_GRAYSCALE
+Definition: A flag in the cv2.imread() function that specifies that the image should be read as a grayscale image.
+
+Term: cv2.imwrite()
+Definition: A function in OpenCV that saves an image to a file.
+
+Term: filename
+Definition: The path and name of the file where the image will be saved.
+
+Term: img
+Definition: The image or images to be saved.
+
+
+#groupe 4
+Term: imread()
+Definition: A function in OpenCV that reads an image from a file and stores it in a variable.
+
+Term: figure
+Definition: A function in matplotlib that creates a new figure window.
+
+Term: figsize
+Definition: A parameter in the figure function that specifies the size of the figure window.
+
+Term: imshow()
+Definition: A function in OpenCV that displays an image in a window.
+
+Term: title
+Definition: A function in matplotlib that adds a title to the figure window.
+
+Term: fontsize
+Definition: A parameter in the title function that specifies the size of the title font.
+
+Term: imwrite()
+Definition: A function in OpenCV that saves an image to a file.
+
+Term: filename
+Definition: The path and name of the file where the image will be saved.
+
+Term: img
+Definition: The image or images to be saved.
+
+
+#groupe 5
+Term: figure
+Definition: A function in matplotlib that creates a new figure window.
+
+Term: figsize
+Definition: A parameter in the figure function that specifies the size of the figure window.
+
+Term: imshow()
+Definition: A function in OpenCV that displays an image in a window.
+
+Term: color channels
+Definition: The channels in an image that represent the colors red, green, and blue.
+
+Term: RGB format
+Definition: A format for storing colors in an image that represents the colors red, green, and blue using three channels.
+
+Term: BGR format
+Definition: A format for storing colors in an image that represents the colors blue, green, and red using three channels.
+
+Term: NumPy array slicing
+Definition: A technique for selecting a subset of elements from an array in NumPy.
+
+Term: channel order
+Definition: The order in which the color channels are stored in an image.
+
+Term: imread()
+Definition: A function in OpenCV that reads an image from a file and stores it in a variable.
+
+Term: cv2.IMREAD_COLOR
+Definition: A flag in the cv2.imread() function that specifies that the image should be read in color.
+
+Term: shape
+Definition: A property of a NumPy array that returns the dimensions of the array.
+
+
+#groupe 6
+Term: alpha channel
+Definition: A channel in an image that contains transparency information, allowing certain regions within the image to appear transparent.
+
+Term: transparency
+Definition: The property of an image that allows certain regions to be see-through or transparent.
+
+Term: alpha masking
+Definition: The process of using an alpha channel to mask certain regions of an image to make them appear transparent.
+
+Term: cv2.IMREAD_UNCHANGED
+Definition: A flag in the cv2.imread() function that specifies that the image should be read with the alpha channel.
+
+Term: shape
+Definition: A property of a NumPy array that returns the dimensions of the array.
+
+Term: figure
+Definition: A function in matplotlib that creates a new figure window.
+
+Term: figsize
+Definition: A parameter in the figure function that specifies the size of the figure window.
+
+Term: imshow()
+Definition: A function in OpenCV that displays an image in a window.
+
+Term: cvtColor()
+Definition: A function in OpenCV that converts an image from one color space to another.
+
+Term: color space
+Definition: A system for representing colors in an image.
+
+Term: src
+Definition: The input image in the cvtColor() function.
+
+Term: code
+Definition: A parameter in the cvtColor() function that specifies the color space conversion to be performed.
+
+
+#groupe 7
+Term: cvtColor()
+Definition: A function in OpenCV that converts an image from one color space to another.
+
+Term: COLOR_BGRA2RGBA
+Definition: A code in the cvtColor() function that specifies that the Blue, Green, Red, and Alpha channels should be converted to Red, Green, Blue, and Alpha channels.
+
+Term: split()
+Definition: A function in OpenCV that divides a multi-channel array into several single-channel arrays.
+
+Term: merge()
+Definition: A function in OpenCV that merges several arrays to make a single multi-channel array.
+
+Term: cv2.imread()
+Definition: A function in OpenCV that reads an image from a file and stores it in a variable.
+
+Term: cv2.IMREAD_COLOR
+Definition: A flag in the cv2.imread() function that specifies that the image should be read in color.
+
+Term: figure
+Definition: A function in matplotlib that creates a new figure window.
+
+Term: figsize
+Definition: A parameter in the figure function that specifies the size of the figure window.
+
+Term: subplot()
+Definition: A function in matplotlib that creates a subplot in a figure window.
+
+Term: imshow()
+Definition: A function in OpenCV that displays an image in a window.
+
+Term: title
+Definition: A function in matplotlib that adds a title to the figure window.
+
+
+#groupe 8
+Term: color space
+Definition: An organization of colors that typically represents the space of all possible human-perceivable colors.
+
+Term: color model
+Definition: A mathematical construct for how to specify colors in a color space with a unique tuple of numbers.
+
+Term: RGB color space
+Definition: A color space that uses a three-dimensional coordinate system to specify the Red, Green, and Blue component colors that represent a unique tuple, and therefore a unique color.
+
+Term: HSV color space
+Definition: A color space that uses a three-dimensional coordinate system to specify the Hue, Saturation, and Value component colors that represent a unique tuple, and therefore a unique color.
+
+Term: cvtColor()
+Definition: A function in OpenCV that converts an image from one color space to another.
+
+Term: COLOR_BGR2HSV
+Definition: A code in the cvtColor() function that specifies that the Blue, Green, and Red channels should be converted to Hue, Saturation, and Value channels.
+
+Term: cv2.split()
+Definition: A function in OpenCV that splits a multi-channel array into several single-channel arrays.
+
+Term: cv2.merge()
+Definition: A function in OpenCV that merges several arrays to make a single multi-channel array.
+
+Term: cv2.COLOR_HSV2RGB
+Definition: A code in the cvtColor() function that specifies that the Hue, Saturation, and Value channels should be converted to Red, Green, and Blue channels.
+
+
+#groupe 9
+imread(): a function in OpenCV that reads an image from a file and returns it as a NumPy array
+imshow(): a function in matplotlib that displays an image on the screen
+cmap: a parameter in imshow() that specifies the color map to use when displaying an image
+cv2.IMREAD_GRAYSCALE: a flag that tells imread() to read the image as grayscale
+plt.figure(): a function in matplotlib that creates a new figure window
+cv2.imwrite(): a function in OpenCV that saves an image to a file
+cv2.imwrite(): a function in OpenCV that converts an image from one color space to another
+cv2.split(): a function in OpenCV that splits a multi-channel image into several single-channel images
+cv2.merge(): a function in OpenCV that merges several single-channel images into a multi-channel image
+cv2.COLOR_BGR2HSV: a constant that specifies the color conversion from BGR to HSV
+cv2.COLOR_HSV2RGB: a constant that specifies the color conversion from HSV to RGB
+
+#groupe 10
+Read the image ('Apollo-11-launch.jpg') using OpenCV imread() as a grayscale image.
+image = cv2.imread('Apollo-11-launch.jpg', cv2.IMREAD_GRAYSCALE)
+
+Print the image width and height.
+print("Image dimensions:", image.shape)
+
+Display the image using matplotlib imshow().
+plt.figure(figsize = [10, 10])
+plt.imshow(image, cmap='gray')
+
+Save the image as a PNG file using OpenCV imwrite().
+cv2.imwrite('Apollo-11-launch.png', image)
+
+
+#groupe 11
+##Solution
+Read the saved image above ('Emerald_Lakes_New_Zealand.jpg') as a color image.
+img = cv2.imread('Emerald_Lakes_New_Zealand.jpg', cv2.IMREAD_COLOR)
+
+Print the image shape.
+print(img.shape)
+
+Convert the image to grayscale using cv2.cvtColor().
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+Print the image shape.
+print(gray.shape)
+
+Display the image using matplotlib imshow()
+plt.figure(figsize = [10, 10])
+plt.imshow(gray, cmap='gray')

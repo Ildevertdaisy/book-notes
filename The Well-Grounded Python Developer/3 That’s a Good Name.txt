@@ -1,0 +1,370 @@
+
+#groupe 1
+
+Keywords: specific words that have special meaning in a programming language, such as "for" or "while" in Python.
+Grammar: the set of rules that define how words and symbols can be combined in a programming language to create a program.
+Syntax: the set of rules that dictate how code should be written in a programming language, including punctuation and spacing.
+Programming languages: languages used to write instructions for a computer to follow, such as Python or Java.
+Cache invalidation: the process of removing outdated data from a cache.
+Naming things: choosing names for variables, functions, and other elements in a program.
+Phil Karlton: a programmer who is credited with the quote about the difficulty of naming things in computer science.
+
+
+#groupe 2
+
+Naming conventions: the rules and guidelines for naming things in a program, including variables, functions, and classes, in order to make the code more readable and maintainable
+UUID (Universally Unique Identifier) and GUID (Globally Unique Identifier): identifiers that are designed to be unique across the entire world, often used to identify things and keep information about them opaque
+
+#groupe 3
+
+Naming Things - the process of giving names to variables, functions, and other elements in a Python program to provide meaning and context for the reader.
+Meta Information - additional information attached to a name that provides context and understanding of how the named thing is used.
+Variable - a named location in a program that can store a value or reference to a value.
+Context - the surrounding information or environment in which something is used or occurs.
+UUID - a unique identifier that is used to identify items in a computer system.
+Typing - the process of inputting text or data into a computer using a keyboard or other input device.
+Looping - the process of repeating a set of instructions multiple times in a program.
+Collection - a group of items or elements.
+Enumerate - a function that returns an iterator containing pairs (index, element) for each element in a given iterable.
+List Comprehension - a concise way to create a list using a single line of code.
+Sum - a function that returns the total of all the elements in a given iterable.
+Part-Time - refers to a type of employment where an employee works fewer hours than a full-time employee.
+fname - a variable that stores a person's first name.
+mname - a variable that stores a person's middle name.
+lname - a variable that stores a person's last name.
+Convention - a set of agreed upon rules or guidelines for how something should be done or organized.
+Typing - the process of inputting text or data into a computer using a keyboard or other input device.
+Monospaced Editing Font - a type of font where each character is given equal horizontal space, resulting in a consistent character width.
+Variable Naming - the process of giving names to variables in a program.
+Typo - a mistake in typing, such as a misspelled word or incorrect punctuation.
+
+
+Exercise 1:
+Which of the following variable names follows the naming convention used in the example code "fname = 'John'"
+
+a) firstname = 'John'
+b) f_name = 'John'
+c) fname = 'John'
+
+Solution: c) fname = 'John'
+
+Exercise 2:
+What is the purpose of the function enumerate() in the following code snippet?
+
+array = [[12, 11, 4], [3, 22, 105], [0, 47, 31]]
+for i, row in enumerate(table):
+for j, item in enumerate(row):
+process_item(i, j, item)
+
+a) To loop over a collection of things
+b) To count things
+c) To add things together
+d) To return an iterator containing pairs (index, element) for each element in a given iterable
+
+Solution: d) To return an iterator containing pairs (index, element) for each element in a given iterable
+
+Exercise 3:
+What is the purpose of the function sum() in the following code snippet?
+
+total_employees = len(employees)
+total_parttime_employees = len([
+employee for employee in employees if employee.part_time
+])
+total_managers = sum([
+employee for employee in employees if employee.manager
+])
+
+a) To loop over a collection of things
+b) To count things
+c) To add things together
+d) To return an iterator containing pairs (index, element) for each element in a given iterable
+
+Solution: c) To add things together
+
+
+
+#groupe 5
+
+Hard Drive - a device that stores digital information, such as files and programs, for use on a computer.
+Operating System - software that manages the hardware and software resources of a computer.
+Directories - a location on a computer's file system where files and other directories can be stored and organized.
+Sub-directories - a directory within another directory, used for organizing files and directories in a hierarchical structure.
+File Name - the name given to a file that identifies it and distinguishes it from other files.
+File Extension - the portion of a file name that follows the last period and indicates the type of file.
+Character Length Limit - a restriction on the number of characters that can be used in a file name.
+File Name Collision - the occurrence of two or more files having the same name in the same directory, which can cause confusion and problems when trying to access the files.
+Naming Convention - a set of agreed upon rules or guidelines for how file names should be structured and organized.
+Granularity - the level of detail or resolution of something, such as a file or directory structure.
+Fully Qualified Date - a date that includes all necessary information, such as the year, month, and day.
+Namespace - a set of identifiers that are used to organize objects of various kinds, so that these objects may be referred to by name.
+
+
+#groupe 6
+
+Namespace - a set of identifiers that are used to organize objects of various kinds, so that these objects may be referred to by name.
+Abstraction - a concept or idea that is separate from the concrete details or instances of it.
+Hierarchy - a system or organization in which people or things are ranked according to status or importance.
+Convention - a set of agreed upon rules or guidelines for how something should be done or organized.
+Mailing Address - a location where mail or packages can be sent or received.
+Leaf Node - a data structure that is at the end of a hierarchy or tree and has no branches or sub-structures.
+
+
+#groupe 7
+
+Namespace - a set of identifiers that are used to organize objects of various kinds, so that these objects may be referred to by name.
+Python - a popular programming language known for its simplicity, readability, and flexibility.
+Variable - a named location in a program that can store a value or reference to a value.
+Collision - the occurrence of two or more elements having the same name or identifier, which can cause confusion and problems when trying to access the elements.
+
+
+#groupe 8
+
+Builtins - the outermost namespace in Python, containing all of the functions that are available at any time.
+Namespace - a set of identifiers that are used to organize objects of various kinds, so that these objects may be referred to by name.
+Python - a popular programming language known for its simplicity, readability, and flexibility.
+Interactive Prompt - a command line interface where users can enter and execute Python commands and statements.
+Dir - a command in Python that returns a list of the attributes and methods of an object.
+Object - a data structure that contains data and methods to manipulate that data.
+Shadowing - the occurrence of two or more elements having the same name or identifier, where the innermost or most recently defined element takes precedence and obscures the others.
+Collision - the occurrence of two or more elements having the same name or identifier, which can cause confusion and problems when trying to access the elements.
+
+
+#groupe 9
+
+Exercise 1:
+
+Write a Python function called "open_file" that takes in a file name as a parameter and opens that file.
+
+Solution:
+
+def open_file(file_name):
+with open(file_name, "r") as f:
+content = f.read()
+return content
+
+Exercise 2:
+
+Write a Python function called "sum_numbers" that takes in a list of numbers and returns the sum of all the numbers in the list.
+
+Solution:
+
+def sum_numbers(numbers):
+total = 0
+for num in numbers:
+total += num
+return total
+
+Exercise 3:
+
+Write a Python function called "count_words" that takes in a string and returns the number of words in that string.
+
+Solution:
+
+def count_words(string):
+words = string.split()
+return len(words)
+
+
+#groupe 10
+
+Flashcards:
+
+Namespace: a container for named things, including other namespaces.
+Builtins namespace: the outermost namespace in Python, containing all the functions that can be accessed at any time.
+Module level: a Python program file that creates a namespace for the objects it contains.
+Import statement: a way to bring objects from a module level namespace into the current namespace.
+Basename: the default name given to a namespace when a module is imported.
+Shadowing: the process of defining a new object with the same name as an existing one, causing the original to be hidden.
+
+namespace: a named space where variables can be created
+function: a block of code that performs a specific task
+module: a file containing Python code that can be imported into other code
+scope: the area of a program in which a variable can be accessed
+local namespace: the namespace within a function where variables can be created and accessed
+module-level namespace: the namespace at the module level, outside of any functions, where variables can be created and accessed
+prefix: a variable initialized with the string "added" in the strings.py module
+strings.add(): a function in the strings.py module that returns a string with the prefix variable and the arguments passed to it
+function level: the level at which a function exists within a module and its namespace
+
+
+Exercise 1:
+
+Write a function that accepts two arguments, a string and an integer. The function should return the string repeated the number of times specified by the integer.
+
+Solution:
+
+def repeat_string(string, times):
+return string * times
+
+Exercise 2:
+
+Write a function that accepts a list of integers and returns the sum of all the odd integers in the list.
+
+Solution:
+
+def sum_odd_integers(int_list):
+return sum([x for x in int_list if x % 2 == 1])
+
+Exercise 3:
+
+Write a function that accepts a dictionary and returns a list of all the values in the dictionary that have a length greater than 5.
+
+Solution:
+
+def long_values(dictionary):
+return [value for value in dictionary.values() if len(value) > 5]
+
+
+#groupe 12
+
+
+Namespace: A container that holds a set of identifiers.
+Scope: The range of accessibility of a variable. It determines where in a program a variable can be used.
+Global scope: A variable that is accessible from anywhere in the program.
+Local scope: A variable that is only accessible within a certain function or block of code.
+Nested scopes: Inner scopes have access to variables in outer scopes, but outer scopes do not have access to inner scopes.
+Variable: A value that can change, and is stored in the computer's memory under a specific name.
+Lifetime: The duration that a variable exists in a program.
+Module: A Python file that contains code, functions, and variables.
+Import: The process of including code, functions, and variables from one module into another module or program.
+
+Exercise 1:
+
+Create a function called "calculate_total" that takes in a list of integers and returns the sum of those integers. Use a descriptive variable name for the list of integers.
+
+Solution:
+
+def calculate_total(numbers):
+total = 0
+for number in numbers:
+total += number
+return total
+
+Exercise 2:
+
+Create a function called "average_age" that takes in a dictionary of names and ages, and returns the average age of the people in the dictionary. Use descriptive variable names for the dictionary and the individual names and ages.
+
+Solution:
+
+def average_age(people):
+total_age = 0
+for name, age in people.items():
+total_age += age
+return total_age / len(people)
+
+Exercise 3:
+
+Create a function called "longest_name" that takes in a list of names and returns the longest name in the list. Use a descriptive variable name for the list of names.
+
+Solution:
+
+def longest_name(names):
+longest = ""
+for name in names:
+if len(name) > len(longest):
+longest = name
+return longest
+
+
+#groupe 14
+
+Meaningful names: Meaningful names are names that accurately and clearly describe the purpose or content of the object being named. In programming, using meaningful names for variables, functions, and other objects can make the code easier to understand and maintain.
+Type hints: Type hints are annotations that provide information about the data type of a variable or function parameter. In Python, type hints are optional but can be helpful for code readability and understanding.
+Argument: An argument is a value passed to a function when the function is called. In Python, arguments are placed in the parentheses after the function name when calling the function.
+Conditional: A conditional is a statement that evaluates whether a certain condition is met, and performs a specific action based on the result of the evaluation. In Python, the if statement is used to create a conditional.
+Variable: A variable is a named location in memory where a value can be stored and accessed. In Python, variables are created by assigning a value to a name using the assignment operator (=).
+Lifetime: The lifetime of a variable refers to the duration of time that the variable exists and is accessible in a program. In Python, the lifetime of a variable can be either global or local, depending on the scope of the variable.
+Object: In programming, an object is a piece of data that can be manipulated by a program. Objects can have attributes (properties) and methods (actions that can be performed on the object).
+Module: A module is a Python file that contains code, including variables, functions, and other objects. Modules can be imported into other Python programs to make the code contained within them available for use.
+
+Function: A function is a block of code that performs a specific task. Functions can be called multiple times in a program and can accept input parameters and return output.
+Module: A module is a Python file that contains code and can be imported into other Python programs. Modules allow code to be organized and reused in multiple programs.
+Package: A package is a collection of modules in Python. Packages allow for even more organized code and provide a way to namespace related modules.
+Namespace: A namespace is a container that holds a set of identifiers (names). In Python, namespaces are used to organize and distinguish different variables, functions, and other objects with the same name.
+Scope: The scope of a variable refers to the part of the program where the variable is accessible. In Python, variables can have either global scope or local scope. Variables with global scope are accessible from anywhere within the program, while variables with local scope are only accessible within a specific function or block of code.
+Import: Importing in Python allows you to use code from other modules or packages in your program.
+Variable assignment: Variable assignment is the process of assigning a value to a variable in a program. In Python, this is done using the "=" operator.
+If/elif/else statement: An if/elif/else statement is a control flow statement in Python that allows you to execute different blocks of code depending on whether a condition is true or false.
+Function object: A function object is a reference to a function in Python. It can be used to call the function or pass it as an argument to other functions.
+Name conflict: A name conflict occurs when two or more variables or functions in a program have the same name and it is not clear which one to use. Namespaces can be used to avoid name conflicts by organizing and separating variables and functions with the same name.
+
+
+Exercise 1:
+
+Given the following code, what is the value of name after the assignment?
+
+def get_name(person):
+    fname = person.get("fname", "")
+    name = f"{fname}"
+    return name
+
+community = [{
+        "title": "Mr.",
+        "fname": "John",
+        "lname": "Smith"
+    } for x in range(3)
+]
+
+person = community[0]
+name = get_name(person)
+
+
+
+Solution:
+
+The value of name after the assignment is "John".
+
+Exercise 2:
+
+What will be printed to the console by the following code?
+
+
+from utilities import names
+from utilities import informal
+from utilities import casual
+from utilities import account
+ 
+community = [{
+        "title": "Mr.",
+        "fname": "John",
+        "lname": "Smith"
+    } for x in range(3)
+]
+ 
+for person in community:
+    tone = account.get_tone(person)
+    if tone == "formal":
+        get_name = names.get_name
+    elif tone == "informal":
+        get_name = informal.get_name
+    elif tone == "casual":
+        get_name = casual.get_name
+    else:
+        get_name = names.get_name
+ 
+    print(get_name(person))
+
+
+Solution:
+
+This code will print the name of each person in the community list three times. The name will be formatted differently each time depending on the value of the tone variable, which is randomly set to "formal", "informal", or "casual" by the account.get_tone(person) function. Therefore, the output could be any of the following:
+
+"Mr. John Smith"
+"John"
+"John Smith"
+The exact output
+
+
+#groupe 17
+
+Names: In programming, a name is a label given to a variable, function, or other object. Names are used to identify and reference these objects in code.
+Namespaces: A namespace is a container that holds a set of names (identifiers). In Python, namespaces are used to organize and distinguish different variables, functions, and other objects with the same name.
+Symbols: In programming, a symbol is a character or combination of characters used to represent a specific meaning or function. Symbols are used in programming languages to represent operations, values, and other elements of code.
+Good names: Good names in programming are clear, descriptive, and meaningful labels that accurately reflect the purpose and content of the object they are naming. Using good names can make code easier to understand and maintain.
+Complexity: Complexity refers to the number of parts or features in a system or process, and how difficult it is to understand or manage them. In programming, complexity can refer to the size and complexity of a codebase, or the complexity of the algorithms and logic used in a program.
+Software development: Software development is the process of creating and maintaining software programs. This includes designing, coding, testing, debugging, and documenting software.
+Elements of software development: The elements of software development include the various components and processes involved in creating and maintaining software programs, such as coding, testing, debugging, and documentation.
+
+
+
+
