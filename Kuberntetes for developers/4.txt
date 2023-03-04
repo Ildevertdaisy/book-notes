@@ -2,7 +2,6 @@
 Can you please create flashcards for me with short sentences regarding this paragraph in the form of terms and definitions especially with simple words since I know nothing about the subject:
 
 
-
 Containerization: The process of packaging an application, including its dependencies and environment, into a container that can be easily run and deployed on different systems.
 Container orchestrator: A tool that manages and schedules containers on a host or cluster of machines, allowing multiple containers to run on a single machine and enabling scaling and automation of container operations.
 Kubernetes: A popular open source container orchestrator that allows you to specify how to arrange your containers onto your resources in order to optimize resource usage and automate operations.

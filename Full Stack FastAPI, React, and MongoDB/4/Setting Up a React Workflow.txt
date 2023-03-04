@@ -12,51 +12,29 @@ Deployment: The process of making a React app accessible to users via a web serv
 
 
 Tailwind CSS => Utility-first CSS framework that translates CSS into a bunch of classes that can be used directly in the markup to achieve complex designs.
-
 Installation => Install the packages using npm, create the necessary config files, and edit the index.css file in the src folder, removing everything and leaving "@tailwind base; @tailwind components; @tailwind utilities;".
-
 JSX => React's language for creating HTML and components, the building blocks that compose a React application.
 
 
 JSX => The syntax used to create React elements that can be inserted into React's virtual DOM tree. It is a full-fledged programming language, JavaScript, that allows to create React elements that can be inserted into React's virtual DOM tree that is different from the actual HTML.
-
 React elements => The smallest building blocks of a React page or app. They are immutable and can be replaced with new elements.
-
 Virtual DOM => A lightweight in-memory representation of the actual DOM, React uses virtual DOM to update the actual DOM efficiently.
-
 Babel => The tool that compiles JSX elements into actual HTML elements.
-
 React components => Every React component, including our App file, which is currently the only component that we have, must return one and only one element – a div or a fragment (essentially, an empty tag, <>) and all the React elements enclosed in it.
-
 key property => A unique identifier that React needs anytime it creates arrays of DOM elements, so it knows which one to replace, keep, or remove.
-
 React Hooks => Functional constructs that enable us to tap into the life cycle of a component and manipulate its state.
-
 State => A set of data that represents the user interface (UI) at any given moment. It can be thought of as the current situation of the app and is used to keep the UI in sync.
-
 Props => A way to pass data from a parent component to a child component. It provides one-way communication between components.
-
 Tailwind CSS => A CSS framework that provides a set of utility classes to style elements quickly and easily.
-
 ES6 destructuring => A feature of JavaScript that allows to extract values from arrays or objects and assign them to variables.
-
 React component => A function that takes props as arguments and returns a JSX element.
-
 Life cycle => The different stages a component goes through from its creation to its destruction.
-
 Hooks => Functional constructs that allow to tap into the life cycle of a component and manipulate its state.
-
-
 useState Hook => A React Hook that allows to create stateful variables in a functional component. It returns two values, a variable, and a function that sets the value for this state variable.
-
 stateful variables => variables that maintains a certain state throughout a component.
-
 SyntheticEvent => A wrapper around the browser's native events that enables React to achieve cross-browser compatibility.
-
 onChange event => An event that is triggered when the value of an input element changes.
-
 Event handlers => Functions that are executed when a specific event occurs.
-
 onChangeHandler => A function that is used as an event handler for the onChange event in the App.js file, it takes the current event as an argument and uses the setter function returned by useState to update the budget state variable.
 
 
@@ -64,7 +42,6 @@ useEffect => useEffect is a React Hook that allows you to synchronize a componen
 Side Effects => Events that are outside the flow of the React data flow process are called side effects, some examples of side effects include setting or getting data values in local storage or session storage, measuring the dimensions of some DOM element, and most notably, getting or fetching data from an external system.
 Fetching Data => To fetch data from an external API, React developers often use Fetch or Axios, it is important to note that React works in a continuous data flow, with an underlying system constantly scanning for updates and ready to re-render components that it deems in need of an update.
 useState => useState is a React Hook that allows you to create stateful variables, it returns two values: a variable (which can be anything) and a function that sets the value for this state variable.
-
 React Router => A package that enables routing in Single-Page Applications (SPAs) by allowing the app to render different components on the same page depending on the route that is loaded.
 Ecosystem => React has a large ecosystem of libraries and frameworks that can be used to enhance user experience, speed up development, and solve complex state problems.
 Data visualization => Combination of React Hooks and D3.js enables to make virtually everything achievable with D3.js while making data management easier through React.

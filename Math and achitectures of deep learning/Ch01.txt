@@ -1,0 +1,25 @@
+
+Machine learning => L'ensemble des techniques informatiques permettant à des machines d'apprendre à partir de données.
+Deep learning => une méthode d'apprentissage automatique basée sur des réseaux de neurones. Il a transformé la vision informatique, le traitement de la parole et de la langue naturelle en particulier et l'intelligence artificielle en général.
+Computer vision => un domaine de l'intelligence artificielle qui s'efforce de comprendre la vision et les images comme le fait un humain.
+Natural language processing => Le traitement automatique de la langue naturelle est un sous-domaine de l'intelligence artificielle qui s'efforce de comprendre la langue humaine comme le fait un humain.
+Speech processing => Le traitement automatique de la parole est un sous-domaine de l'intelligence artificielle qui s'efforce de comprendre la parole humaine comme le fait un humain.
+Artificial intelligence => Une branche de l'informatique qui s'efforce de créer des machines qui travaillent et raisonnent comme des humains.
+Mathematics => L'étude des nombres, des formes et des relations.
+
+Machine Learning => Emulating a machine that takes in sensory or knowledge inputs and generates decisions or predictions by processing them.
+Deep Learning => A specific subset of Machine learning that has transformed computer vision, natural language and speech processing in particular and artificial intelligence in general.
+Classification Problem => A problem where the output is one out of a set of possible classes
+Quantitative Estimation => A problem requiring a quantitative output as opposed to classification
+Machine => A device that transforms sensory or knowledge inputs to decisions or quantitative estimates
+Paradigm shift => Machine learning does not provide a step by step instruction set to convert input to output, instead a mathematical model is developed for the problem.
+
+Machine learning => A paradigm shift in computation that emulates the decision-making and predictions of life by transforming a set of inputs to an output
+Deep learning => A subfield of machine learning that is focused on using neural networks to solve problems in computer vision, natural language processing and speech processing
+Function Approximation => The process of approximating an unknown function by a mathematical model, in order to solve problems in machine learning
+Models => Mathematical functions that transform inputs to outputs, used in machine learning as a proxy for the unknown function
+Training => The process of finding the optimal set of parameters/weights for a model, so that it can transform inputs to outputs that match the corresponding training outputs as closely as possible
+Inferencing => The process of using a trained model on new inputs to generate outputs
+Human labeling => The process of using humans to generate ground truth outputs for training data inputs
+Procurement of training data => The process of obtaining data to train a machine learning model. Can be a daunting challenge if data is not readily available on the internet.
+

@@ -1,0 +1,182 @@
+Donnes moi le rôle de chaque de chaque instruction de ce code python avec des phrases très courtes:
+
+
+pip install est une commande de la ligne de commande utilisée pour installer des paquets Python.
+httpie est un paquet Python qui est installé. Il s'agit d'un client HTTP léger et convivial pour le terminal, qui peut être utilisé pour envoyer des requêtes HTTP et afficher les réponses. Il peut être utilisé pour tester les API HTTP, envoyer des requêtes formulaires, uploader des fichiers, etc.
+
+pip install commande qui permet d'installer des paquets python
+fastapi paquet qui permet de créer des API web efficaces et performante en utilisant python
+uvicorn paquet qui permet d'exécuter des applications web écrites avec des frameworks comme fastapi en utilisant des fonctionnalités d'asynchronisme pour des performances optimales.
+
+def annotated_function(name: str, age: int) -> str: définit une fonction python appelée annotated_function qui prend en entrée deux arguments name de type str et age de type int. La flèche -> str indique que la fonction retournera une valeur de type str.
+return f"Your name is {name.upper()} and you are {age} years old!" Cette ligne retourne une chaîne de caractères formatée, où la valeur de name est convertie en majuscule et l'âge est inclus dans la chaîne.
+print(annotated_function(name="marko", age=99)) Appel de la fonction annotated_function avec les arguments name="marko" et age=99 puis l'affichage du résultat retourné par la fonction.
+
+
+pip install commande qui permet d'installer des paquets python
+pydantic paquet qui permet de valider et de décrire les données en utilisant les annotations de type Python standard. Il permet de définir des modèles de données avec des validations de type, des valeurs par défaut, des alias, etc. Il peut être utilisé pour valider les données d'entrée d'une API REST, les données d'un fichier de configuration, etc.
+
+from enum import Enum importe la classe Enum de python qui permet de définir des enums (enumérations)
+from typing import List importe la classe List de python qui permet de définir des listes de types
+from pydantic import BaseModel, ValidationError importe les classes BaseModel et ValidationError de pydantic pour utiliser les fonctionnalités de validation et de description des données
+class Fuel(str, Enum): définit une classe Fuel qui hérite des propriétés de la classe str et de la classe Enum. Elle déclare des constantes de type Fuel qui sont PETROL, DIESEL, LPG.
+class Car(BaseModel): définit une classe Car qui hérite des propriétés de la classe BaseModel. Elle déclare des propriétés pour une voiture comme brand (marque) de type str, model (modèle) de type str, year (année) de type int, fuel (carburant) de type Fuel, countries (pays) de type List[str] et note (note) de type str avec une valeur par défaut "No note"
+
+car = Car(brand="Lancia", model="Musa", fuel="PETROL", year="2006", countries=["Italy","France"]) instancie un objet de la classe Car en lui affectant des valeurs pour ses propriétés brand, model, fuel, year, countries. Notez que la propriété year a été passée en tant que chaîne de caractères, qui sera convertie en entier lorsque la validation sera effectuée.
+print(car.json()) imprime les valeurs de l'objet car en format json
+
+invalid_car = Car(brand="Lancia", fuel="PETROL", year="something", countries=["Italy","France"]) instancie un objet de la classe Car en lui affectant des valeurs pour ses propriétés brand, fuel, year, countries. Notez que la propriété year a été passée en tant que chaîne de caractères 'something', qui est invalide car elle ne peut pas être convertie en un entier valide.
+print(invalid_car.json()) imprime les valeurs de l'objet invalid_car en format json, mais il générera une erreur ValidationError car une ou plusieurs propriétés ne sont pas valides selon les validation définies dans la classe Car.
+
+
+try: déclenche un bloc d'essai qui va essayer d'exécuter les instructions qui suivent
+invalid_car = Car(brand="Lancia", fuel="PETROL", year="something", countries=["Italy","France"]) instancie un objet de la classe Car en lui affectant des valeurs pour ses propriétés brand, fuel, year, countries. Notez que la propriété year a été passée en tant que chaîne de caractères 'something', qui est invalide car elle ne peut pas être convertie en un entier valide. Cette instruction déclenchera une erreur de validation car une ou plusieurs propriétés ne sont pas valides selon les validation définies dans la classe Car.
+except ValidationError as e: capture l'erreur de validation qui est déclenchée par l'instanciation de invalid_car, et attribue l'erreur à la variable e
+print(e) imprime le contenu de l'erreur e, qui contient les détails de l'erreur de validation qui a été levée.
+
+Ensemble ces instructions suivants créent une application web avec une seule route qui répond à une requête GET à la racine de l'application avec un dictionnaire contenant un message "Hello FastAPI"
+from fastapi import FastAPI importe la classe FastAPI de la bibliothèque fastapi
+app = FastAPI() instancie un objet de la classe FastAPI
+@app.get("/") est un décorateur qui enregistre une fonction comme une route pour la méthode HTTP GET sur la racine "/"
+async def root(): définit une fonction asynchrone root
+return {"message": "Hello FastAPI"} renvoie un dictionnaire contenant la clé "message" et la valeur "Hello FastAPI"
+
+Cette instruction lance l'application définie dans le module "chapter3_first_endpoint" avec uvicorn en utilisant l'objet app défini dans ce module, et permet de recharger l'application automatiquement si des modifications sont apportées au code source.
+uvicorn est un outil de ligne de commande pour exécuter une application ASGI (Asynchronous Server Gateway Interface) comme notre application FastAPI
+chapter3_first_endpoint:app indique à uvicorn de charger le module "chapter3_first_endpoint" et de rechercher l'objet app défini dans ce module.
+--reload option permet de recharger automatiquement l'application si des modifications sont apportées au code source.
+
+Ensemble ces instructions créent une route pour une requête HTTP POST à la racine de l'application qui renvoie un dictionnaire avec un message "Post request success"
+@app.post("/") est un décorateur qui enregistre une fonction comme une route pour la méthode HTTP POST sur la racine "/"
+async def post_root(): définit une fonction asynchrone post_root
+return {"message": "Post request success"} renvoie un dictionnaire contenant la clé "message" et la valeur "Post request success"
+
+Ensemble ces instructions suivants créent une application web avec une route qui répond à une requête GET à l'URL "/car/{id}" ou id est un paramètre d'URL qui retourne un dictionnaire contenant un identifiant de voiture.
+from fastapi import FastAPI importe la classe FastAPI de la bibliothèque fastapi
+app = FastAPI() instancie un objet de la classe FastAPI
+@app.get("/car/{id}") est un décorateur qui enregistre une fonction comme une route pour la méthode HTTP GET sur l'URL "/car/{id}"
+async def root(id): définit une fonction asynchrone root qui prend un paramètre id
+return {"car_id":id} renvoie un dictionnaire contenant la clé "car_id" et la valeur de la variable id
+
+
+Ensemble ces instructions créent une application web avec une route qui répond à une requête GET à l'URL "/carh/{id}" ou id est un paramètre d'URL qui est hinté comme un entier et retourne un dictionnaire contenant un identifiant de voiture.
+@app.get("/carh/{id}") est un décorateur qui enregistre une fonction comme une route pour la méthode HTTP GET sur l'URL "/carh/{id}"
+async def hinted_car_id(id:int): définit une fonction asynchrone hinted_car_id qui prend un paramètre id avec un hint de type int
+return {"car_id":id} renvoie un dictionnaire contenant la clé "car_id" et la valeur de la variable id
+
+
+Ensemble ces instructions créent une application web avec deux routes qui répondent à des requêtes GET, l'une à l'URL "/user/{id}" ou id est un paramètre d'URL qui est hinté comme un entier et retourne un dictionnaire contenant un identifiant d'utilisateur, l'autre à l'URL "/user/me" qui retourne un dictionnaire contenant "This is me!" comme valeur de l'identifiant d'utilisateur.
+@app.get("/user/{id}") est un décorateur qui enregistre une fonction comme une route pour la méthode HTTP GET sur l'URL "/user/{id}"
+async def user(id:int): définit une fonction asynchrone user qui prend un paramètre id avec un hint de type int
+return {"User_id":id} renvoie un dictionnaire contenant la clé "User_id" et la valeur de la variable id
+@app.get("/user/me") est un décorateur qui enregistre une fonction comme une route pour la méthode HTTP GET sur l'URL "/user/me"
+async def user(): définit une fonction asynchrone user qui ne prend pas de paramètre
+return {"User_id":"This is me!"} renvoie un dictionnaire contenant la clé "User_id" et la valeur "This is me!"
+
+
+Ensemble ces instructions créent un type enum personnalisé AccountType avec deux constantes FREE et PRO qui peuvent être utilisées pour valider les valeurs d'un paramètre d'URL ou d'un champ de requête.
+from enum import Enum importe le module Enum pour permettre la création de types enums personnalisés.
+from fastapi import FastAPI, Path importe les modules FastAPI et Path pour permettre la création d'une application web et de définir des types de paramètres d'URL.
+class AccountType(str, Enum): définit une classe AccountType qui hérite de str et Enum pour créer un type enum personnalisé.
+FREE = "free" définit une constante FREE avec la valeur "free"
+PRO = "pro" définit une constante PRO avec la valeur "pro"
+
+
+Ensemble, ces instructions définissent une route pour une requête GET à l'URL "/account/{acc_type}/{months}" qui attend deux paramètres d'URL "acc_type" et "months", valide les valeurs de "months" et renvoie un message de confirmation avec les valeurs passées en paramètre.
+@app.get("/account/{acc_type}/{months}"): définit une route pour une requête HTTP GET à l'URL "/account/{acc_type}/{months}"
+acc_type:AccountType : définit un paramètre d'URL nommé "acc_type" avec un type attendu AccountType qui est un type enum personnalisé créé précédemment.
+months:int = Path(..., ge=3,le=12) : définit un paramètre d'URL nommé "months" avec un type attendu int et des validations pour la limite inférieure(ge) et supérieure(le) valeur.
+return : renvoie un dictionnaire avec les valeurs du compte créé.
+
+
+@app.get("/cars/price") is a decorator that creates an endpoint for the /cars/price route and handles GET requests to this route.
+async def cars_by_price(min_price: int=0, max_price: int=100000) is a function that handles the request to this endpoint. It takes 2 parameters min_price and max_price, both are integers and have default values of 0 and 100000 respectively.
+return{"Message":f"Listing cars with prices between {min_price} and {max_price}"} this line of code is returning a json object with a message that concatenates the min_price and max_price that is passed as query parameter.
+
+
+@app.post("/cars") is a decorator that creates an endpoint at the path '/cars' that listens for a POST request.
+async def new_car(data: Dict=Body(...)) defines a function that will handle the request. It has a parameter data of type Dict, and is expecting a JSON payload in the request body.
+print(data) is a function call that will print the payload to the console
+return { "message":data } returns a JSON response to the client with a message key having the payload as its value
+
+from fastapi import FastAPI, Body : import the FastAPI and Body classes from the fastapi module.
+from pydantic import BaseModel: import the BaseModel class from the pydantic module
+class InsertCar(BaseModel): define a new class called InsertCar which inherits from the BaseModel class
+brand: str: define a variable called brand of type string
+model: str: define a variable called model of type string
+year: int: define a variable called year of type integer
+app = FastAPI(): create an instance of the FastAPI class
+@app.post("/cars"): create a new route for the post request
+async def new_car(data: Dict=Body(...)): define a new asynchronous function called new_car which will take a request payload in the form of a dictionary, with a default value of Body(...)
+print(data): Print the payload data
+return { "message":data }: return a dictionary with message key and data value
+
+
+class InsertUser(BaseModel): déclare une classe qui hérite de BaseModel pour la validation de données
+username: str Déclare une variable username de type string qui doit être présente dans les données fournies.
+name: str Déclare une variable name de type string qui doit être présente dans les données fournies.
+
+class InsertUser(BaseModel) : cette instruction crée une classe 'InsertUser' qui définit un modèle pour les données utilisateur avec les propriétés 'username' et 'name' qui sont toutes les deux de type 'str' .
+@app.post("/car/user") : cette instruction définit une route pour les requêtes HTTP de type 'POST' à l'URL '/car/user'
+async def new_car_model(car: InsertCar, user: InsertUser, code: int=Body(None) ) : cette instruction définit une fonction asynchrone 'new_car_model' qui prend en entrée les paramètres 'car' de type 'InsertCar', 'user' de type 'InsertUser', 'code' de type 'int' avec une valeur par défaut qui est 'None'
+return { "car":car,"user":user,"code":code } : cette instruction retourne un dictionnaire avec les propriétés 'car', 'user', 'code' contenant les valeurs des paramètres 'car', 'user', 'code' respectivement
+
+FastAPI: c'est une bibliothèque python pour créer des API asynchrones rapidement.
+app = FastAPI() : instancie un objet FastAPI qui sera utilisé pour définir les routes de l'API.
+@app.get("/cars") : définit une route pour une requête HTTP GET à l'URL "/cars".
+async def raw_request(request: Request): : déclare une fonction asynchrone pour gérer la route "/cars", qui prend un argument nommé "request" de type Request.
+return { "message": request.base_url, "all": dir(request) }: retourne un dictionnaire contenant l'URL de base de la requête (request.base_url) et tous les attributs disponibles dans l'objet de requête (dir(request)).
+
+
+from fastapi import FastAPI, Header : Importation des modules FastAPI et Header de fastapi
+app = FastAPI() : Initialisation de l'application FastAPI
+@app.get("/headers") : définition d'une route pour les requêtes GET, avec l'URL "/headers"
+async def read_headers(user_agent: str | None = Header(None)): : définition de la fonction read_headers qui prend en paramètre un user_agent de type str ou None (par défaut) récupéré à partir des headers de la requête via l'annotation Header(None).
+return {"User-Agent": user_agent} : renvoie l'user agent récupéré dans les headers sous forme de dictionnaire.
+
+
+"pip install python-multipart" est une instruction qui utilise l'outil pip pour installer le paquet python-multipart. python-multipart est un module Python qui permet de traiter les données en format multipart/form-data, utilisé pour l'envoi de fichiers et de données à travers les formulaires HTML. L'installation de ce paquet permet à l'application d'utiliser ces fonctionnalités.
+
+pip install python-multipart : cette instruction installe l'extension python-multipart qui permet de traiter les fichiers dans les requêtes HTTP.
+from fastapi import FastAPI, Form, File, UploadFile : cette instruction importe les classes FastAPI, Form, File et UploadFile de l'extension fastapi. Ces classes sont utilisées pour gérer les formulaires et les fichiers dans les requêtes HTTP.
+app = FastAPI() : cette instruction crée un objet FastAPI qui est utilisé pour définir les routes de l'application.
+@app.post("/upload") : cette instruction définit une route pour les requêtes HTTP de type POST à l'URL /upload.
+async def upload(file:UploadFile=File(...), brand:str=Form(...), model:str=Form(...)): : Cette instruction définit une fonction qui prend en entrée un fichier, une marque et un modèle. Ces entrées sont liées aux champs file, brand et model dans le formulaire HTML.
+return { "brand": brand, "model": model, "file_name":file.filename} : Cette instruction renvoie un dictionnaire contenant les informations de la marque, du modèle et du nom de fichier.
+
+L'instruction import shutil importe le module shutil qui permet de copier les fichiers.
+L'instruction from fastapi import FastAPI, Form, File, UploadFile importe les classes nécessaires de fastapi pour gérer les uploads de fichier.
+L'instruction app = FastAPI() initialise l'application FastAPI.
+L'instruction @app.post("/upload") définit une route pour la méthode POST pour l'url "/upload"
+L'instruction async def upload(picture:UploadFile=File(...), brand:str=Form(...), model:str=Form(...)): définit une fonction asynchrone pour traiter les données reçues par la route définie précédemment. Elle prend en paramètre un fichier, une chaine de caractères pour la marque et une chaine de caractères pour le modèle.
+L'instruction with open("saved_file.png", "wb") as buffer: ouvre un fichier en mode écriture binaire.
+L'instruction shutil.copyfileobj(picture.file, buffer) copie les données du fichier reçu dans le fichier ouvert précédemment.
+L'instruction return { "brand": brand, "model": model, "file_name":picture.filename } retourne les informations de la marque, modèle et nom de fichier reçus dans la requête
+
+L'import de FastAPI est nécessaire pour utiliser les fonctionnalités fournies par ce framework pour créer une API.
+La création de l'application FastAPI est nécessaire pour utiliser les fonctionnalités fournies par ce framework.
+La définition de la fonction raw_fa_response() avec un décorateur @app.get("/") indique qu'elle sera utilisée pour gérer les requêtes GET pour la route racine.
+L'utilisation de status_code=status.HTTP_208_ALREADY_REPORTED dans le décorateur de fonction permet de définir le code de statut HTTP de la réponse.
+La fonction raw_fa_response() renvoie un dictionnaire qui contient le message "fastapi response".
+
+
+L'instruction @app.post("/carsmodel") définit une route pour l'application avec une méthode HTTP "POST" et un chemin d'accès "/carsmodel"
+L'instruction async def new_car_model(car:InsertCar): déclare une fonction asynchrone new_car_model qui prend en argument un objet car de type InsertCar
+L'instruction if car.year>2022: vérifie si l'année du modèle de voiture est supérieure à 2022
+L'instruction raise HTTPException(status.HTTP_406_NOT_ACCEPTABLE,detail="The car doesn’t exist yet!") lève une exception de type HTTPException avec un code HTTP 406 et un message détaillé "The car doesn’t exist yet!" si la condition est vraie
+L'instruction return {"message":car} renvoie un dictionnaire avec la clé "message" et la valeur de l'objet car si la condition est fausse.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+Crée moi des flashcards des cinq concepts les plus importants de ce paragraphe avec des phrases courtes sous la forme des termes et définitions :
+
+Microservice : A small and independent process that does one thing well.
+FlixTube : A video-streaming application built from microservices.
+HTTP Server : A microservice used to deliver streaming video to a user in a web browser.
+JavaScript & Node.js : A tech stack used to program the microservices in this book.
+Development Environment : An environment set up to prepare for the production deployment of microservices.
+
+Crée moi des flashcards des cinq concepts les plus importants de ce paragraphe avec des phrases courtes sous la forme des termes et définitions :
+2.1 New tools
+Because this book is all about the tools, in most chapters we’ll start with the new tools you need to install to follow along with the examples in the chapter. Starting with our first microservice, table 2.1 shows the tools we need: Git, Node.js, and Visual Studio (VS) Code. We’ll use Git to get the code. We’ll use Node.js to run and test our first microservice, and we’ll use VS Code to edit our code and work on our Node.js project.
+
+Throughout the book, I’ll tell you the version numbers for each tool used to develop the examples in this book. This gives you a version number that you can use to follow along with the examples.
+
+Later versions of these tools should also work because good tools are usually backward compatible, but occasional major increments to versions can break old examples. If that happens, let me know by logging an issue in GitHub (see the next section).
+
+Table 2.1 Tools introduced in chapter 2
+
+Of course, you can use some other integrated development environment (IDE) or text editor for editing your code. I recommend VS Code because it’s very good and very widely used.

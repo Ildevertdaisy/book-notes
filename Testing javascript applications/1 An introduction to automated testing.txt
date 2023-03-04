@@ -1,0 +1,91 @@
+Make me flashcards about the most important concepts from this text in the form of terms -> definitions whit simple words and short sentences:
+Automated Tests: A process of testing software automatically to ensure that it works as expected. It is an industry standard and required for most software development jobs.
+Importance of Tests: Writing tests is valuable for companies of all sizes to help with communication among developers and avoid defects. The importance grows with the number of developers involved and the cost of failure.
+
+Make me flashcards about the 5 most important concepts from this text in the form of terms -> definitions with simple words and short sentences:
+Automated Test:
+A program that automatically tests software by interacting with the application to perform actions and comparing the actual result with a previously defined expected output.
+
+HTTP Request:
+A request sent from the website to the backend, which informs the add to cart function about the item and the number of units to add to the cart.
+
+Backend:
+The part of the application responsible for processing requests from the website, such as adding items to a customer's cart.
+
+Session:
+A way to identify a customer's cart in the application.
+
+Action Flow:
+The series of steps a user takes when performing an action, such as adding items to a cart.
+
+
+
+Make me flashcards about the 5 most important concepts from this text in the form of terms -> definitions with simple words and short sentences:
+Cart Instance - An instance of a cart is a digital representation of a customer's shopping cart.
+
+Add to Cart - The add to cart function is used to add a product to a customer's cart.
+
+Cart Contents - The contents of a cart are the items a customer has added to their shopping cart.
+
+HTTP Request - An HTTP request is a message sent from the client to the server asking for information or to perform an action.
+
+Testing Database - A testing database is a separate database used to perform tests and not pollute the production database with testing data.
+
+
+Make me flashcards about the 5 most important concepts from this text in the form of terms -> definitions with simple words and short sentences:
+Automated Tests -> Tests that simulate the actions of users and check if the application works as expected, giving quick feedback and increasing confidence in the software's functionality.
+
+Test that fails -> A test that will report a failure when the application does not work as expected.
+
+Simulated actions -> The actions of users are simulated by software instead of being performed manually.
+
+Quick feedback -> Automated tests provide quick feedback on the functionality of the software, making it easier to identify and fix bugs.
+
+Manual Testing -> The process of verifying the software by testing it as an end-user would do, which is still necessary even with automated tests in place.
+
+
+Make me flashcards about the 5 most important concepts from this text in the form of terms -> definitions with simple words and short sentences:
+Automated tests:
+Provide quick and reliable feedback on code changes
+Make development more predictable and uniform
+Improve collaboration among developers
+Speed up the delivery of high-quality software
+
+Predictability in development:
+Prevents unexpected behavior in features and bug fixes
+Makes tasks easier to estimate and reduces revisits
+Improves feedback and speeds up fixing mistakes
+
+Testing without automation:
+Time-consuming and error-prone
+Involves manual processes
+Leads to writing too much code before checking
+Long feedback loop makes it hard to find bugs
+
+Advantages of automated tests:
+Decreases time to get feedback
+Makes development quicker
+Avoids writing too much code before testing
+Allows for direct testing of features
+
+Example: tracking feature:
+Louis wants customers to track order status
+Without automated tests, the process is manual and time-consuming
+Automated tests for the "trackOrder" function provide direct feedback.
+
+
+
+Make me flashcards about the 5 most important concepts from this text in the form of terms -> definitions with simple words and short sentences:
+With an automated test like the ones in figure 1.7, you can write less code before getting feedback. When your automated tests can call the trackOrder function directly, you can avoid touching unnecessary parts of your application before you’re sure that trackOrder works.
+
+When a test fails after you’ve written only 10 lines of code, you have only 10 lines of code to worry about. Even if the bug is not within those 10 lines, it becomes way easier to detect which one of them provoked misbehavior somewhere else.
+
+The situation can get even worse if you break other parts of your application. If you introduce bugs into the checkout procedure, you need to check how your changes affected it. The more changes you’ve made, the harder it becomes to find where the problem is.
+
+When you have automated tests like the ones in figure 1.8, they can alert you as soon as something breaks so that you can correct course more easily. If you run tests frequently, you will get precise feedback on what part of your application is broken as soon as you break it. Remember that the less time it takes to get feedback once you’ve written code, the more predictable your development process will be.
+
+Figure 1.8 Automated tests can check parts of your code individually and give you precise feedback on what’s broken as soon as you break it.
+
+
+Often I see developers having to throw work away because they’ve done too many changes at once. When those changes caused so many parts of the application to break, they didn’t know where to start. It was easier to start from scratch than to fix the mess they had already created. How many times have you done that?
+

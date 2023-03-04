@@ -1,0 +1,186 @@
+Crée moi des flashcards des cinq concepts les plus importants de ce paragraphe avec des phrases courtes sous la forme des termes et définitions :
+Crée moi des flashcards des cinq concepts les plus importants de ce paragraphe avec des phrases courtes sous la forme des termes et définitions :
+
+
+Microservices : an architectural pattern in software development, solves problems of complexity, expandability, and scalability.
+Monolithic application : a traditional application structure, easier to architect but becomes complex over time.
+Distributed application : an application composed of microservices.
+Microservices-first approach : building microservices from the beginning, instead of converting from a monolithic structure.
+Learning curve : steep learning process for building microservices, needs to be broken for wider adoption.
+
+
+Crée moi des flashcards des cinq concepts les plus importants de ce paragraphe avec des phrases courtes sous la forme des termes et définitions :
+Create individual microservices
+Definition: Ability to create a single microservice
+
+Package and publish microservices using Docker
+Definition: Ability to package and publish a microservice using Docker
+
+Develop a microservices application on your development workstation using Docker Compose
+Definition: Ability to develop a microservices application on a development workstation using Docker Compose
+
+Test your code, microservices, and application using Jest and Cypress
+Definition: Ability to test code, microservices, and application using Jest and Cypress
+
+Integrate third-party servers into your application
+Definition: Ability to integrate third-party servers like MongoDB and RabbitMQ into an application
+
+
+Crée moi des flashcards des cinq concepts les plus importants de ce paragraphe avec des phrases courtes sous la forme des termes et définitions :
+Prerequisites: entry-level understanding of computer programming
+Code explanation provided
+Background in programming is helpful
+Uses Node.js and Microsoft Azure as examples
+Focus on building microservices with modern tooling, transferable skills to other languages and cloud providers.
+
+
+Managing Complexity in Microservices: The process of breaking down complex applications into smaller, simple and manageable components using microservices.
+
+Simple Starting Point: Microservice applications can start off simple and continue to develop in simple iterations.
+
+Microservices as a Tool: Microservices are used to manage the growing complexity of applications, making them easier to understand and manage.
+
+Infrastructure Complexity: The infrastructure required for microservices may add complexity, but it is offset by the benefits they bring.
+
+Complex Adaptive System: A microservices application is a form of complex adaptive system where complexity emerges from the interactions of its components. Each component remains simple, manageable, and easy to understand.
+
+
+Microservice:
+Definition: A small, independent software process that runs on its own deployment schedule and can be updated independently.
+Deployment Schedule:
+Definition: Separate frequency for updating each microservice.
+Responsibility:
+Definition: Ownership of a microservice by a single developer or a team including development, testing, deployment, and operations.
+Accessibility:
+Definition: A microservice can be exposed to the outside world or be an internal service without external access.
+Microservices Application:
+Definition: A system that can be decomposed into simple services, which collaborate to provide the features and functionality of the greater application.
+
+Microservices application
+ Definition: A distributed program composed of many small services that collaborate to achieve the features and functionality of the overall project.
+
+Distributed application
+ Definition: A system composed of tiny components that live in separate processes and communicate via the network.
+
+Service
+ Definition: A component of a microservices application that can be exposed externally to allow users to interact with the system.
+
+Cluster
+ Definition: A group of computers represented as a single cohesive unit for deployment and management of services.
+
+Cluster orchestration
+ Definition: The automated management of services in a cluster.
+
+Flashcard 1:
+Term: Monolith
+Definition: An entire application that runs in a single process.
+
+Flashcard 2:
+Term: Microservices
+Definition: An architectural style for building applications as a suite of small, independently deployable services.
+
+Flashcard 3:
+Term: Monolithic vs Microservices
+Definition: Monolithic is simpler to build but comes with potential problems of risk, complexity and scalability as the application grows. Microservices offer greater flexibility, security, and scalability but require more technical investment.
+
+Flashcard 4:
+Term: Big Ball of Mud
+Definition: A state of an application when its structure degenerates and it becomes a mess of spaghetti code that is hard to maintain.
+
+Flashcard 5:
+Term: Deployment Fear
+Definition: Fear of breaking the monolith during code updates, leading to slow development and high risk of failure.
+
+Microservices : Tiny components of a distributed system.
+Distributed Computing : A method of building applications that runs on multiple devices.
+Monolithic applications : A type of application architecture where all components are built as a single unit.
+Cloud Technology : The use of remote servers to store, manage, and process data, rather than a local server or personal computer.
+Virtualization : The creation of a virtual version of something, such as a operating system, a server, storage device, or network resources.
+
+
+
+Fine-Grained Control - "Microservices allow for building applications with fine-tuned scalability control."
+Minimized Deployment Risk - "Microservices minimize deployment risk and maximize development pace."
+Technology Stack Choice - "Microservices allow for choosing the right technology stack for each task without constraints."
+Reliability and Easy Recovery - "A distributed application with microservices offers better reliability and easy recovery from problems."
+Encourages Evolvement - "Microservices encourage iteration, extension and rearrangement of application architecture over its lifetime."
+
+Learning microservices is difficult:
+Term: Steep learning curve
+Definition: Microservices require knowledge of complicated technologies and techniques for building distributed applications.
+
+Microservices are more complicated:
+Term: Increased complexity
+Definition: Building a microservices application is more complicated than building a monolith.
+
+Fear of complexity:
+Term: Fear of complexity
+Definition: People often fear the increased complexity of microservices.
+
+Modern tooling helps manage complexity:
+Term: Improved tooling
+Definition: Modern tooling for building distributed applications is more sophisticated and easier to use, making it easier to manage complexity in microservices.
+
+Microservices bring pain forward:
+Term: Pain management
+Definition: Microservices help manage complexity in applications by providing boundaries and better design, but bring complexity to the forefront to deal with it in a more economical way.
+
+
+Docker - Package and deploy services
+Docker Compose - Test microservices application on development workstation
+Kubernetes - Host application in cloud, transcend cloud vendor boundaries
+Terraform - Build cloud infrastructure, declarative configuration language
+Infrastructure as Code - Create cloud infrastructure with code, key enabler for continuous delivery
+
+
+Distributed Applications: Applications that can run across multiple computers to improve scalability and fault tolerance.
+Microservices: An architectural style for building applications that are composed of small, independent services.
+Monolithic Applications: Applications that are made up of a single, tightly-coupled codebase.
+Monolith vs Microservices: A simplified dichotomy between two architectural styles that often doesn't reflect real world solutions.
+User Experience: The overall satisfaction and perception of a user when interacting with a product or service.
+
+
+Monolith vs Microservices Spectrum: There's a spectrum of possibilities between monolithic and microservice architecture, with most real-world solutions falling somewhere in between.
+Developer's Utopia of Microservices: The idealized version of microservices development is achievable when starting a new application and maintaining discipline, but can be difficult in practice.
+No Right Answer: There's no one-size-fits-all solution to choosing between monolith and microservices, and the choice should be made to improve things for customers, team, and company.
+Real-world Development is Complicated: Development is complicated and messy, but techniques in this book can help bring back control.
+Benefits with Movement towards Microservices: Moving towards the microservices end of the spectrum can bring benefits to the application and development process, even if a perfect implementation is difficult.
+
+Single Responsibility Principle: each microservice should cover only one conceptual area of the business with a single, well-defined responsibility.
+Loose Coupling: minimize connections and dependencies between microservices to make it easier to upgrade individual services.
+High Cohesion: all code within a microservice should belong together and contribute to solving the service's problem.
+Domain Driven Design (DDD): technique for understanding the domain of a business and modeling it as software.
+Tolerance for Duplicated Code: a higher tolerance for duplicated code is acceptable in microservices compared to traditional software development.
+
+FlixTube
+Video streaming application as a final product
+Microservices
+Building a simple but complete application with a small number of microservices.
+Scalability: adding more virtual machines, replicating services, and extracting services to separate code repositories.
+Front End
+Browser-based for viewing a list of videos and video playback.
+Customer-facing
+Deployment
+Docker Compose for development
+Docker images for microservices in chapter 3
+Deployed to production in chapters 6, 7, and 8
+Continuous delivery set up
+Scaling
+Future scalability as the application grows.
+Architecture helps in scaling.
+Discussed in chapters 11 and 12.
+
+Approche pratique : On prend une approche pratique pour apprendre à construire une application de microservices plutôt qu'une approche théorique.
+
+Microservices : Ce sont des processus petits et indépendants qui font chacun une chose bien.
+
+Application de microservices : C'est une composition de nombreux petits processus travaillant ensemble pour créer les fonctionnalités de l'application.
+
+Monolithe : C'est une application composée d'un seul service massive.
+
+Outils modernes : Des outils tels que Docker, Kubernetes et Terraform facilitent considérablement la construction d'une application de microservices.
+
+
+
+
+

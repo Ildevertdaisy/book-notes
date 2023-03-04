@@ -1,61 +1,35 @@
 FastAPI => a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints
-
 REST API => an architectural style and a set of constraints that are usually applied when creating web services
-
 API => application programming interface, the brain of the system, implements the business logic
-
 HTTP requests and responses => the cardiovascular system of the web, how data flows in and out of the system
-
 Path and query parameters => a way to specify which resource an API request is asking for
-
 Type hinting => a feature in Python that allows you to indicate the type of a variable
-
 Annotations => a way to specify metadata about a variable or function
-
 Async await syntax => a way to write asynchronous code in Python
-
 Form data => data that is sent in the request body in the format of key-value pairs
-
 Routers => a way to organize and group related endpoints in a FastAPI application.
 
 
 Python => a programming language widely used for web development, data analysis, artificial intelligence, and scientific computing.
-
-FastAPI => a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
-
+FastAPI => a modern, fast (high-p erformance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
 REST API => a set of rules for creating web services that allow communication between different systems over the internet.
-
 HTTP requests => the process of sending a request to a server to retrieve data or perform an action.
-
 HTTP responses => the data sent back to the client from the server in response to an HTTP request.
-
 Type hinting => a feature in Python that allows developers to indicate the expected data type of a variable or function parameter.
-
 Annotations => a feature in Python that allows developers to add metadata to variables, functions, and classes.
-
 Async/await syntax => a feature in Python that allows developers to write asynchronous code, which allows for multiple tasks to be executed concurrently.
-
 Path and query parameters => a way to provide input to an API by including them in the URL.
-
 Headers => metadata sent with an HTTP request or response that contains information about the request or response.
-
 Cookies => small pieces of data stored by a website in a user's browser.
-
 Form data => data submitted through an HTML form, used for sending data to a server.
-
 Routers => a way to organize and structure an API by grouping related endpoints together.
 
 
 Virtual environments => Isolated Python environments that include a copy of the Python interpreter and packages, allowing for different versions of Python and packages to coexist on a single machine without interfering with each other.
-
 Creating virtual environments => To create a virtual environment, head to an application directory and run the command "python -m venv venv" to create a new directory named "venv" that includes a Python executable and packages.
-
 Activating virtual environments => To activate a virtual environment, navigate to the "venv" directory and type "activate" in the Scripts folder. The command prompt will change and be prepended with the name of the active environment in parenthesis.
-
 Git => A version control system for tracking changes in computer files and coordinating work on those files among multiple people.
-
 Shell programs => Programs that allow you to interact with your computer's operating system, such as Windows PowerShell or Commander for Windows.
-
 Visual Studio Code => A popular code editor from Microsoft that is cross-platform, provides integrated tools, lightweight, and has many plugins suitable for various programming tasks.
 
 
@@ -67,19 +41,12 @@ HTTPie : A command-line REST API client that allows testing of endpoints without
 Virtual environment : A tool used to create isolated Python environments to avoid dependency conflicts between different projects.
 
 Virtual environment => A virtual environment is a tool used to isolate specific Python environments on a single machine, in order to manage dependencies and versions for different projects.
-
 FastAPI => A modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
-
 Uvicorn => A lightning-fast ASGI server, built on uvloop and httptools. Recommended for serving FastAPI applications.
-
 ASGI => Asynchronous Server Gateway Interface, a specification for asynchronous web servers, applications, and middleware.
-
 Dependencies => Required packages or libraries that a software application needs in order to function properly.
-
 REST clients => Tools used to test and interact with REST APIs, such as Postman and Insomnia.
-
 HTTPie => A command-line HTTP client, similar to cURL, which makes it easy to send HTTP requests and inspect responses.
-
 Activating virtual environment => Activating a virtual environment sets the environment's Python and packages as the defaults, allowing you to run Python and install packages without affecting other environments.
 
 FastAPI: A modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
@@ -89,7 +56,6 @@ Type Hinting: A feature in Python 3.5+ that allows developers to indicate the ty
 ASGI: Asynchronous Server Gateway Interface, an interface specification for asynchronous web servers and applications in Python.
 Uvicorn: A lightning-fast ASGI server, recommended by FastAPI for serving web applications.
 FARM stack: A collection of technologies and frameworks used to build web applications, including FastAPI for the API, React for the frontend, and MongoDB for the database.
-
 Starlette: An ASGI framework that is fast and provides many features such as WebSocket support, events, session and cookie support, background tasks, middleware, templates and more. It is the foundation of FastAPI and it is useful to know how it works under the hood.
 
 Python type hinting => A feature in Python version 3.5 to provide developers with the opportunity to check the types of the variables before runtime.
@@ -138,9 +104,7 @@ Reload flag => Tells Uvicorn to reload the server each time the code is saved, s
 HTTPie => A command line tool for testing the endpoint, returns a 200 OK status code, content-type is correctly set to application/json and the response is a JSON document.
 Insomnia => GUI REST API testing tool, user interface is intuitive and allows you to test endpoints by populating the URL field, specifying the HTTP method, and adding other information to the request.
 
-
 Automatic documentation: A feature in FastAPI that automatically generates interactive documentation based on the OpenAPI specification, Python hints and the parsing and validation library Pydantic, making it an incredibly useful tool that allows developers to test their API as it is being developed.
-
 
 REST API: a web architecture and a set of design constraints that are usually applied to web services, it stands for Representational State Transfer.
 HTTP protocol: a communication protocol used to transmit data over the internet, it stands for Hypertext Transfer Protocol.
@@ -150,11 +114,9 @@ HTTP protocol: a communication protocol used to transmit data over the internet,
 HTTP requests and responses: the basic element of communication in REST APIs, where a client sends a request and the server responds accordingly.
 Showcase API: an example of an API that is used to demonstrate the functionalities and capabilities of a framework or library.
 
-
 -Retrieving path and query parameters: The process of getting information from the URL of a request. In FastAPI, this is achieved by defining dynamic path parameters, using standard Python string-formatted dynamic parameters in the path, for example "/car/{id}".
 -Type hinting: A feature in Python that allows you to specify the type of a variable, such as int, str, etc. In FastAPI, type hinting is used to ensure that the correct type of data is passed to an endpoint, and if the wrong type is passed, an error message is returned.
 -Order matters: The order in which endpoints are defined in the code is important, as it determines the order in which the routes are matched. In situations where similar paths are used, it's important to remember that the first endpoint defined will be matched first.
-
 
 FastAPI - a web framework for building APIs with Python
 Endpoint - a unique combination of an URL, a path, and an HTTP method
@@ -179,7 +141,6 @@ Request body: The data sent from the client to an API server, usually in the for
 Response body: The data sent from an API server to the client.
 Pydantic models: Used to validate and enforce a certain structure for request bodies in FastAPI.
 Request object: The raw request object in FastAPI, which is a Starlette request object and can be accessed in functions.
-
 
 Headers: Header parameters are handled in a similar way to query and path parameters, and we can collect them using the Header function.
 Cookies: Cookies work in a similar way as headers and can be extracted manually from the Cookies header, but the framework offers a utility function, named Cookie, that does all the work in a way similar to Query, Path, and Header.

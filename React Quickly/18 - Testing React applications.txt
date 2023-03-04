@@ -1,0 +1,225 @@
+
+Terme: Automatisation des tests
+Définition: Écrire des scripts qui émulent l'interaction d'un utilisateur avec une application pour vérifier automatiquement que l'application fonctionne comme elle est censée le faire.
+
+Terme: Bibliothèque de tests pour React
+Définition: React Testing Library est une bibliothèque de tests pour React qui permet de tester les composants de manière isolée, en s'appuyant sur une logique de "boîte noire".
+
+Terme: Couverture de code
+Définition: Pourcentage de code qui est exécuté lors des tests automatisés.
+
+Terme: Test unitaire
+Définition: Test visant à vérifier le bon fonctionnement d'une partie spécifique de code, généralement une fonction ou une méthode, de manière isolée.
+
+Terme: Jest
+Définition: Jest est un cadre de tests de JavaScript développé par Facebook, souvent utilisé pour les tests de React.
+
+Terme: React Testing Library
+Définition: Une bibliothèque de tests pour React qui permet de tester les composants de manière isolée, en s'appuyant sur une logique de "boîte noire".
+
+Terme: Testeur de composant
+Définition: Un outil pour tester les composants d'une application afin de vérifier leur bon fonctionnement.
+
+Terme: Hook personnalisé
+Définition: Un hook que vous écrivez vous-même, en utilisant les hooks fournis par React, pour encapsuler une logique qui peut être réutilisée dans plusieurs composants.
+
+Terme: Scénario hypothétique
+Définition: Un scénario fictif qui peut être utilisé pour tester une application ou une fonctionnalité dans une situation spécifique.
+
+Terme: Test fonctionnel
+Définition: Un type de test qui vérifie que l'application fonctionne correctement du point de vue de l'utilisateur final, en simulant une interaction avec l'application.
+
+Terme: Test de régression
+Définition: Un test visant à vérifier que les modifications apportées à une application n'ont pas introduit de nouveaux bogues dans le code existant.
+
+Terme: Testeur en boîte noire
+Définition: Un type de test qui évalue une application sans connaître sa structure interne ou la manière dont elle fonctionne.
+
+
+Flashcards pour les règles à retenir :
+
+Termes :
+
+Composant MenuItem
+Tester un composant React statique
+Assertion
+getByRole
+Définitions :
+
+MenuItem est un composant fonctionnel qui rend un élément de liste avec un lien. Le lien pointe vers la propriété href passée et a la propriété de libellé passée comme titre et texte de lien.
+Tester un composant React statique consiste à écrire des scripts qui émulent comment un utilisateur interagit avec l'application et vérifient automatiquement si l'application agit effectivement comme elle est censée le faire.
+Une assertion est une expression qui évalue si une condition est vraie ou fausse.
+getByRole est une fonction de React Testing Library qui renvoie l'élément qui correspond au rôle spécifié dans l'arbre DOM.
+
+
+
+Test file location:
+
+Il est important de choisir un emplacement pour les fichiers de test, soit dans un dossier séparé pour chaque dossier source, soit dans un dossier complètement séparé.
+Il faut être cohérent dans son choix.
+ROLES ET NOMS:
+
+Les rôles sont des concepts qui s'appliquent à tous les éléments dans un document web.
+Les rôles sont définis par ARIA (Accessible Rich Internet Applications), qui est une spécification pour structurer, comprendre et interagir avec les éléments d'une page web de manière non-visuelle.
+Les rôles permettent aux différents utilisateurs d'interagir avec la page web de manière accessible, en particulier pour les utilisateurs ayant des handicaps.
+Certains éléments ont des rôles implicites tandis que d'autres doivent être définis manuellement.
+Les noms accessibles sont automatiquement générés pour chaque élément et permettent de les nommer en fonction de leur contenu.
+Les éléments peuvent être sélectionnés par leur rôle et leur nom en utilisant la fonction getByRole().
+
+
+Créer des flashcards des règles à retenir à partir de ce paragraphe sous la forme des termes => définitions en français:
+Test resilience: tester uniquement les parties importantes d'un composant tout en permettant aux autres parties de changer, afin de rendre les tests et l'application plus résilients aux changements non critiques.
+
+
+Composants interactifs: les tests deviennent plus complexes lorsque nous testons des composants interactifs tels que les boutons et les champs de saisie. Les tests doivent simuler les interactions utilisateur pour vérifier que les résultats attendus se produisent. Les séquences d'interaction peuvent inclure la mise au point sur un champ, la saisie au clavier, etc.
+
+
+
+Termes:
+
+Composant avec état
+Counter
+useState
+render
+screen
+getByRole
+expect
+user-event
+click
+getByRole
+rerender
+Propriété start
+Définitions:
+
+Composant avec état: Composant React qui peut stocker et gérer son propre état interne.
+Counter: Nom donné au composant dans l'exemple de test.
+useState: Hook de React qui permet de déclarer une variable d'état dans un composant fonctionnel.
+render: Fonction de testing library qui permet de rendre un composant pour les tests.
+screen: Objet de testing library qui contient des méthodes pour trouver des éléments dans la sortie du rendu.
+getByRole: Méthode de screen qui permet de sélectionner un élément par son rôle et son nom.
+expect: Fonction de Jest qui permet de vérifier si une condition est vraie.
+user-event: Bibliothèque de testing library qui fournit des méthodes pour simuler des interactions utilisateur avec les éléments.
+click: Méthode de user-event pour simuler un clic sur un élément.
+rerender: Méthode retournée par render qui permet de rerendre le composant avec de nouvelles propriétés.
+Propriété start: Propriété passée au composant Counter pour initialiser sa valeur de comptage.
+
+ARRANGE, ACT, ASSERT : ces commentaires sont utilisés pour organiser les tests en suivant le modèle Arrange-Act-Assert, qui consiste à structurer les tests de manière organisée et logique.
+
+Setup function: une fonction personnalisée en haut d'un fichier de test qui initialise le test case pour une utilisation tout au long du composant.
+
+Counter should start at the given value: un test qui vérifie que le compteur démarre avec la valeur donnée.
+
+Counter should start at 0 if no value is given: un test qui vérifie que le compteur démarre à 0 si aucune valeur n'est donnée.
+
+Counter should increment when button is pressed: un test qui vérifie que le compteur s'incrémente lorsque le bouton est pressé.
+
+Counter should decrement when button is pressed: un test qui vérifie que le compteur se décrémente lorsque le bouton est pressé.
+
+Counter should not update value if passed start property changes: un test qui vérifie que la valeur du compteur ne change pas lorsque la propriété start est modifiée.
+
+RQ18-CLICK-COUNTER: le nom du référentiel de code source contenant cet exemple de test.
+
+npx create-react-app rq18-click-counter --template rq18-click-counter: une commande qui crée une nouvelle application basée sur le modèle associé à RQ18-CLICK-COUNTER.
+
+
+
+Jest.fn() : méthode intégrée de Jest pour créer une fonction simulée (mock function) qui permet de contrôler ou de valider l'invocation d'une fonction passée en paramètre.
+Composant Items : composant d'une application de Todo qui affiche tous les éléments d'une liste avec un bouton de suppression à côté de chacun d'eux, et qui invoque la fonction de rappel onDelete lorsque le bouton est cliqué.
+onDelete : propriété du composant Items qui prend une fonction de rappel qui sera appelée lorsque l'utilisateur supprime un élément de la liste.
+userEvent : bibliothèque de test pour simuler des événements utilisateur tels que des clics, des saisies de texte, etc.
+Render : méthode de rendu de l'API de test de React qui permet de rendre un composant à tester et de récupérer son instance de conteneur (container instance).
+screen.getByRole : méthode de l'API de test de React qui permet de rechercher un élément DOM en fonction de son rôle (role).
+expect : fonction de test qui prend une valeur ou une expression à tester et un prédicat (matcher) pour comparer la valeur ou l'expression à une valeur attendue. Si le prédicat est vrai, le test passe, sinon il échoue.
+
+
+
+Callback : une fonction passée en paramètre à une autre fonction, qui sera appelée ultérieurement.
+Jest.fn() : une méthode intégrée dans Jest qui permet de créer une fonction simulée qui peut être utilisée pour contrôler et valider les appels de fonction.
+Form : un composant interactif qui permet aux utilisateurs de saisir et de soumettre des données.
+getByRole() : une méthode de l'API de test de bibliothèque React qui permet de rechercher des éléments en fonction de leur rôle dans l'interface utilisateur.
+userEvent : une bibliothèque de test qui fournit des fonctions pour simuler les interactions utilisateur, telles que la saisie de texte, le clic de souris et la sélection de cases à cocher.
+Implementation details : des détails internes de l'implémentation d'un composant, qui ne devraient pas être testés car ils peuvent changer sans affecter l'interface utilisateur ou les fonctionnalités visibles. Les tests devraient plutôt se concentrer sur le comportement du composant en tant que boîte noire, c'est-à-dire ses entrées et sorties visibles.
+
+
+
+Terme: Custom hooks
+Définition: Fonctions spéciales utilisées dans les composants en React, qui encapsulent une logique complexe et peuvent être partagées entre plusieurs composants.
+
+Terme: Test de formulaire
+Définition: Type de test pour les composants interactifs dans lesquels l'utilisateur peut soumettre des données via des champs de formulaire. Le test vérifie si la fonction de rappel est correctement appelée lorsque l'utilisateur soumet les données.
+
+Terme: Test de hook
+Définition: Test spécifique pour un hook personnalisé, qui peut être utilisé pour s'assurer qu'il fonctionne correctement dans diverses situations.
+
+Terme: renderHook
+Définition: Fonction de la bibliothèque React Testing Library qui permet de tester un hook personnalisé en lui fournissant des valeurs d'entrée et en vérifiant sa sortie.
+
+Terme: Implementation details
+Définition: Les détails de mise en œuvre internes d'un composant, tels que les variables d'état, les effets, etc., qui ne doivent pas être testés car ils peuvent changer sans affecter le comportement externe du composant.
+
+Terme: userEvent
+Définition: Bibliothèque de la bibliothèque de tests React Testing Library utilisée pour simuler des événements d'utilisateur tels que les clics, les touches et les mouvements de souris pour les tests.
+
+
+Component with dependencies: Composant avec dépendances
+Geolocation API: API de géolocalisation
+Axios: Bibliothèque de récupération de données (data fetching)
+Mocking: Simulation (ou simulation d'une fonctionnalité)
+
+
+Terme: geolocation API
+Définition: Une interface du navigateur web qui permet aux sites web d'accéder à la position géographique de l'utilisateur.
+
+Terme: useState hook
+Définition: Une fonction de Hook React qui permet à un composant de React de maintenir un état local.
+
+Terme: getCurrentPosition
+Définition: Une méthode de l'API geolocation qui demande à l'utilisateur la permission d'accéder à sa position géographique et renvoie ses coordonnées si l'accès est autorisé.
+
+Terme: mocking
+Définition: Une technique de test logiciel où des parties du système qui ne peuvent pas être testées directement sont remplacées par des objets simulés ou des fonctionnalités de test, appelées mocks.
+
+Terme: jest.fn()
+Définition: Une fonction de Jest, un framework de test JavaScript, qui permet de créer des fonctions simulées à des fins de test.
+
+Terme: global.navigator.geolocation
+Définition: Un objet global du navigateur qui représente l'API de géolocalisation, utilisé ici pour le remplacer par une version simulée lors de la réalisation de tests.
+
+Terme: render
+Définition: Une fonction de Testing Library React qui permet de rendre un composant de React dans un environnement de test pour faciliter son test.
+
+Terme: getByRole
+Définition: Une fonction de Testing Library React qui permet de récupérer un élément du DOM en fonction de son rôle, par exemple "button", "heading", "list", etc.
+
+Terme: mockImplementationOnce
+Définition: Une méthode de Jest qui permet de remplacer la fonctionnalité d'une fonction simulée pour un test spécifique.
+
+Terme: expect
+Définition: Une fonction de Jest qui permet de définir les résultats attendus d'un test.
+
+
+Créer des flashcards des règles à retenir à partir de ce paragraphe sous la forme des termes => définitions de manière concise en français:
+swapi.dev : URL d'une ressource web qui fournit une liste paginée de vaisseaux spatiaux.
+fetch() : fonction intégrée pour effectuer des requêtes réseau en JavaScript.
+Axios : une bibliothèque populaire pour effectuer des requêtes réseau.
+StarshipList : un composant React qui effectue une requête réseau à l'aide d'Axios pour afficher une liste de vaisseaux spatiaux.
+useState : un hook React qui permet de gérer un état local à un composant.
+useEffect : un hook React qui permet d'effectuer des effets de bord, par exemple des requêtes réseau, en réponse à des mises à jour d'état.
+Axios.get : fonction de la bibliothèque Axios pour effectuer une requête GET.
+Promise : une représentation d'une valeur qui peut ne pas être disponible immédiatement, mais qui sera résolue à une date ultérieure.
+mock : fonctionnalité de Jest qui permet de remplacer des modules par des modules fictifs contrôlés dans des tests.
+jest.fn : fonction de Jest qui permet de créer une fonction fictive contrôlable dans des tests.
+screen : objet fourni par Testing Library pour effectuer des assertions sur des éléments de l'interface utilisateur.
+render : fonction fournie par Testing Library pour rendre un composant dans un environnement de test.
+findByRole : fonction fournie par Testing Library pour rechercher un élément de l'interface utilisateur par son rôle.
+toBeInTheDocument : méthode fournie par Jest pour vérifier si un élément de l'interface utilisateur est présent dans le DOM.
+
+createContext(): une fonction qui crée un objet contexte qui peut être utilisé pour passer des données à travers l'arbre de composants
+useContextSelector(): un hook qui permet d'accéder à une valeur spécifique dans un contexte React
+Provider: un composant React qui permet de fournir des données via un objet contexte à tous les composants enfants qui en ont besoin
+Mock: remplacer une fonction ou un module réel avec une version factice à des fins de test
+setup(): une fonction qui encapsule le rendu et le retour des éléments nécessaires pour effectuer des tests, afin de réduire la duplication de code dans les tests
+jest.fn(): une fonction de simulation qui permet de créer une fonction factice à des fins de test
+userEvent: une bibliothèque qui fournit des utilitaires pour simuler les événements de l'utilisateur dans les tests de l'interface utilisateur
+Callback: une fonction qui est passée en argument à une autre fonction et qui est appelée ultérieurement dans le code
+DarkModeContext: un objet contexte qui contient des valeurs liées au mode sombre d'une application

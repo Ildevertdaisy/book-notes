@@ -13,292 +13,32 @@ Creating a MongoDB instance for our app: This section covers the process of sett
 Creating our FastAPI backend: This section covers the process of creating the FastAPI backend for the app, including breaking the app into routes with the FastAPI router, handling multiple groups of URLs, creating pydantic models for cars, and creating routes for basic operations like creating, updating, deleting, and reading cars.
 Deployment to Heroku: This section covers the process of deploying the backend to Heroku, a platform-as-a-service.
 
-
-
-Can you make me flashcards of the most important concepts of this text  with short sentences in the form terms => definitions:
-Putting all of our request-response logic in one file is perfectly possible, but as you start building even slightly larger projects, you will see that it is not a good solution. FastAPI, like Express.js or Flask (with blueprints), provides APIRouter – a module designed to handle a group of path operations related to a single type of object. Using this approach, it could make sense to assign an APIRouter to handle cars at the /cars path, maybe later, another one for users at /users, and so on. The FastAPI proposes a type of project structure that is simple enough yet able to accommodate most of the use cases that you might encounter. I will jumpstart this structure by simply adding another folder in our /backend project folder and call it routers. Inside, we will add an empty __init__.py file, making the folder a Python package, and our first APIRouter called cars.py. Modify the /routers/cars.py file to match the following:
-
-from fastapi import APIRouter
-router = APIRouter()
-@router.get("/", response_description="List all cars")
-async def list_cars():
-    return {"data":"All cars will go here."}
-
-Routers in FastAPI are pleasantly simple to work with: we import the APIRouter on top, then we instantiate it, and after that, we just treat it as a partial FastAPI app, if you will, defining routes with the familiar decorators, response descriptions, and all the stuff that we have seen so far. This is just a simple test route that should return a single JSON response, but in order to be able to use it, we have to hook it up to main.py, our instance of FastAPI.
-
-First, we need to import the router, and since they will reside in separate folders but have the same name (router.py), in order to be able to distinguish one from another, we will rename it, at the top of the main.py file:
-
-from routers.cars import router as cars_router
-
-In the same main.py file, add the following lines (after the line where you instantiated the FastAPI app):
-
-app.include_router(cars_router, prefix="/cars", tags=["cars"])
-
-This line tells our FastAPI application to attach the router that we just defined and to assign it the /cars prefix , which means that it will respond to requests whose path begins with /cars. Finally, we added the tags property in order to have it displayed and nicely grouped in the OpenAPI documentation. If you navigate now to the documentation, you should indeed find just one route defined at /cars and responding only to GET requests. It is intuitive that this procedure can have us building “parallel” or same-level routers in no time, but one of the biggest benefits of using APIRouters is that they support nesting, which enables us to manage quite complex hierarchies of endpoints effortlessly!
-
-It is now time to create our first endpoint, and that for me is usually a /POST route when I do not have any previous data inserted or imported into the database. I will explain in detail what is going on with the first endpoint and the remaining endpoints should be much clearer. I will leave our dummy GET endpoint for now and just add some imports at the top of the file. You should, of course, be adhering to the Python imports order convention (standard library imports, third-party imports, local application/library specific imports)! This is what we’re going to need for now in main.py:
-
-from fastapi import APIRouter, Request, Body, status
-from fastapi.encoders import jsonable_encoder
-from fastapi.responses import JSONResponse
-from models import CarBase
-
-In the same file, after our dummy test GET route, add the following endpoint:
-
-@router.post("/", response_description="Add new car")
-async def create_car(request: Request, car: CarBase = Body(...)):
-    car = jsonable_encoder(car)
-    new_car = await     request.app.mongodb["cars1"].insert_
-        one(car)
-    created_car = await request.app.mongodb["cars1"].find_one(
-        {"_id": new_car.inserted_id}
-    )
-    return JSONResponse(status_code=status.HTTP_201_CREATED, 
-        content=created_car)
-
-There is really nothing particularly new to you here: we have seen how to create async endpoints, we are annotating the request and the car arguments, and we are setting the car to be of type CarBase, our Pydantic model that we defined previously. In the first line inside the function, we are using the jsonable_encoder helper in order to steamroll our ObjectId and cast it to a string. Finally, we define a new_car variable and we assign it an async operation – a MongoDB insertion.
-
-Here, things get interesting: you will remember that in main.py we were able to “attach” a MongoDB client to our application instance. Well, this client is still here and we can find it in the routers as well, so we only need to provide the following:
-
-request.app.mongodb["cars1"]
-
-After this, we can use all the PyMongo/Motor operations for querying MongoDB. I will not get into every aspect of the syntax, but the tutorial on PyMongo (https://pymongo.readthedocs.io/en/stable/tutorial.html) is very useful and I wholeheartedly recommend that you take a look. Insert_one means exactly that: insert one instance into the database. The analogy with the native MongoDB syntax is fully present.
-
-Finally, we want to return the inserted object through the response, and it is an excellent opportunity to see how our first query is working. The created_car is a find_one MongoDB query result, translated into the Motor/Python language: we still have to define the collection and bring over our request.app.mongodb client that is omnipresent in our app, and then we simply supply the ID of the freshly inserted car. Try it out in the interactive documentation or fire up Insomnia or HTTPie. If you installed HTTPie in our new virtual environment, you could play with this endpoint and insert some dummy data:
-
-(venv) λ http POST "http://localhost:8000/cars/" brand="aaa" make="500" year=2015 cm3=1222 price=2000 km=100000
-
-At the same time, you can monitor the database in Compass and see that it is indeed getting populated! This is exciting. If we try to pass some faulty data, pydantic will be our fierce guardian and will notify us of any data that does not belong in the database.
-
-Let us now try to retrieve a car by its ID. The following code should be understandable. In the routers/car.py file, after our /POST handling route, add the following code:
-
-@router.get("/{id}", response_description="Get a single car")
-async def show_car(id: str, request: Request):
-    if (car := await request.app.mongodb
-      ["cars1"].find_one({"_id": id})) is not None:
-        return CarDB(**car)
-    raise HTTPException(status_code=404, detail=f"Car with 
-      {id} not found")
-
-This path has just a couple of specific points that I want to tackle: as the argument, we are expecting an ID (id), which is of type string and we take the request. The if line includes some Python syntactical sugar – we are using the controversial walrus operator, := (a colon followed with an equals sign). It simply enables us to do an assignment (the result of the awaited MongoDB operation) and return it, while checking that it actually exists. After that, we simply pass our car instance from the database to the Pydantic model CarDB and return it. If the car is not to be found, we raise an HTTP exception with a meaningful message and the appropriate status code.
-
-We are now ready to replace our dummy GET route with a fairly more complex path operation. In the file cars/router.py replace the dummy route with the following:
-
-@router.get("/", response_description="List all cars")
-async def list_all_cars(
-    request: Request, 
-    min_price: int=0, 
-    max_price:int=100000, 
-    brand:Optional[str]=None
-    ) -> List[CarDB]:
-    query = {"price":{"$lt":max_price, "$gt":min_price}}
-    if brand:
-        query["brand"] = brand    
-    full_query = request.app.mongodb['cars1'].find(query).sort("_id",1)
-    results = [CarDB(**raw_car) async for raw_car in 
-      full_query]
-    return results
-
-Again, nothing is really new in this path – we are setting some default values for our query parameters – the minimum and maximum price and we add the brand into the mix, enabling us to query by brand. We could of course make this much more complex, but I believe that this is more than enough in order to showcase the main ideas.
-
-I built a dictionary for the query and simply named it query. Since it is a Python dictionary that we pass to MongoDB, it is very easy to update or modify according to our needs. In this case, we just check for the existence of a brand parameter. If such a parameter is provided, we simply add it to our query dictionary before passing it to MongoDB. Finally, in the query, we added a sorting function.
-
-The results are returned in the form of an async generator with the async-for construct. There are other viable options here – we could use something like the following:
-
-results = await full_query().to_list(1000)
-
-There is one more thing that needs to be fixed at this point – this query is returning just too many cars all at once – all of them in fact! At this point, it might not seem like a problem but try importing a couple of thousand cars into our database and watch as things become tricky. While there are ways to limit the query on the client (React) side, it is much more efficient to use the database layer to perform the pagination and return to the client only a limited set of results. Before leaving the GET route, let’s add some simple pagination functionality. Pagination is basically defined with a query string denoting the page that we want to get, while the variable parameter is the number of items (cars) that we want to get on every “page.” I will just make a simple hardcoded solution for now with a fixed number of results (25, to be precise), but later we will see how this simple functionality can be parameterized.
-
-Modify the cars/router.py and add the following parts:
-
-@router.get("/", response_description="List all cars")
-async def list_all_cars(
-    request: Request, 
-    min_price: int=0, 
-    max_price:int=100000, 
-    brand: Optional[str] = None,
-    page:int=1,
-    ) -> List[CarDB]:
-    RESULTS_PER_PAGE = 25
-    skip = (page-1)*RESULTS_PER_PAGE       
-    query = {"price":{"$lt":max_price, "$gt":min_price}}
-    if brand:
-        query["brand"] = brand
-    
-    full_query = request.app.mongodb
-      ['cars1'].find(query).sort("_id",-
-        1).skip(skip).limit(RESULTS_PER_PAGE)
-    results = [CarDB(**raw_car) async for raw_car in 
-      full_query]
-    return results
-
-We have two more routes in order to complete our CRUD job – the U(pdate) and D(elete). They should be pretty simple compared to what we have seen, as it is only a matter of implementing what we have done with the previous paths. A further simplification is to allow only the price to be updated, as the remaining data shouldn’t really change (although a periodic mileage-decreasing function could come in handy!). Let’s add these path operations to our cars/router.py file:
-
-@router.patch("/{id}", response_description="Update car")
-async def update_task(id: str, request: Request, car: 
-CarUpdate = Body(...)):
-  await request.app.mongodb['cars1'].update_one(
-        {"_id": id}, {"$set": car.dict(exclude_unset=True)}
-    )
-    if (car := await request.app.mongodbm
-      ['cars1'].find_one({"_id": id})) is not None:
-    return CarDB(**car)
-    raise HTTPException(status_code=404, detail=f"Car with 
-      {id} not found")
-@router.delete("/{id}", response_description="Delete car")
-async def delete_task(id: str, request: Request):
-    delete_result = await request.app.mongodb
-      ['cars1'].delete_one({"_id": id})
-    if delete_result.deleted_count == 1:
-        return JSONResponse(status_code=status.
-          HTTP_204_NO_CONTENT)
-    raise HTTPException(status_code=404, detail=f"Car with 
-      {id} not found")
-
-These routes are very similar to the others – we use the PATCH method to update and the DELETE method to delete. The interesting thing in this code is the set operation in the update route: we took advantage of the exclude_unset flag in order to enable MongoDB to update only the fields that are provided in the request, leaving the rest unaltered.
-
-Congratulations! You now have your first fully functional REST API with CRUD functionality and some fancy filtering baked in when it comes to reading data. There are still a couple of things to do in order to enable our app to be usable from within a frontend framework, React, for instance.
-
-
-Can you make me flashcards of the most important concepts of this text  with short sentences in the form terms => definitions:
-Cross origin resource sharing (CORS) refers to the policy that is applied when we incur into situations where our backend (FastAPI) has to communicate with the frontend (React) and they reside on different origins. An origin is simply a combination of a protocol (http, for instance) a domain (like localhost or farmstack.net), and a port (80, or 8000, or 3000). The default action is to block all unauthorized CORS requests, so if you try to run a React project on port 3000 and try to access our fresh cars API, you will fail. In order to make it work, frameworks provide a way of specifying which origins are allowed to make requests to our API, and FastAPI is no different – it makes it ridiculously easy in fact.
-
-FastAPI implements the concept of middleware – something that you might have encountered in Django or Express.js – two popular frameworks that make extensive use of the concept. Middleware is simply a set of functions that run on every request and tap into the request/response cycle, intercepting the request, manipulating it in some desired way, then taking the response before it is sent to the browser or client, performing additional manipulation if needed, and finally, returning the final response.
-
-Middleware is really based on the ASGI specification, and it is implemented in Starlette, so FastAPI enables us to use it in all our routes and optionally tie it to a part of an application (via APIRouter) or the entire app. Let’s see how we can implement them in order to allow our API to accept incoming requests from our React frontend, which will run (for now) on port 3000, React’s default:
-
-Fire up your main.py file where our main app resides and add the following import at the beginning:
-
-from fastapi.middleware.cors import CORSMiddleware
-
-After all the imports, let’s define some origins for which we want to allow communication:
-
-origins = [
-    "http://localhost",
-    "http://localhost:8080",
-    "http://localhost:3000",
-    "http://localhost:8000",
-]
-
-Finally, we have to add this middleware to our application in order to make use of it. The FastAPI recommended way of doing so is to just use the addMiddleware method on the app itself, right after instantiating the app:
-
-app = FastAPI()
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-
-While, another viable option is to import the middleware directly from Starlette and include it in the instantiation call
-
-from starlette.middleware import Middleware
-from starlette.middleware.cors import CORSMiddleware
-middleware = [
-    Middleware(
-        CORSMiddleware,
-        allow_origins=["*"],
-        allow_credentials=True,
-        allow_methods=["*"],
-        allow_headers=["*"],
-    )
-]
-app = FastAPI(middleware=middleware)
-
-In this case, the complete main.py file will look like this:
-
-from decouple import config
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from motor.motor_asyncio import AsyncIOMotorClient
-from routers.cars import router as cars_router
-DB_URL = config("DB_URL", cast=str)
-DB_NAME = config("DB_NAME", cast=str)
-origins = ["*"]
-app = FastAPI()
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
-@app.on_event("startup")
-async def startup_db_client():
-    app.mongodb_client = AsyncIOMotorClient(DB_URL)
-    app.mongodb = app.mongodb_client[DB_NAME]
-@app.on_event("shutdown")
-async def shutdown_db_client():
-    app.mongodb_client.close()
-app.include_router(cars_router, prefix="/cars", tags=["cars"])
-
-Finally, in the GitHub repository of the book, I have provided a real, albeit a bit crippled, dataset of cars in a convenient CSV format and a simple script for importing them into MongoDB. They could be imported directly in Compass as a CSV file, but that would bypass our pydantic model, which treats IDs as strings, so we wouldn’t be able to query our data relying on ObjectId. The script uses a plain synchronous PyMongo driver and a CSV reader, along with some validation logic. You are more than welcome to take it for a test drive and import as many cars as you want. I know that I always wanted to have some data to play around with, so I just wanted to provide it. By the way, the data is real, and it was scraped two years ago.
-
-
-Can you make me flashcards of the most important concepts of this text  with short sentences in the form terms => definitions: 
-Deployment to Heroku
-If you have been able to play with our backend a bit and test it with HTTPie or Insomnia, you will certainly be satisfied with your work, as you will be able to see how your API responds to all the CRUD operations. After all, we were able to complete our first task! Wouldn’t it be great if we could deploy our backend for the world to see?
-
-We will examine deployment options for a FastAPI project later, but I feel that this is a good moment to quickly show how easy the deployment of a FastAPI app to a platform-as-a-service (PaaS) can be. I get motivated and excited like a little kid every time I put something online, so I want to quickly show you how you can deploy this simple API to Heroku.
-
-Heroku is one of the leading container-based platforms for the deployment and management of applications; it has been on the market for quite some time now and it has a free tier (albeit with some limitations that will not be a deal-breaker for our purposes).
-
-The main concept of Heroku is the use of Dynos – virtualized containers for applications that are scalable and run Linux in isolated environments. You can get acquainted with the infrastructure and principles on their site: https://www.heroku.com/dynos. Heroku is a versatile and powerful tool to have under your belt, so it seems right to make our first deployment using it, using the following steps:
-
-The first step is to create a Heroku account – it is free and all you need is a valid email address. Go to https://signup.heroku.com/, fill in the form, and validate your email address.
-The second step is to download the Heroku CLI – the magic tool that will enable us to easily deploy our FastAPI interface. Navigate to https://devcenter.heroku.com/articles/heroku-cli or simply google download Heroku CLI and follow the instructions relative to your operating system.
-Remember that you should have Git already installed and your backend folder under version control. It is a good moment to double-check our .gitignore file. It should contain (at least) the following:
-
-venv/
-__pycache__/
-.env
-.vscode/settings.json
-
-Fire up the Heroku CLI (you might need to restart the shell if you just installed Heroku CLI in order to make it available!) and log in. In the shell, ideally the one hosting your virtual environment, type the following:
-
-heroku login
-
-If you are not already logged in, and chances are you aren’t since you just started, you will be prompted to open a browser and insert your credentials. Do so and close the tab.
-Heroku needs a GitHub repository to work, so now is a good moment to save our precious work and commit our changes. In your shell, type the following commands:
-
-git add .
-
-Then, think of a meaningful message and type the following:
-
-git commit -m "first API version – CRUD working"
-
-Now that we have our application under (version) control, we are ready to deploy to Heroku! First, we need to create something called a Procfile – it is really what we are going to name it, no extensions. It is simply a way of telling Heroku what process(es) it should run for the deployment. Create the file in the /backend directory and make sure it contains only the following line:
-
-web: uvicorn main:app –host 0.0.0.0 –port=$PORT
-
-The last step in this preparation is to tell Heroku which Python libraries are needed for our project in order to collect them and run them. In the past, I often had to play a bit of a trial-and-error game with various versions of packages since the Python versions might differ on Heroku’s dyno and the local machine. The safest way of solving this is to list the bare minimum in the requirements.txt file and let the cloud Python interpreter figure out the dependencies – in case you are not bound to a specific version of a package. In this case, my requirements.txt file is as follows:
-
-dnspython
-fastapi
-motor
-PythonDNS
-uvicorn
-python-decouple
-
-Now, we are ready to create a new Heroku app – in the terminal, type the following:
-
-heroku create
-
-The previous command generated a new app for us and it also created a remote Git repository on Heroku itself. When we push our code to this remote repo, the deployment will automatically begin. If you are curious, you can issue git remote -v and verify that the remote is indeed on Heroku (git.heroku.com/your-random-app-name.git).
-
-You will be greeted with the URL of your Heroku app, so it might be a good idea to keep it somewhere copy-pasted.
-
-The last thing that should be done before pushing our code to Heroku is to set the environment variables, since they are not in the repository. Although this can be done from the Heroku web interface (config – reveal variables) it is easier to do from the shell, the syntax is the following:
-
-heroku config:set DB_URL="mongodb+srv://yourdata" 
-
-Repeat this for the DB_NAME and other variables if needed.
-
-It was a bit of work, I’ll admit, but now you finally get to type the following (drumroll!):
-
-git push heroku master
-
-You will be able to follow the process in the shell output: building the stack, detecting the Python environment, installing dependencies, discovering process types from the Procfile… Finally, it should output that the Deployment is done. You can type heroku open and you should be able to see your app with a blunt Not Found page. If you, however, test the URL with /cars appended, you should see your FastAPI backend in all its glory!
+FastAPI => a web framework for building APIs with Python
+APIRouter => a module in FastAPI designed to handle a group of path operations related to a single type of object
+APIRouter nesting => ability to manage complex hierarchies of endpoints in a straightforward manner
+Endpoints => specific routes for a web application to respond to client requests
+Routers => a way to organize and separate endpoint logic in a web application
+Prefix => a way to specify a URL path that a specific router should handle
+Tags => a way to group endpoints in the OpenAPI documentation
+MongoDB => a NoSQL database that can be used with FastAPI to store data
+
+Cross-origin resource sharing (CORS) => policy applied when a backend (FastAPI) communicates with a frontend (React) on different origins
+Middleware => a set of functions that run on every request and tap into the request/response cycle to manipulate the request and response
+ASGI specification => specification that middleware is based on and is implemented in Starlette
+FastAPI middleware => a way to use middleware in all routes and tie it to a part of an application (via APIRouter) or the entire app
+CORSMiddleware => middleware in FastAPI that allows certain origins to make requests to the API
+origins => the domains that are allowed to make requests to the API
+allow_credentials => whether to allow requests with credentials
+allow_methods => the HTTP methods that are allowed
+allow_headers => the headers that are allowed in requests
+MongoDB => a NoSQL database that can be used with FastAPI to store data
+
+Heroku => a platform-as-a-service (PaaS) for the deployment and management of applications
+Dynos => virtualized containers for applications that are scalable and run Linux in isolated environments
+Heroku CLI => a command line tool that enables easy deployment of FastAPI apps to Heroku
+Git => a version control system used to deploy apps to Heroku
+Procfile => a file that tells Heroku what process(es) to run for deployment
+requirements.txt => a file that lists the necessary Python libraries for a project, used by Heroku to collect and run them
+Heroku account => an account necessary to use Heroku, which can be created for free with a valid email address
 
 
